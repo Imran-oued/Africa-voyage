@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Pratique & Rites du Pèlerin | Africa Voyage SARL</title>
+  <meta name="description" content="Guide officiel et complet pour réussir son pèlerinage Hajj et Omra : étapes pas à pas des rites du Tawaf à Arafat, checklist de la valise, formalités de visa Nusuk et conseils santé de nos Oulémas et médecins.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23064e3b'/><path d='M50 20 A30 30 0 1 0 75 65 A24 24 0 1 1 50 20 Z' fill='%23d4af37'/><polygon points='75,35 78,42 85,42 80,47 82,54 75,50 68,54 70,47 65,42 72,42' fill='%23d4af37'/></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pattern-bg">
+
+  <!-- ========================================================================
+       Top Emergency & Info Bar
+       ======================================================================== -->
+  <aside class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info-group">
+        <div class="top-info-item">
+          <i class="fa-solid fa-certificate"></i>
+          <span>Accompagnement Spirituel d'Excellence & Assistance Médicale</span>
+        </div>
+        <div class="top-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>Assistance Pèlerins : +221 77 654 32 10</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="prayer-pill" id="prayerTimeIndicator">
+          <i class="fa-solid fa-mosque"></i>
+          <span>Makkah: Prochaine prière Dhuhr</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-coins" style="color: var(--gold); font-size: 13px;"></i>
+          <select class="currency-selector" aria-label="Sélection de devise">
+            <option value="FCFA" selected>Devise : FCFA (XOF)</option>
+            <option value="EUR">Devise : EUR (€)</option>
+            <option value="USD">Devise : USD ($)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Header & Navbar with Hamburger Menu
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-img-wrapper">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNf-y1WgaSExlbUxRHYn-BxMrlJzenkDpYOycPvlyrjflFDe2G6H0cgYp_ygVcPGNTlIHfhZzyQez9DPrnx7bFvg-78PP-OHCV_rZ01ndoonJ_X8-pU8z0XrUySYc84vGB8E_DZz8PKDqGkxJsKZPZP7zOHz2VojJ4s8i-U9wVmpOaPP2gGndSMwJ7pz0Z9CVcwYDLmtu6dTW7bcqO7g8lYD9iFsGodPmM6TnrL_zDBPHUl7KB7bsBCZ-ZtRABvwe7LTtnXt6LrHOq" alt="Africa Voyage SARL" class="brand-logo-img">
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-name">Africa <span>Voyage</span></span>
+          <span class="brand-sub">SARL • Pèlerinage Hajj & Omra</span>
+        </div>
+      </a>
+
+      <div class="nav-actions-group">
+        <a href="https://wa.me/221776543210?text=Salam%20Aleykoum%20Africa%20Voyage,%20j'ai%20une%20question%20sur%20les%20rites%20du%20p%C3%A8lerinage" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 9px 16px; font-size: 0.85rem;">
+          <i class="fa-brands fa-whatsapp"></i> Poser une Question
+        </a>
+        <a href="offres.html" class="btn btn-primary">
+          <i class="fa-solid fa-kaaba"></i> Voir les Forfaits
+        </a>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-btn" aria-label="Ouvrir le menu">
+          <div class="hamburger-icon-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span>MENU</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Hamburger Slide-In Drawer Navigation
+       ======================================================================== -->
+  <div class="hamburger-drawer-overlay" id="hamburgerDrawerOverlay">
+    <aside class="hamburger-drawer">
+      <div class="drawer-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="brand-logo-img-wrapper" style="width: 40px; height: 40px;">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNf-y1WgaSExlbUxRHYn-BxMrlJzenkDpYOycPvlyrjflFDe2G6H0cgYp_ygVcPGNTlIHfhZzyQez9DPrnx7bFvg-78PP-OHCV_rZ01ndoonJ_X8-pU8z0XrUySYc84vGB8E_DZz8PKDqGkxJsKZPZP7zOHz2VojJ4s8i-U9wVmpOaPP2gGndSMwJ7pz0Z9CVcwYDLmtu6dTW7bcqO7g8lYD9iFsGodPmM6TnrL_zDBPHUl7KB7bsBCZ-ZtRABvwe7LTtnXt6LrHOq" alt="Logo" class="brand-logo-img">
+          </div>
+          <span style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #fff;">
+            Africa <span style="color: var(--gold);">Voyage</span>
+          </span>
+        </div>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fermer le menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <ul class="drawer-menu-list">
+        <li class="drawer-menu-item">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Accueil & Présentation</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="offres.html">
+            <i class="fa-solid fa-kaaba"></i>
+            <span>Nos Forfaits Hajj & Omra</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="guide.html" class="active">
+            <i class="fa-solid fa-book-quran"></i>
+            <span>Guide Pratique & Rites du Pèlerin</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#simulateur" onclick="closeDrawer()">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Simulateur de Devis en Direct</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#agences" onclick="closeDrawer()">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Nos Agences (Dakar, Abidjan, Bamako)</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-footer-actions">
+        <div style="background: rgba(255, 255, 255, 0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.2);">
+          <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; margin-bottom: 6px;">
+            <i class="fa-solid fa-headset"></i> PERMANENCE 24/7
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1;">Conseillers et Oulémas disponibles par appel ou WhatsApp.</p>
+          <a href="tel:+221776543210" style="display: inline-block; margin-top: 8px; color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
+            📞 +221 77 654 32 10
+          </a>
+        </div>
+        <a href="https://wa.me/221776543210" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+          <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================================================
+       Hero Section: Guide
+       ======================================================================== -->
+  <section class="hero hero-page">
+    <div class="hero-bg-container">
+      <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1920&q=85" alt="Tawaf autour de la Kaaba" class="hero-bg-image">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge-container">
+        <i class="fa-solid fa-book-open text-gold"></i>
+        <span>Guide Complet & Recommandations Officielles</span>
+      </div>
+
+      <h1 class="hero-title">
+        Guide Pratique du Pèlerin <br><span class="highlight">Rites, Préparation & Sérénité</span>
+      </h1>
+
+      <p class="hero-sub">
+        Tout ce qu'il faut savoir pour accomplir vos rites avec piété et conformité selon la tradition prophétique (Sunnah), encadré par les Oulémas d'Africa Voyage SARL.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Step-by-Step Rites Breakdown
+       ======================================================================== -->
+  <section class="guide-section">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">Étapes Sacrées</span>
+        <h2 class="section-title">Les Grandes Étapes du Pèlerinage</h2>
+        <p class="section-desc">
+          Une explication claire et chronologique des stations et actes cultuels du Hajj et de la Omra.
+        </p>
+      </header>
+
+      <div class="rite-steps-timeline">
+        <!-- Step 1 -->
+        <article class="rite-step-card">
+          <div class="rite-badge-num">
+            <span>Étape</span>01
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 6px;">
+              L'Entrée en État de Sacralisation (Al-Ihram) & Talbiyah
+            </h3>
+            <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 8px;">
+              Au Miqat désigné, le pèlerin effectue ses ablutions majeures (Ghusl), revêt la tenue blanche non cousue (pour les hommes) et formule solennellement la Niyyah (l'intention) en répétant la récitation sacrée : <em>« Labbayka Allahumma Labbayk... »</em>.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--gold-dark); font-weight: 600;">
+              <i class="fa-solid fa-lightbulb"></i> Conseil Africa Voyage : Nos séminaires à Dakar et Abidjan vous forment au port correct de l'Ihram avant l'embarquement.
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="rite-step-card">
+          <div class="rite-badge-num">
+            <span>Étape</span>02
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 6px;">
+              Le Tawaf d'Arrivée autour de la Sainte Kaaba (7 Tours)
+            </h3>
+            <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 8px;">
+              Arrivé au Masjid Al-Haram, le pèlerin effectue 7 circonvolutions autour de la Kaaba dans le sens inverse des aiguilles d'une montre, en débutant à la Pierre Noire (Al-Hajar Al-Aswad), suivi d'une prière de 2 rakats derrière le Maqam Ibrahim et de l'eau bénite de Zamzam.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--gold-dark); font-weight: 600;">
+              <i class="fa-solid fa-lightbulb"></i> Conseil Africa Voyage : Nos guides vous accompagnent en petits groupes pour un cheminement fluide et sécurisé.
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="rite-step-card">
+          <div class="rite-badge-num">
+            <span>Étape</span>03
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 6px;">
+              Le Parcours du Sa'i entre Safa et Marwah
+            </h3>
+            <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 8px;">
+              Sept trajets entre les collines sacrées de Safa et Marwah en mémoire de dame Hajar. L'étape se conclut par la coupe ou le rasage des cheveux (Tahallul pour la Omra).
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="rite-step-card">
+          <div class="rite-badge-num">
+            <span>Étape</span>04
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 6px;">
+              Le Séjour à Mina & La Station Solennelle au Mont Arafat (Pilier du Hajj)
+            </h3>
+            <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 8px;">
+              Le 8ème jour (Yawm at-Tarwiyah) installation à Mina. Le 9ème jour de Dhul-Hijjah est le point culminant : le rassemblement à Arafat de midi au coucher du soleil dans la supplication et l'imploration divine (Duaa).
+            </p>
+            <div style="font-size: 0.85rem; color: var(--gold-dark); font-weight: 600;">
+              <i class="fa-solid fa-lightbulb"></i> Prestation VIP : Tentes privatisées haut de gamme avec climatisation renforcée et rafraîchissements continus.
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 5 -->
+        <article class="rite-step-card">
+          <div class="rite-badge-num">
+            <span>Étape</span>05
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 6px;">
+              La Nuitée à Mouzdalifah, la Lapidation des Jamarat et le Sacrifice
+            </h3>
+            <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 8px;">
+              Récolte des petits cailloux à Mouzdalifah, nuit sous les étoiles, puis retour à Mina pour le rami (lapidation des stèles symbolisant le rejet du mal) et accomplissement du sacrifice béni.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Packing Checklist Section -->
+      <div style="background: var(--surface-alt); border-radius: var(--radius-lg); padding: 48px 36px; border: 1px solid var(--border-gold); margin-top: 40px;">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+          <span class="section-tag">Préparation Matérielle</span>
+          <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--primary);">
+            La Checklist de la Valise du Pèlerin
+          </h3>
+          <p style="color: #64748b;">
+            Cochez les éléments indispensables pour préparer vos bagages en toute sérénité.
+          </p>
+        </div>
+
+        <div class="checklist-grid">
+          <div class="checklist-box">
+            <h4 class="checklist-title"><i class="fa-solid fa-passport"></i> Documents & Formalités</h4>
+            <ul class="checklist-items-list">
+              <li class="check-item"><input type="checkbox" id="c1"> <label for="c1">Passeport biométrique valide (> 6 mois)</label></li>
+              <li class="check-item"><input type="checkbox" id="c2"> <label for="c2">Visa Nusuk officiel imprimé et sur mobile</label></li>
+              <li class="check-item"><input type="checkbox" id="c3"> <label for="c3">Carnet de vaccination international (Méningite & Fièvre jaune)</label></li>
+              <li class="check-item"><input type="checkbox" id="c4"> <label for="c4">Badge d'identification Africa Voyage SARL</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-box">
+            <h4 class="checklist-title"><i class="fa-solid fa-shirt"></i> Tenue & Vêtements</h4>
+            <ul class="checklist-items-list">
+              <li class="check-item"><input type="checkbox" id="c5"> <label for="c5">2 étoffes d'Ihram 100% coton blanc (Hommes)</label></li>
+              <li class="check-item"><input type="checkbox" id="c6"> <label for="c6">Ceinture porte-monnaie spéciale Ihram</label></li>
+              <li class="check-item"><input type="checkbox" id="c7"> <label for="c7">Sandales confortables sans coutures hautes</label></li>
+              <li class="check-item"><input type="checkbox" id="c8"> <label for="c8">Abayas/Hijabs légers et amples (Femmes)</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-box">
+            <h4 class="checklist-title"><i class="fa-solid fa-kit-medical"></i> Santé & Confort</h4>
+            <ul class="checklist-items-list">
+              <li class="check-item"><input type="checkbox" id="c9"> <label for="c9">Trousse de médicaments personnels et ordonnance</label></li>
+              <li class="check-item"><input type="checkbox" id="c10"> <label for="c10">Brumisateur rechargeable d'eau</label></li>
+              <li class="check-item"><input type="checkbox" id="c11"> <label for="c11">Crème solaire sans parfum (autorisée en Ihram)</label></li>
+              <li class="check-item"><input type="checkbox" id="c12"> <label for="c12">Batterie externe (Powerbank) 10000mAh</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Health & Nusuk Visa Info Box -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 50px;">
+        <div class="office-card" style="background: #fff; padding: 30px;">
+          <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <i class="fa-solid fa-shield-virus" style="color: var(--gold);"></i> Exigences Sanitaires Officielles 2026
+          </h4>
+          <p style="font-size: 0.92rem; color: #475569; line-height: 1.7;">
+            Le Ministère saoudien de la Santé impose la vaccination contre la méningite à méningocoque (ACYW135) datant de moins de 3 ans et de plus de 10 jours avant l'arrivée. Le vaccin contre la fièvre jaune est également exigé pour les ressortissants d'Afrique de l'Ouest. Nos médecins partenaires à Dakar et Abidjan supervisent toutes ces démarches.
+          </p>
+        </div>
+
+        <div class="office-card" style="background: #fff; padding: 30px;">
+          <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <i class="fa-solid fa-mobile-screen-button" style="color: var(--gold);"></i> L'Application Nusuk & Visas
+          </h4>
+          <p style="font-size: 0.92rem; color: #475569; line-height: 1.7;">
+            Africa Voyage SARL se charge à 100% de l'enregistrement de votre dossier sur la plateforme officielle <strong>Nusuk</strong> et de la réservation des créneaux de prière à la sainte Rawdah de Médine. Vous recevez vos permis et QR codes validés avant votre vol.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="brand-logo-img-wrapper" style="width: 42px; height: 42px;">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNf-y1WgaSExlbUxRHYn-BxMrlJzenkDpYOycPvlyrjflFDe2G6H0cgYp_ygVcPGNTlIHfhZzyQez9DPrnx7bFvg-78PP-OHCV_rZ01ndoonJ_X8-pU8z0XrUySYc84vGB8E_DZz8PKDqGkxJsKZPZP7zOHz2VojJ4s8i-U9wVmpOaPP2gGndSMwJ7pz0Z9CVcwYDLmtu6dTW7bcqO7g8lYD9iFsGodPmM6TnrL_zDBPHUl7KB7bsBCZ-ZtRABvwe7LTtnXt6LrHOq" alt="Logo" class="brand-logo-img">
+            </div>
+            <span style="font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #fff;">
+              Africa <span style="color: var(--gold);">Voyage</span> SARL
+            </span>
+          </div>
+          <p>
+            Votre agence de référence en Afrique de l'Ouest pour le Hajj et la Omra.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Pages du Site</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="offres.html">Nos Forfaits Hajj & Omra</a></li>
+            <li><a href="guide.html">Guide du Pèlerin</a></li>
+            <li><a href="index.html#simulateur">Simulateur de Devis</a></li>
+            <li><a href="index.html#agences">Nos Agences</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Sièges Régionaux</h4>
+          <ul class="footer-links">
+            <li><span style="color: #cbd5e1;">📍 Dakar (Fann Résidence)</span></li>
+            <li><span style="color: #cbd5e1;">📍 Abidjan (Plateau)</span></li>
+            <li><span style="color: #cbd5e1;">📍 Bamako (ACI 2000)</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Permanence 24/7</h4>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 12px;">
+            Ligne directe pèlerins : +221 77 654 32 10
+          </p>
+          <a href="https://wa.me/221776543210" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Africa Voyage SARL. Tous droits réservés. Agence agréée Hajj & Omra.</span>
+        <span>Licence Touristique N° SN-DKR-2011-B • Code IATA: 96-4 1234 5</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221776543210" target="_blank" rel="noopener" class="whatsapp-fab" title="Discuter sur WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

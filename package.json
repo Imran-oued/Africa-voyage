@@ -1,0 +1,30 @@
+{
+  "name": "africa-voyage-sarl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plateforme web officielle d'Africa Voyage SARL - Organisation de pèlerinages de prestige Hajj 2026 et Omra au départ de l'Afrique.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "hajj",
+    "omra",
+    "africa-voyage",
+    "pelerinage",
+    "dakar",
+    "abidjan",
+    "bamako",
+    "spiritual-luxury",
+    "kaaba",
+    "makkah",
+    "madinah"
+  ],
+  "author": "Africa Voyage SARL",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

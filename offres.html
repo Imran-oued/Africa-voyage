@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forfaits & Tarifs Hajj 2026 / Omra | Africa Voyage SARL</title>
+  <meta name="description" content="Catalogue complet des offres et tarifs pour le Hajj 2026 et la Omra avec Africa Voyage SARL. Hôtels 5 étoiles face à la Sainte Kaaba, formules VIP et Confort au départ de Dakar, Abidjan et Bamako.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23064e3b'/><path d='M50 20 A30 30 0 1 0 75 65 A24 24 0 1 1 50 20 Z' fill='%23d4af37'/><polygon points='75,35 78,42 85,42 80,47 82,54 75,50 68,54 70,47 65,42 72,42' fill='%23d4af37'/></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pattern-bg">
+
+  <!-- ========================================================================
+       Top Emergency & Info Bar
+       ======================================================================== -->
+  <aside class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info-group">
+        <div class="top-info-item">
+          <i class="fa-solid fa-certificate"></i>
+          <span>Agence Agréée Ministère du Hajj N° AF-7842 & IATA</span>
+        </div>
+        <div class="top-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>Dakar: +221 33 824 50 00 | Abidjan: +225 27 20 30 40</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="prayer-pill" id="prayerTimeIndicator">
+          <i class="fa-solid fa-mosque"></i>
+          <span>Makkah: Prochaine prière Dhuhr</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-coins" style="color: var(--gold); font-size: 13px;"></i>
+          <select class="currency-selector" aria-label="Sélection de devise">
+            <option value="FCFA" selected>Devise : FCFA (XOF)</option>
+            <option value="EUR">Devise : EUR (€)</option>
+            <option value="USD">Devise : USD ($)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Header & Navbar with Hamburger Menu
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-img-wrapper">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNf-y1WgaSExlbUxRHYn-BxMrlJzenkDpYOycPvlyrjflFDe2G6H0cgYp_ygVcPGNTlIHfhZzyQez9DPrnx7bFvg-78PP-OHCV_rZ01ndoonJ_X8-pU8z0XrUySYc84vGB8E_DZz8PKDqGkxJsKZPZP7zOHz2VojJ4s8i-U9wVmpOaPP2gGndSMwJ7pz0Z9CVcwYDLmtu6dTW7bcqO7g8lYD9iFsGodPmM6TnrL_zDBPHUl7KB7bsBCZ-ZtRABvwe7LTtnXt6LrHOq" alt="Africa Voyage SARL" class="brand-logo-img">
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-name">Africa <span>Voyage</span></span>
+          <span class="brand-sub">SARL • Pèlerinage Hajj & Omra</span>
+        </div>
+      </a>
+
+      <div class="nav-actions-group">
+        <a href="https://wa.me/221776543210?text=Salam%20Aleykoum%20Africa%20Voyage%20SARL,%20je%20souhaite%20r%C3%A9server%20un%20forfait" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 9px 16px; font-size: 0.85rem;">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <button class="btn btn-primary" onclick="openContactModal()">
+          <i class="fa-solid fa-file-invoice-dollar"></i> Devis Gratuit
+        </button>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-btn" aria-label="Ouvrir le menu">
+          <div class="hamburger-icon-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span>MENU</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Hamburger Slide-In Drawer Navigation
+       ======================================================================== -->
+  <div class="hamburger-drawer-overlay" id="hamburgerDrawerOverlay">
+    <aside class="hamburger-drawer">
+      <div class="drawer-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="brand-logo-img-wrapper" style="width: 40px; height: 40px;">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNf-y1WgaSExlbUxRHYn-BxMrlJzenkDpYOycPvlyrjflFDe2G6H0cgYp_ygVcPGNTlIHfhZzyQez9DPrnx7bFvg-78PP-OHCV_rZ01ndoonJ_X8-pU8z0XrUySYc84vGB8E_DZz8PKDqGkxJsKZPZP7zOHz2VojJ4s8i-U9wVmpOaPP2gGndSMwJ7pz0Z9CVcwYDLmtu6dTW7bcqO7g8lYD9iFsGodPmM6TnrL_zDBPHUl7KB7bsBCZ-ZtRABvwe7LTtnXt6LrHOq" alt="Logo" class="brand-logo-img">
+          </div>
+          <span style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #fff;">
+            Africa <span style="color: var(--gold);">Voyage</span>
+          </span>
+        </div>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fermer le menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <ul class="drawer-menu-list">
+        <li class="drawer-menu-item">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Accueil & Présentation</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="offres.html" class="active">
+            <i class="fa-solid fa-kaaba"></i>
+            <span>Nos Forfaits Hajj & Omra</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="guide.html">
+            <i class="fa-solid fa-book-quran"></i>
+            <span>Guide Pratique & Rites du Pèlerin</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#simulateur" onclick="closeDrawer()">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Simulateur de Devis en Direct</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#agences" onclick="closeDrawer()">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Nos Agences (Dakar, Abidjan, Bamako)</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-footer-actions">
+        <div style="background: rgba(255, 255, 255, 0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.2);">
+          <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; margin-bottom: 6px;">
+            <i class="fa-solid fa-headset"></i> PERMANENCE 24/7
+          </div>
+          <p style="font-size: 0.82rem; color: #cbd5e1;">Conseillers pèlerinage disponibles par appel ou WhatsApp.</p>
+          <a href="tel:+221776543210" style="display: inline-block; margin-top: 8px; color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none;">
+            📞 +221 77 654 32 10
+          </a>
+        </div>
+        <a href="https://wa.me/221776543210" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+          <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================================================
+       Hero Section: Offers
+       ======================================================================== -->
+  <section class="hero hero-page">
+    <div class="hero-bg-container">
+      <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1920&q=85" alt="Kaaba Masjid al-Haram" class="hero-bg-image">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge-container">
+        <i class="fa-solid fa-star text-gold"></i>
+        <span>Prestige, Proximité & Sérénité</span>
+      </div>
+
+      <h1 class="hero-title">
+        Nos Forfaits Hajj 2026 & Omra <br><span class="highlight">Face à la Sainte Kaaba</span>
+      </h1>
+
+      <p class="hero-sub">
+        Découvrez l'ensemble de nos formules tout compris avec hébergements 5 étoiles à quelques pas de la Kaaba et de la Mosquée du Prophète à Médine.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Packages Catalog
+       ======================================================================== -->
+  <section class="packages-section" id="catalogue">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">Catalogue Complet</span>
+        <h2 class="section-title">Sélectionnez Votre Formule Bénie</h2>
+        <p class="section-desc">
+          Tarifs tout compris : Billets d'avion, Hôtels 5★, Visas Nusuk, TGV Haramain, Tentes VIP climatisées et Pension Complète.
+        </p>
+      </header>
+
+      <!-- Filter Buttons -->
+      <div class="package-filter-pills">
+        <button class="filter-pill active" data-filter="all">Tous les Forfaits</button>
+        <button class="filter-pill" data-filter="hajj">Hajj 2026</button>
+        <button class="filter-pill" data-filter="ramadan">Omra Ramadan</button>
+        <button class="filter-pill" data-filter="vip">Prestige VIP 5★</button>
+        <button class="filter-pill" data-filter="confort">Formules Confort</button>
+      </div>
+
+      <!-- Dynamic Cards Grid -->
+      <div class="packages-grid" id="packagesGrid">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Kaaba & Holy Sites Photo Gallery
+       ======================================================================== -->
+  <section class="kaaba-gallery-section" id="galerie">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag" style="background: rgba(212, 175, 55, 0.2); color: var(--gold-light);">Immersion Visuelle</span>
+        <h2 class="section-title" style="color: #fff;">Les Lieux Saints au Cœur de Votre Voyage</h2>
+        <p class="section-desc" style="color: #cbd5e1;">
+          Admirez la grandeur de la Sainte Kaaba, du Masjid Al-Haram et de la Mosquée du Prophète à Médine où vous résiderez.
+        </p>
+      </header>
+
+      <div class="gallery-grid">
+        <div class="gallery-card featured-large">
+          <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=85" alt="Sainte Kaaba Masjid al-Haram" class="gallery-image">
+          <div class="gallery-card-overlay">
+            <h4 class="gallery-card-title">La Sainte Kaaba – Cœur Sacré de l'Islam</h4>
+            <p class="gallery-card-desc">Vue majestueuse lors du Tawaf depuis les esplanades du Haram.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80" alt="Horloge Royale Abraj Al Bait" class="gallery-image">
+          <div class="gallery-card-overlay">
+            <h4 class="gallery-card-title">Fairmont Clock Tower Makkah</h4>
+            <p class="gallery-card-desc">Nos chambres et suites avec vue panoramique directe sur la Kaaba.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=800&q=80" alt="Mosquée du Prophète Médine" class="gallery-image">
+          <div class="gallery-card-overlay">
+            <h4 class="gallery-card-title">Al-Masjid An-Nabawi (Médine)</h4>
+            <p class="gallery-card-desc">Les célèbres parasols géants et la sainte Rawdah ash-Sharifah.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Pèlerins en prière" class="gallery-image">
+          <div class="gallery-card-overlay">
+            <h4 class="gallery-card-title">Ferveur & Dévotion Collective</h4>
+            <p class="gallery-card-desc">Des moments inoubliables partagés avec nos Oulémas et guides.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80" alt="Mont Arafat et Mina" class="gallery-image">
+          <div class="gallery-card-overlay">
+            <h4 class="gallery-card-title">Mont Arafat & Campements de Mina</h4>
+            <p class="gallery-card-desc">Tentes VIP climatisées et accompagnement médical garanti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Detailed Comparison Table
+       ======================================================================== -->
+  <section class="comparison-section">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">Transparence Totale</span>
+        <h2 class="section-title">Tableau Comparatif des Formules</h2>
+        <p class="section-desc">
+          Comparez les prestations incluses pour choisir la formule la plus adaptée à vos attentes et à votre budget.
+        </p>
+      </header>
+
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Prestations & Services</th>
+              <th class="featured-col">Hajj Royal VIP 5★</th>
+              <th>Hajj Confort 5★</th>
+              <th>Omra Ramadan 15J</th>
+              <th>Omra Mensuelle 10J</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hôtel à La Mecque</strong></td>
+              <td class="featured-col">Fairmont Clock Tower (0m Kaaba)</td>
+              <td>Swissôtel Al Maqam (50m)</td>
+              <td>Pullman Zamzam (20m)</td>
+              <td>Mövenpick Hajar (100m)</td>
+            </tr>
+            <tr>
+              <td><strong>Hôtel à Médine</strong></td>
+              <td class="featured-col">The Oberoi Madinah (50m)</td>
+              <td>Anwar Mövenpick (Cour)</td>
+              <td>Dar Al Taqwa (Cour)</td>
+              <td>Crowne Plaza (150m)</td>
+            </tr>
+            <tr>
+              <td><strong>Restauration</strong></td>
+              <td class="featured-col">Pension Complète Gastronomique</td>
+              <td>Pension Complète Buffets</td>
+              <td>Iftar & Suhoor Inclus</td>
+              <td>Petit-déjeuner inclus</td>
+            </tr>
+            <tr>
+              <td><strong>Hébergement à Mina & Arafat</strong></td>
+              <td class="featured-col">Tentes VIP privatives climatisées</td>
+              <td>Tentes climatisées collectives</td>
+              <td>— (Non applicable)</td>
+              <td>— (Non applicable)</td>
+            </tr>
+            <tr>
+              <td><strong>Transport Inter-villes</strong></td>
+              <td class="featured-col">TGV Haramain 1ère Classe + GMC</td>
+              <td>TGV Haramain Standard</td>
+              <td>TGV Haramain / Bus VIP</td>
+              <td>Bus VIP climatisé</td>
+            </tr>
+            <tr>
+              <td><strong>Encadrement Médical</strong></td>
+              <td class="featured-col">Médecin dédié 24h/24 dans l'hôtel</td>
+              <td>Équipe médicale sur place</td>
+              <td>Assistance médicale d'urgence</td>
+              <td>Assistance médicale d'urgence</td>
+            </tr>
+            <tr>
+              <td><strong>Tarif de Référence</strong></td>
+              <td class="featured-col"><strong class="table-price-cell text-gold" data-amount="8900000">8 900 000 FCFA</strong></td>
+              <td><strong class="table-price-cell" data-amount="6800000">6 800 000 FCFA</strong></td>
+              <td><strong class="table-price-cell" data-amount="3450000">3 450 000 FCFA</strong></td>
+              <td><strong class="table-price-cell" data-amount="1950000">1 950 000 FCFA</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Action Rapide</strong></td>
+              <td class="featured-col">
+                <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('hajj-royal-vip')">Réserver</button>
+              </td>
+              <td>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('hajj-confort-famille')">Réserver</button>
+              </td>
+              <td>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('omra-ramadan-10-derniers')">Réserver</button>
+              </td>
+              <td>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('omra-mensuelle-confort')">Réserver</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="brand-logo-img-wrapper" style="width: 42px; height: 42px;">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNf-y1WgaSExlbUxRHYn-BxMrlJzenkDpYOycPvlyrjflFDe2G6H0cgYp_ygVcPGNTlIHfhZzyQez9DPrnx7bFvg-78PP-OHCV_rZ01ndoonJ_X8-pU8z0XrUySYc84vGB8E_DZz8PKDqGkxJsKZPZP7zOHz2VojJ4s8i-U9wVmpOaPP2gGndSMwJ7pz0Z9CVcwYDLmtu6dTW7bcqO7g8lYD9iFsGodPmM6TnrL_zDBPHUl7KB7bsBCZ-ZtRABvwe7LTtnXt6LrHOq" alt="Logo" class="brand-logo-img">
+            </div>
+            <span style="font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #fff;">
+              Africa <span style="color: var(--gold);">Voyage</span> SARL
+            </span>
+          </div>
+          <p>
+            Votre agence de référence en Afrique de l'Ouest pour le Hajj et la Omra.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Pages du Site</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="offres.html">Nos Forfaits Hajj & Omra</a></li>
+            <li><a href="guide.html">Guide du Pèlerin</a></li>
+            <li><a href="index.html#simulateur">Simulateur de Devis</a></li>
+            <li><a href="index.html#agences">Nos Agences</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Sièges Régionaux</h4>
+          <ul class="footer-links">
+            <li><span style="color: #cbd5e1;">📍 Dakar (Fann Résidence)</span></li>
+            <li><span style="color: #cbd5e1;">📍 Abidjan (Plateau)</span></li>
+            <li><span style="color: #cbd5e1;">📍 Bamako (ACI 2000)</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Permanence 24/7</h4>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 12px;">
+            Ligne directe pèlerins : +221 77 654 32 10
+          </p>
+          <a href="https://wa.me/221776543210" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Africa Voyage SARL. Tous droits réservés. Agence agréée Hajj & Omra.</span>
+        <span>Licence Touristique N° SN-DKR-2011-B • Code IATA: 96-4 1234 5</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Itinerary & Quote -->
+  <div class="modal-overlay" id="itineraryModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="itineraryModalTitle" style="font-size: 1.25rem; font-weight: 700;">Programme Détaillé</h3>
+        <button class="modal-close" onclick="closeModal('itineraryModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="itineraryModalBody"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="quoteModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem; font-weight: 700;">Demande de Devis & Inscription</h3>
+        <button class="modal-close" onclick="closeModal('quoteModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="event.preventDefault(); alert('Votre demande a été envoyée !'); closeModal('quoteModal');">
+          <div class="form-group">
+            <label>Nom complet *</label>
+            <input type="text" class="form-control" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label>Numéro WhatsApp *</label>
+            <input type="tel" class="form-control" required placeholder="+221 ...">
+          </div>
+          <div class="form-group">
+            <label>Forfait souhaité</label>
+            <select class="form-control">
+              <option>Hajj 2026 – Forfait Royal VIP 5★</option>
+              <option>Hajj 2026 – Forfait Confort</option>
+              <option>Omra Ramadan 2026</option>
+              <option>Omra Mensuelle</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+            Envoyer ma Demande
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/221776543210" target="_blank" rel="noopener" class="whatsapp-fab" title="Discuter sur WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

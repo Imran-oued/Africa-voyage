@@ -1,0 +1,27 @@
+{
+  "projectId": "11913000141625610575",
+  "projectTitle": "Africa Voyage SARL - Pèlerinage Hajj & Omra",
+  "designSystem": {
+    "name": "Spiritual Luxury",
+    "primaryColor": "#064E3B",
+    "secondaryColor": "#D4AF37",
+    "backgroundColor": "#FDFBF7",
+    "fonts": {
+      "headline": "Playfair Display",
+      "body": "Inter",
+      "labels": "Montserrat"
+    }
+  },
+  "screens": [
+    {
+      "id": "a1d4c91d542649f3abf2549752046c39",
+      "title": "Africa Voyage SARL - Accueil Hajj & Omra",
+      "deviceType": "DESKTOP"
+    },
+    {
+      "id": "dccc1d2423d045e097f99fd273bae764",
+      "title": "Africa Voyage SARL Emblem Logo",
+      "deviceType": "IMAGE"
+    }
+  ]
+}
