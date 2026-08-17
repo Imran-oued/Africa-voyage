@@ -1,7 +1,16 @@
 /**
- * Africa Voyage SARL - Pèlerinage Hajj & Omra
- * Core Interactive Application Engine & Multi-Page Navigation
+ * AFRICA VOYAGES SARL - La 1ère agence agréée pour le Hadj au Burkina Faso
+ * Plus de 40 ans d'expérience
+ * Siège : Samandin secteur 05, en face de la station Total du Mogho Naaba à Ouagadougou
+ * Tél : +226 25 31 06 77 | +226 70 24 55 74 | WhatsApp : +226 73 18 74 17
+ * Email : africavoyagebf74@gmail.com
+ * RCCM : BF OUA 2018 B 9910 | IFU : 00114097X | Licence Catégorie A | Capital : 15 000 000 FCFA
  */
+
+import contentData from './data/content.json';
+
+// Global Data Store
+export const APP_DATA = contentData;
 
 // Exchange Rates (Base: FCFA)
 const EXCHANGE_RATES = {
@@ -12,148 +21,14 @@ const EXCHANGE_RATES = {
 
 let currentCurrency = 'FCFA';
 
-// Packages Database
-const PACKAGES = [
-  {
-    id: 'hajj-royal-vip',
-    type: 'hajj',
-    category: 'vip',
-    title: 'Hajj 2026 – Forfait Royal Prestige VIP 5★',
-    tag: 'Places Limitées - VIP',
-    duration: '21 Jours',
-    departure: 'Dakar & Abidjan',
-    dates: 'Du 15 Mai au 05 Juin 2026 (Dates prévisionnelles)',
-    basePriceFCFA: 8900000,
-    makkahHotel: 'Fairmont Makkah Clock Royal Tower (5★)',
-    makkahDistance: '0m – Face à la Sainte Kaaba',
-    madinahHotel: 'The Oberoi Madinah (5★)',
-    madinahDistance: '50m – Esplanade Masjid Nabawi',
-    image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80',
-    inclusions: [
-      'Vols réguliers directs aller-retour classe affaire disponible',
-      'Tentes VIP privatives climatisées à Mina & Arafat avec lits',
-      'Pension complète gastronomique (buffets internationaux & africains)',
-      'Accompagnement d\'éminents Oulémas francophones et wolof/bambara',
-      'Médecin dédié disponible 24h/24 et assistance pharmacie',
-      'Transferts en TGV Haramain première classe'
-    ],
-    itinerary: [
-      { day: 'Jour 1-4', title: 'Départ & Séjour de Sérénité à Médine', desc: 'Accueil VIP à l\'aéroport de Médine, installation au palace The Oberoi. Visite de la sainte Rawdah ash-Sharifah avec créneaux Nusuk réservés.' },
-      { day: 'Jour 5', title: 'Entrée en état d\'Ihram & Voyage vers La Mecque', desc: 'Préparation au Miqat de Dhul Hulaifah, départ en TGV Haramain haute vitesse. Arrivée à La Mecque et accomplissement de la Omra d\'accueil.' },
-      { day: 'Jour 6-8', title: 'Révérence à La Mecque', desc: 'Séjour au Fairmont Clock Tower face à la Kaaba. Conférences préparatoires au Hajj avec nos érudits.' },
-      { day: 'Jour 8-12', title: 'Les Jours Sacrés du Hajj (Mina, Arafat, Mouzdalifah)', desc: 'Campement VIP privatisé à Mina, journée solennelle de prières à Arafat sous nos tentes grand confort, nuitée à Mouzdalifah et rami des Jamarat sous encadrement sécurisé.' },
-      { day: 'Jour 13-14', title: 'Tawaf Al-Ifadah & Clôture', desc: 'Accomplissement du Tawaf et Sa\'i en toute quiétude. Repos au palace.' },
-      { day: 'Jour 15-21', title: 'Tawaf d\'adieu & Retour béni', desc: 'Transfert aéroport et retour vers Dakar / Abidjan.' }
-    ]
-  },
-  {
-    id: 'omra-ramadan-10-derniers',
-    type: 'omra',
-    category: 'ramadan',
-    title: 'Omra Ramadan 2026 – Les 10 Dernières Nuits (Laylat Al-Qadr)',
-    tag: 'Très Demandé',
-    duration: '15 Jours',
-    departure: 'Dakar, Abidjan & Bamako',
-    dates: 'Du 10 au 25 Mars 2026',
-    basePriceFCFA: 3450000,
-    makkahHotel: 'Pullman Zamzam Makkah (5★)',
-    makkahDistance: '20m – Complexe Abraj Al Bait',
-    madinahHotel: 'Dar Al Taqwa Hotel Madinah (5★)',
-    madinahDistance: 'Cour de la Mosquée du Prophète',
-    image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=80',
-    inclusions: [
-      'Vols directs aller-retour avec franchise bagages généreuse',
-      'Iftar et Suhoor quotidiens inclus en formule buffet haut de gamme',
-      'Séminaires spirituels quotidiens et veillées de prières',
-      'Ziarates (visites guidées des lieux historiques à Médine & La Mecque)',
-      'Gestion intégrale des visas électroniques et assurances Nusuk',
-      'Kit du pèlerin offert (Ihram, guide, sac, gourde)'
-    ],
-    itinerary: [
-      { day: 'Jour 1-5', title: 'Médine Al-Mounawwarah', desc: 'Prières au Masjid An-Nabawi, visites historiques à Quba et Uhud.' },
-      { day: 'Jour 6-15', title: 'La Mecque & Nuits Bénies de Ramadan', desc: 'Vivre Laylat Al-Qadr et la prière de Tarawih et Tahajjoud face à la Kaaba.' }
-    ]
-  },
-  {
-    id: 'hajj-confort-famille',
-    type: 'hajj',
-    category: 'confort',
-    title: 'Hajj 2026 – Forfait Confort & Sérénité',
-    tag: 'Meilleur Rapport Qualité/Prix',
-    duration: '20 Jours',
-    departure: 'Dakar, Abidjan, Bamako & Conakry',
-    dates: 'Du 16 Mai au 04 Juin 2026',
-    basePriceFCFA: 6800000,
-    makkahHotel: 'Swissôtel Al Maqam Makkah (5★)',
-    makkahDistance: '50m du Haram',
-    madinahHotel: 'Anwar Al Madinah Mövenpick (5★)',
-    madinahDistance: 'Esplanade Sud',
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80',
-    inclusions: [
-      'Vols réguliers avec assistance aéroport personnalisée',
-      'Hôtels 5 étoiles proches des mosquées saintes',
-      'Tentes climatisées à Mina et Arafat avec repas chauds',
-      'Encadrement religieux continu et délégués bilingues',
-      'Assistance médicale sur place'
-    ],
-    itinerary: [
-      { day: 'Jour 1-6', title: 'Médine la Lumineuse', desc: 'Visite de la sainte mosquée et lieux saints.' },
-      { day: 'Jour 7-20', title: 'Rites complets du Hajj à La Mecque', desc: 'Hajj serein et bien encadré.' }
-    ]
-  },
-  {
-    id: 'omra-mensuelle-confort',
-    type: 'omra',
-    category: 'confort',
-    title: 'Omra Confort Mensuelle – Toutes Saisons',
-    tag: 'Départs Chaque Mois',
-    duration: '10 Jours',
-    departure: 'Dakar & Abidjan',
-    dates: 'Départs continus : Octobre à Mai',
-    basePriceFCFA: 1950000,
-    makkahHotel: 'Mövenpick Hotel & Residences Hajar Tower (5★)',
-    makkahDistance: '100m du Haram',
-    madinahHotel: 'Crowne Plaza Madinah (4★ Sup)',
-    madinahDistance: '150m de la Rawdah',
-    image: 'https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=1200&q=80',
-    inclusions: [
-      'Vols aller-retour réguliers',
-      'Hébergement en chambre double/triple/quadruple avec petit déjeuner',
-      'Visa Omra touristique ou électronique',
-      'Guide accompagnateur dédié',
-      'Eau de Zamzam 5L offerte au retour'
-    ],
-    itinerary: [
-      { day: 'Jour 1-4', title: 'Arrivée & Médine', desc: 'Visites religieuses et recueillement.' },
-      { day: 'Jour 5-10', title: 'La Mecque & Omra', desc: 'Accomplissement de la Omra et shopping souvenirs.' }
-    ]
-  },
-  {
-    id: 'omra-sur-mesure-vip',
-    type: 'omra',
-    category: 'vip',
-    title: 'Omra Privilège Sur-Mesure (Dates Flexibles)',
-    tag: '100% Personnalisable',
-    duration: '7 à 21 Jours',
-    departure: 'Toutes villes d\'Afrique & Europe',
-    dates: 'À la date de votre choix',
-    basePriceFCFA: 2800000,
-    makkahHotel: 'Raffles Makkah Palace / Suite Vue Kaaba (5★ Luxe)',
-    makkahDistance: 'Accès direct privé Kaaba',
-    madinahHotel: 'Dar Al Iman InterContinental (5★)',
-    madinahDistance: 'Face à la porte des femmes et hommes',
-    image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1200&q=80',
-    inclusions: [
-      'Chauffeur privé et véhicule de luxe (GMC Yukon) dédié',
-      'Suites exécutives avec vue panoramique sur la Kaaba',
-      'Guide privé exclusif pour votre famille',
-      'Accès salon VIP aéroportuaire et formalités express'
-    ],
-    itinerary: [
-      { day: 'Programme Sur-Mesure', title: 'Conçu selon vos désirs', desc: 'Notre conciergerie religieuse établit votre planning sur mesure selon vos dates et préférences.' }
-    ]
-  }
-];
+// Packages Database from contentData.offers
+export const PACKAGES = APP_DATA.offers;
+
+// Partner Airlines
+export const AIRLINES = APP_DATA.partnerAirlines;
+
+// Additional Services
+export const SERVICES = APP_DATA.additionalServices;
 
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initLogoCustomizer();
   initContactForm();
+  renderAirlinesAndServices();
 });
 
 /* ==========================================================================
@@ -200,7 +76,6 @@ function initHamburgerMenu() {
     }
   });
 
-  // Close when pressing Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawerOverlay.classList.contains('active')) {
       closeDrawer();
@@ -271,7 +146,6 @@ function updateAllPrices() {
     }
   });
 
-  // Update comparison table cells if on offres.html
   document.querySelectorAll('.table-price-cell').forEach(cell => {
     const amount = parseInt(cell.dataset.amount);
     if (amount) {
@@ -310,19 +184,19 @@ function renderPackages(packagesToRender) {
   const container = document.getElementById('packagesGrid');
   if (!container) return;
 
-  if (packagesToRender.length === 0) {
+  if (!packagesToRender || packagesToRender.length === 0) {
     container.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; background: #fff; border-radius: 16px; border: 1px solid var(--border-gold);">
-        <p style="font-size: 1.2rem; color: var(--primary); font-weight: 600;">Aucun forfait ne correspond exactement à vos critères de recherche.</p>
-        <p style="color: #64748b; margin: 10px 0 20px;">Contactez nos conseillers pour élaborer une offre personnalisée.</p>
-        <button class="btn btn-primary" onclick="openContactModal()">Contacter un Conseiller</button>
+        <p style="font-size: 1.2rem; color: var(--primary); font-weight: 600;">Aucun forfait ne correspond à ce filtre.</p>
+        <p style="color: #64748b; margin: 10px 0 20px;">Contactez nos conseillers à Ouagadougou au +226 25 31 06 77 pour toute demande spécifique.</p>
+        <button class="btn btn-primary" onclick="openContactModal()">Contacter l'Agence</button>
       </div>
     `;
     return;
   }
 
   container.innerHTML = packagesToRender.map(pkg => `
-    <div class="package-card ${pkg.category === 'vip' ? 'featured' : ''}" data-id="${pkg.id}">
+    <div class="package-card ${pkg.type === 'hadj' ? 'featured' : ''}" data-id="${pkg.id}">
       <span class="package-badge-top">${pkg.tag}</span>
       <span class="package-type-badge">${pkg.type.toUpperCase()}</span>
       
@@ -339,18 +213,22 @@ function renderPackages(packagesToRender) {
         <h3 class="package-title">${pkg.title}</h3>
         <div class="package-dates">
           <i class="fa-regular fa-calendar" style="color: var(--gold-dark);"></i>
-          <span>${pkg.duration} • ${pkg.dates}</span>
+          <span>${pkg.duration} • Départ : ${pkg.departure}</span>
         </div>
 
         <div class="package-hotels-grid">
           <div class="hotel-item">
-            <strong>Makkah:</strong>
+            <strong>Makkah :</strong>
             <span>${pkg.makkahHotel}</span>
           </div>
           <div class="hotel-item">
-            <strong>Madinah:</strong>
+            <strong>Madinah :</strong>
             <span>${pkg.madinahHotel}</span>
           </div>
+        </div>
+
+        <div style="background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 4px; margin-bottom: 14px; font-size: 0.82rem; color: var(--primary);">
+          <i class="fa-solid fa-circle-info"></i> <strong>Condition :</strong> ${pkg.conditions}
         </div>
 
         <ul class="package-inclusions">
@@ -364,15 +242,15 @@ function renderPackages(packagesToRender) {
 
         <div class="package-footer">
           <div class="package-price-box">
-            <span class="price-label">À partir de</span>
+            <span class="price-label">${pkg.priceLabel || 'À partir de'}</span>
             <span class="price-amount">${formatPrice(pkg.basePriceFCFA)}</span>
           </div>
           <div style="display: flex; gap: 8px;">
             <button class="btn btn-outline" style="padding: 8px 14px; font-size: 0.85rem;" onclick="openItineraryModal('${pkg.id}')">
-              Programme
+              Détails
             </button>
             <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" onclick="bookPackageWhatsApp('${pkg.id}')">
-              Réserver
+              S'inscrire
             </button>
           </div>
         </div>
@@ -394,8 +272,12 @@ function initFilterPills() {
 
       if (filter === 'all') {
         renderPackages(PACKAGES);
-      } else if (filter === 'hajj' || filter === 'omra') {
-        renderPackages(PACKAGES.filter(p => p.type === filter));
+      } else if (filter === 'hadj' || filter === 'hajj') {
+        renderPackages(PACKAGES.filter(p => p.type === 'hadj'));
+      } else if (filter === 'omra') {
+        renderPackages(PACKAGES.filter(p => p.type === 'omra'));
+      } else if (filter === 'ramadan') {
+        renderPackages(PACKAGES.filter(p => p.category === 'ramadan'));
       } else {
         renderPackages(PACKAGES.filter(p => p.category === filter));
       }
@@ -410,21 +292,15 @@ function initSearchForm() {
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const type = document.getElementById('searchType')?.value;
-    const city = document.getElementById('searchCity')?.value;
-    const duration = document.getElementById('searchDuration')?.value;
 
     let filtered = PACKAGES;
     if (type && type !== 'all') {
-      filtered = filtered.filter(p => p.type === type);
-    }
-    if (duration && duration !== 'all') {
-      filtered = filtered.filter(p => p.duration.toLowerCase().includes(duration.toLowerCase()));
+      filtered = filtered.filter(p => p.type === type || (type === 'hajj' && p.type === 'hadj'));
     }
 
     renderPackages(filtered);
 
-    // Smooth scroll to packages
-    const pkgSection = document.getElementById('offres');
+    const pkgSection = document.getElementById('offres') || document.getElementById('catalogue');
     if (pkgSection) {
       pkgSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -432,34 +308,30 @@ function initSearchForm() {
 }
 
 /* ==========================================================================
-   Interactive Quote Simulator
+   Interactive Quote Simulator (Configured for Official Burkina Faso Offers)
    ========================================================================== */
 let simulatorState = {
-  type: 'omra-confort',
+  type: 'omra-standard',
   room: 'double',
-  city: 'dakar',
   travelers: 1,
-  vipLounge: false,
-  wheelchair: false
+  vipAssistance: false,
+  visaService: false
 };
 
 const BASE_SIM_PRICES = {
-  'omra-eco': 1950000,
-  'omra-confort': 2500000,
-  'omra-ramadan': 3450000,
-  'hajj-confort': 6800000,
-  'hajj-vip': 8900000
+  'hadj-2027': 328500,
+  'omra-standard': 1300000,
+  'omra-ramadan': 1800000
 };
 
 const ROOM_MULTIPLIERS = {
-  single: 1.45,
+  single: 1.35,
   double: 1.0,
-  triple: 0.92,
-  quad: 0.85
+  triple: 0.95,
+  quad: 0.90
 };
 
 function initSimulator() {
-  // Option buttons
   document.querySelectorAll('.sim-type-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.sim-type-btn').forEach(b => b.classList.remove('active'));
@@ -478,15 +350,6 @@ function initSimulator() {
     });
   });
 
-  document.querySelectorAll('.sim-city-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      document.querySelectorAll('.sim-city-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      simulatorState.city = btn.dataset.value;
-      updateSimulatorPrice();
-    });
-  });
-
   const travelersInput = document.getElementById('simTravelers');
   if (travelersInput) {
     travelersInput.addEventListener('input', (e) => {
@@ -495,18 +358,18 @@ function initSimulator() {
     });
   }
 
-  const vipLounge = document.getElementById('simVipLounge');
-  if (vipLounge) {
-    vipLounge.addEventListener('change', (e) => {
-      simulatorState.vipLounge = e.target.checked;
+  const vipAssistance = document.getElementById('simVipAssistance');
+  if (vipAssistance) {
+    vipAssistance.addEventListener('change', (e) => {
+      simulatorState.vipAssistance = e.target.checked;
       updateSimulatorPrice();
     });
   }
 
-  const wheelchair = document.getElementById('simWheelchair');
-  if (wheelchair) {
-    wheelchair.addEventListener('change', (e) => {
-      simulatorState.wheelchair = e.target.checked;
+  const visaService = document.getElementById('simVisaService');
+  if (visaService) {
+    visaService.addEventListener('change', (e) => {
+      simulatorState.visaService = e.target.checked;
       updateSimulatorPrice();
     });
   }
@@ -515,12 +378,12 @@ function initSimulator() {
 }
 
 function updateSimulatorPrice() {
-  const base = BASE_SIM_PRICES[simulatorState.type] || 2500000;
-  const roomMult = ROOM_MULTIPLIERS[simulatorState.room] || 1.0;
+  const base = BASE_SIM_PRICES[simulatorState.type] || 1300000;
+  const roomMult = (simulatorState.type === 'hadj-2027') ? 1.0 : (ROOM_MULTIPLIERS[simulatorState.room] || 1.0);
   let pricePerPerson = base * roomMult;
 
-  if (simulatorState.vipLounge) pricePerPerson += 150000;
-  if (simulatorState.wheelchair) pricePerPerson += 100000;
+  if (simulatorState.vipAssistance) pricePerPerson += 50000;
+  if (simulatorState.visaService) pricePerPerson += 25000;
 
   const total = pricePerPerson * simulatorState.travelers;
 
@@ -531,24 +394,24 @@ function updateSimulatorPrice() {
   const totalPriceElem = document.getElementById('simSummaryTotal');
 
   if (typeNameElem) typeNameElem.textContent = simulatorState.type.replace('-', ' ').toUpperCase();
-  if (roomNameElem) roomNameElem.textContent = `Chambre ${simulatorState.room.toUpperCase()}`;
+  if (roomNameElem) roomNameElem.textContent = (simulatorState.type === 'hadj-2027') ? 'Pré-inscription officielle' : `Chambre ${simulatorState.room.toUpperCase()}`;
   if (travelersElem) travelersElem.textContent = `${simulatorState.travelers} Pèlerin(s)`;
   if (unitPriceElem) unitPriceElem.textContent = formatPrice(pricePerPerson);
   if (totalPriceElem) totalPriceElem.textContent = formatPrice(total);
 }
 
 function sendSimulatorWhatsApp() {
-  const base = BASE_SIM_PRICES[simulatorState.type] || 2500000;
-  const roomMult = ROOM_MULTIPLIERS[simulatorState.room] || 1.0;
+  const base = BASE_SIM_PRICES[simulatorState.type] || 1300000;
+  const roomMult = (simulatorState.type === 'hadj-2027') ? 1.0 : (ROOM_MULTIPLIERS[simulatorState.room] || 1.0);
   let pricePerPerson = base * roomMult;
-  if (simulatorState.vipLounge) pricePerPerson += 150000;
-  if (simulatorState.wheelchair) pricePerPerson += 100000;
+  if (simulatorState.vipAssistance) pricePerPerson += 50000;
+  if (simulatorState.visaService) pricePerPerson += 25000;
   const total = pricePerPerson * simulatorState.travelers;
 
-  const message = `Salam Aleykoum Africa Voyage SARL,\n\nJe souhaite obtenir un devis personnalisé pour le pèlerinage :\n- Formule : ${simulatorState.type.toUpperCase()}\n- Ville de départ : ${simulatorState.city.toUpperCase()}\n- Type de chambre : ${simulatorState.room.toUpperCase()}\n- Nombre de pèlerins : ${simulatorState.travelers}\n- Options additionnelles : ${simulatorState.vipLounge ? 'Salon VIP ' : ''}${simulatorState.wheelchair ? 'Assistance fauteuil' : 'Aucune'}\n- Estimation calculée : ${formatPrice(total)}\n\nMerci de me recontacter pour finaliser mon inscription.`;
+  const message = `Salam Aleykoum AFRICA VOYAGES SARL,\n\nJe souhaite des informations / un devis pour :\n- Offre : ${simulatorState.type.toUpperCase()}\n- Ville de départ : Ouagadougou (Burkina Faso)\n- Formule : ${simulatorState.room.toUpperCase()}\n- Nombre de pèlerins : ${simulatorState.travelers}\n- Montant estimé : ${formatPrice(total)}\n\nMerci de me donner les modalités pour déposer les pièces (CNIB/Passeport) à votre agence de Samandin (Ouagadougou).`;
 
   const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/221776543210?text=${encoded}`, '_blank');
+  window.open(`https://wa.me/22673187417?text=${encoded}`, '_blank');
 }
 
 /* ==========================================================================
@@ -585,14 +448,17 @@ function openItineraryModal(pkgId) {
       <img src="${pkg.image}" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 16px;">
       <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
         <span class="hero-badge-container" style="margin: 0;"><span>Durée : ${pkg.duration}</span></span>
-        <span class="hero-badge-container" style="margin: 0;"><span>Hôtel Makkah : ${pkg.makkahHotel}</span></span>
-        <span class="hero-badge-container" style="margin: 0;"><span>Prix : ${formatPrice(pkg.basePriceFCFA)}</span></span>
+        <span class="hero-badge-container" style="margin: 0;"><span>Départ : ${pkg.departure}</span></span>
+        <span class="hero-badge-container" style="margin: 0;"><span>Tarif : ${formatPrice(pkg.basePriceFCFA)}</span></span>
+      </div>
+      <div style="background: rgba(6, 78, 59, 0.08); padding: 12px; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 0.88rem;">
+        <strong>Condition requise :</strong> ${pkg.conditions}
       </div>
     </div>
     <h4 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 16px; border-bottom: 2px solid var(--gold); padding-bottom: 6px;">
-      Programme Détaillé Jour par Jour
+      Programme & Services Inclus
     </h4>
-    <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
       ${pkg.itinerary.map(item => `
         <div style="background: #f8fafc; border-left: 4px solid var(--gold); padding: 14px 18px; border-radius: 6px;">
           <strong style="color: var(--primary); display: block; font-size: 1rem;">${item.day} : ${item.title}</strong>
@@ -600,9 +466,10 @@ function openItineraryModal(pkgId) {
         </div>
       `).join('')}
     </div>
-    <div style="margin-top: 24px; text-align: right;">
+    <div style="margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 12px;">
+      <span style="font-size: 0.85rem; color: #64748b;">AFRICA VOYAGES SARL – Tél: +226 25 31 06 77</span>
       <button class="btn btn-whatsapp" onclick="bookPackageWhatsApp('${pkg.id}')">
-        <i class="fa-brands fa-whatsapp"></i> Réserver via WhatsApp
+        <i class="fa-brands fa-whatsapp"></i> S'inscrire via WhatsApp
       </button>
     </div>
   `;
@@ -617,10 +484,38 @@ function openContactModal() {
 
 function bookPackageWhatsApp(pkgId) {
   const pkg = PACKAGES.find(p => p.id === pkgId);
-  const title = pkg ? pkg.title : 'votre pèlerinage';
+  const title = pkg ? pkg.title : 'le pèlerinage';
   const price = pkg ? formatPrice(pkg.basePriceFCFA) : '';
-  const message = `Salam Aleykoum Africa Voyage SARL,\n\nJe suis très intéressé(e) par le forfait "${title}" (${price}).\nPourriez-vous me transmettre la documentation complète et les modalités d'inscription ?\n\nMerci.`;
-  window.open(`https://wa.me/221776543210?text=${encodeURIComponent(message)}`, '_blank');
+  const message = `Salam Aleykoum AFRICA VOYAGES SARL,\n\nJe souhaite des informations et m'inscrire pour l'offre "${title}" (${price}).\nJe dispose de ma pièce d'identité / passeport.\n\nMerci de m'indiquer la marche à suivre pour mon dossier.`;
+  window.open(`https://wa.me/22673187417?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+/* ==========================================================================
+   Render Airlines & Additional Services
+   ========================================================================== */
+function renderAirlinesAndServices() {
+  const airlinesContainer = document.getElementById('partnerAirlinesGrid');
+  if (airlinesContainer && AIRLINES) {
+    airlinesContainer.innerHTML = AIRLINES.map(airline => `
+      <div class="airline-badge" style="background: #ffffff; border: 1px solid var(--border-gold); padding: 14px 20px; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--primary); box-shadow: var(--shadow-sm);">
+        <i class="fa-solid fa-plane-departure" style="color: var(--gold);"></i>
+        <span>${airline.name}</span>
+      </div>
+    `).join('');
+  }
+
+  const servicesContainer = document.getElementById('additionalServicesGrid');
+  if (servicesContainer && SERVICES) {
+    servicesContainer.innerHTML = SERVICES.map(srv => `
+      <div class="pillar-card" style="background: #ffffff; color: var(--on-surface); border: 1px solid var(--border-gold);">
+        <div class="pillar-icon-wrapper" style="background: var(--gold-gradient); color: #121c2a;">
+          <i class="${srv.icon}"></i>
+        </div>
+        <h3 class="pillar-title" style="color: var(--primary);">${srv.title}</h3>
+        <p class="pillar-desc" style="color: #4b5563;">${srv.description}</p>
+      </div>
+    `).join('');
+  }
 }
 
 /* ==========================================================================
@@ -654,7 +549,7 @@ function resetDefaultLogo() {
 }
 
 /* ==========================================================================
-   Contact & Quote Form
+   Contact Form
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -664,14 +559,13 @@ function initContactForm() {
     e.preventDefault();
     const name = document.getElementById('contactName')?.value || 'Client';
     const phone = document.getElementById('contactPhone')?.value || '';
-    const email = document.getElementById('contactEmail')?.value || '';
 
     const alertBox = document.getElementById('formSuccessAlert');
     if (alertBox) {
       alertBox.style.display = 'block';
       alertBox.innerHTML = `
         <div style="background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 14px 18px; border-radius: 8px; margin-bottom: 16px;">
-          <strong>Alhamdulillah ! Merci ${name}.</strong> Votre demande a été enregistrée avec succès. Un conseiller pèlerinage Africa Voyage SARL vous contactera par téléphone (${phone}) ou email (${email}) dans les plus brefs délais.
+          <strong>Alhamdulillah ! Merci ${name}.</strong> Votre demande a été transmise à AFRICA VOYAGES SARL (Ouagadougou). Notre équipe vous contactera au ${phone} dans les plus brefs délais. Vous pouvez également nous joindre directement au +226 25 31 06 77 ou sur WhatsApp au +226 73 18 74 17.
         </div>
       `;
     }

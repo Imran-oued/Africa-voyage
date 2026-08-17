@@ -1,0 +1,154 @@
+{
+  "agency": {
+    "name": "AFRICA VOYAGES SARL",
+    "shortName": "Africa Voyages",
+    "slogan": "La 1ère agence agréée pour le Hadj au Burkina Faso",
+    "experience": "Plus de 40 ans d'expérience",
+    "experienceYears": 40,
+    "capital": "15 000 000 FCFA",
+    "legal": {
+      "rccm": "BF OUA 2018 B 9910",
+      "ifu": "00114097X",
+      "licence": "Catégorie A",
+      "capital": "15 000 000 FCFA",
+      "agreation": "1ère agence agréée pour le Hadj au Burkina Faso"
+    },
+    "location": {
+      "country": "Burkina Faso",
+      "city": "Ouagadougou",
+      "district": "Samandin secteur 05",
+      "landmark": "En face de la station Total du Mogho Naaba",
+      "fullAddress": "Samandin secteur 05, en face de la station Total du Mogho Naaba, Ouagadougou, Burkina Faso"
+    },
+    "contacts": {
+      "phonePrimary": "+226 25 31 06 77",
+      "phoneSecondary": "+226 70 24 55 74",
+      "phonePrimaryRaw": "22625310677",
+      "phoneSecondaryRaw": "22670245574",
+      "whatsapp": "+226 73 18 74 17",
+      "whatsappRaw": "22673187417",
+      "whatsappLink": "https://wa.me/22673187417",
+      "email": "africavoyagebf74@gmail.com"
+    }
+  },
+  "offers": [
+    {
+      "id": "hadj-2027",
+      "type": "hadj",
+      "category": "officiel",
+      "title": "Hadj 2027 – Campagne Officielle Burkina Faso",
+      "tag": "Inscriptions Ouvertes Hadj 2027",
+      "duration": "21 à 25 Jours",
+      "departure": "Ouagadougou (Aéroport International Thomas Sankara)",
+      "dates": "Saison Hadj 2027 (Dates officielles fixées par le Ministère)",
+      "priceLabel": "Tarif pré-inscription",
+      "basePriceFCFA": 328500,
+      "makkahHotel": "Hôtels 4★ et 5★ proches du Haram",
+      "makkahDistance": "Proximité immédiate du parvis de la Kaaba",
+      "madinahHotel": "Hôtels de référence proches du Masjid Nabawi",
+      "madinahDistance": "Accès direct à la sainte Rawdah",
+      "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
+      "conditions": "La pièce d'identité (CNIB) ou le passeport en cours de validité suffit pour la pré-inscription.",
+      "inclusions": [
+        "Pré-inscription simplifiée (CNIB ou Passeport valide)",
+        "Accompagnement par des Oulémas et guides chevronnés du Burkina Faso (Mooré, Dioula, Français, Arabe)",
+        "Vols réguliers & charters au départ de Ouagadougou",
+        "Hébergement hôtelier et tentes climatisées à Mina & Arafat",
+        "Suivi médical et encadrement 24h/24",
+        "Assistance administrative, visa et badge officiel"
+      ],
+      "itinerary": [
+        { "day": "Phase 1 : Préparation & Formalités", "title": "Inscription et Séminaires à Ouagadougou", "desc": "Validation du dossier avec CNIB/Passeport au siège de Samandin, séances de formation pratique aux rites du Hadj." },
+        { "day": "Phase 2 : Départ de Ouagadougou", "title": "Vol vers les Lieux Saints", "desc": "Assistance aéroport à Ouaga et installation confortable à Médine ou La Mecque." },
+        { "day": "Phase 3 : Les Jours Sacrés du Hadj", "title": "Mina, Arafat, Mouzdalifah & Jamarat", "desc": "Accomplissement des rites majeurs sous l'encadrement rigoureux d'Africa Voyages SARL." },
+        { "day": "Phase 4 : Clôture & Retour Béni", "title": "Tawaf d'adieu et retour au Burkina Faso", "desc": "Retour à Ouagadougou avec eau de Zamzam." }
+      ]
+    },
+    {
+      "id": "omra-standard",
+      "type": "omra",
+      "category": "standard",
+      "title": "Omra Standard – Départs Bimensuels (2 départs / mois)",
+      "tag": "2 Départs par Mois",
+      "duration": "12 à 15 Jours",
+      "departure": "Ouagadougou",
+      "dates": "Toute l'année (2 départs chaque mois)",
+      "priceLabel": "Tarif Tout Compris",
+      "basePriceFCFA": 1300000,
+      "makkahHotel": "Hôtels de qualité face et proches du Haram",
+      "makkahDistance": "100m à 250m de la Kaaba",
+      "madinahHotel": "Hôtels proches du Masjid An-Nabawi",
+      "madinahDistance": "150m de l'Esplanade",
+      "image": "https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=1200&q=80",
+      "conditions": "Passeport en cours de validité (> 6 mois) et photos d'identité.",
+      "inclusions": [
+        "Billet d'avion aller-retour au départ de Ouagadougou",
+        "Visa électronique Omra et assurance médicale saoudienne",
+        "Hébergement à La Mecque et à Médine",
+        "Transferts terrestres climatisés et visites guidées (Ziarates)",
+        "Encadrement spirituel par nos délégués"
+      ],
+      "itinerary": [
+        { "day": "Jours 1-5", "title": "Médine la Lumineuse", "desc": "Prières au Masjid Nabawi, visite de la sainte Rawdah et lieux historiques (Quba, Uhud)." },
+        { "day": "Jours 6-14", "title": "La Mecque & Rites de la Omra", "desc": "Entrée en Ihram, Tawaf, Sa'i et recueillement face à la sainte Kaaba." }
+      ]
+    },
+    {
+      "id": "omra-ramadan",
+      "type": "omra",
+      "category": "ramadan",
+      "title": "Omra Ramadan – Nuits Bénies & Laylat Al-Qadr",
+      "tag": "Période Sacrée de Ramadan",
+      "duration": "15 à 20 Jours",
+      "departure": "Ouagadougou",
+      "dates": "Mois Sacré de Ramadan",
+      "priceLabel": "Tarif Forfait Ramadan",
+      "basePriceFCFA": 1800000,
+      "makkahHotel": "Hôtels d'excellence proches du Haram",
+      "makkahDistance": "Accès direct au parvis",
+      "madinahHotel": "Hôtels de prestige à Médine",
+      "madinahDistance": "Face à la Mosquée du Prophète",
+      "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=80",
+      "conditions": "Places très limitées. Inscriptions anticipées recommandées.",
+      "inclusions": [
+        "Vol aller-retour Ouagadougou – Arabie Saoudite",
+        "Visa Omra Ramadan officiel",
+        "Hébergement proche des Deux Saintes Mosquées",
+        "Repas Iftar & Suhoor inclus ou organisés",
+        "Veillées de prières (Tarawih et Tahajjoud) et Ziarates"
+      ],
+      "itinerary": [
+        { "day": "Programme Ramadan", "title": "Immersion spirituelle intense", "desc": "Vivez les 10 dernières nuits bénies et la nuit du Destin (Laylat Al-Qadr) face à la Sainte Kaaba." }
+      ]
+    }
+  ],
+  "partnerAirlines": [
+    { "name": "Ethiopian Airlines", "logo": "✈️" },
+    { "name": "Turkish Airlines", "logo": "✈️" },
+    { "name": "Royal Air Maroc", "logo": "✈️" },
+    { "name": "Air Burkina", "logo": "✈️" },
+    { "name": "ASKY Airlines", "logo": "✈️" },
+    { "name": "Air Côte d'Ivoire", "logo": "✈️" },
+    { "name": "Air Sénégal", "logo": "✈️" }
+  ],
+  "additionalServices": [
+    {
+      "id": "assistance-visa",
+      "title": "Assistance Visa",
+      "icon": "fa-solid fa-passport",
+      "description": "Traitement rapide et sécurisé de vos visas touristiques, d'affaires, de séjour et visas électroniques pour l'Arabie Saoudite, l'Europe, l'Asie et l'Afrique."
+    },
+    {
+      "id": "billetterie",
+      "title": "Billetterie Aérienne",
+      "icon": "fa-solid fa-plane-departure",
+      "description": "Émission et réservation de billets d'avion sur toutes les compagnies aériennes partenaires aux meilleurs tarifs, pour toutes destinations internationales."
+    },
+    {
+      "id": "transfert-argent",
+      "title": "Transfert d'Argent",
+      "icon": "fa-solid fa-money-bill-transfer",
+      "description": "Services de transfert d'argent fiables, rapides et sécurisés pour vos besoins nationaux et internationaux (Orange Money, Moov Money, Western Union, MoneyGram)."
+    }
+  ]
+}
