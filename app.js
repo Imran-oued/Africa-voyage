@@ -2,8 +2,7 @@
  * AFRICA VOYAGES SARL - Moteur Web Épuré & Haute Performance
  * Siège : Samandin secteur 05, en face de la station Total du Mogho Naaba à Ouagadougou
  * Tél : +226 25 31 06 77 | +226 70 24 55 74 | WhatsApp : +226 73 18 74 17
- * Email : africavoyagebf74@gmail.com
- * Agréments : RCCM BF OUA 2018 B 9910 | IFU 00114097X | Licence Catégorie A | Capital 15 000 000 FCFA
+ * Agréments : RCCM BF OUA 2018 B 9910 | IFU 00114097X | Licence Catégorie A
  */
 
 import contentData from './data/content.json';

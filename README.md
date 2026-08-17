@@ -18,10 +18,7 @@ Bienvenue sur le dépôt de l'application web officielle de l'agence **AFRICA VO
   * WhatsApp Direct : `+226 73 18 74 17`
   * Email : `africavoyagebf74@gmail.com`
 * **Agréments & Mentions Légales** :
-  * **RCCM** : `BF OUA 2018 B 9910`
-  * **IFU** : `00114097X`
-  * **Licence** : Catégorie A
-  * **Capital Social** : 15 000 000 FCFA
+  * **Agréments** : RCCM `BF OUA 2018 B 9910` • IFU `00114097X` • Licence `Catégorie A`
 
 ---
 

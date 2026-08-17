@@ -5,12 +5,10 @@
     "slogan": "La 1ère agence agréée pour le Hadj au Burkina Faso",
     "experience": "Plus de 40 ans d'expérience",
     "experienceYears": 40,
-    "capital": "15 000 000 FCFA",
     "legal": {
       "rccm": "BF OUA 2018 B 9910",
       "ifu": "00114097X",
       "licence": "Catégorie A",
-      "capital": "15 000 000 FCFA",
       "agreation": "1ère agence agréée pour le Hadj au Burkina Faso"
     },
     "location": {
@@ -31,6 +29,29 @@
       "whatsappLink": "https://wa.me/22673187417",
       "email": "africavoyagebf74@gmail.com"
     }
+  },
+  "about": {
+    "title": "À Propos de AFRICA VOYAGES SARL",
+    "subtitle": "Pionnier du pèlerinage au Burkina Faso depuis plus de 40 ans",
+    "story": "Fondée avec la noble mission d'accompagner les croyants dans l'accomplissement des rites sacrés de l'Islam, AFRICA VOYAGES SARL s'est imposée comme la 1ère agence officiellement agréée pour le Hadj au Burkina Faso.",
+    "mission": "Depuis plus de 40 ans, notre engagement repose sur une exigence absolue : offrir à chaque pèlerin un voyage serein, digne et conforme aux préceptes authentiques de la Sunnah. De la préparation pédagogique à Ouagadougou jusqu'aux Lieux Saints de La Mecque et Médine, notre équipe d'Oulémas polyglottes et de professionnels chevronnés veille à chaque instant sur votre bien-être spirituel et physique.",
+    "pillars": [
+      {
+        "title": "40+ Ans d'Héritage & d'Agrément",
+        "desc": "Première agence détentrice de la Licence Catégorie A au Burkina Faso, reconnue par les autorités nationales et saoudiennes.",
+        "icon": "fa-solid fa-award"
+      },
+      {
+        "title": "Encadrement Spirituel en Langues Locales",
+        "desc": "Séminaires préparatoires et guidage sur place dispensés en Mooré, Dioula, Français et Arabe.",
+        "icon": "fa-solid fa-book-quran"
+      },
+      {
+        "title": "Prise en Charge Médicale & Logistique",
+        "desc": "Médecins dédiés, tentes climatisées à Mina/Arafat, hébergements de confort proches du Haram.",
+        "icon": "fa-solid fa-hand-holding-heart"
+      }
+    ]
   },
   "stats": [
     {
