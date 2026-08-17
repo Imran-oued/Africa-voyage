@@ -73,6 +73,34 @@ function applyLanguage(lang) {
       el.setAttribute('placeholder', dict[key]);
     }
   });
+
+  // Traduire les options du formulaire de contact
+  const pkgSelect = document.getElementById('contactPackage');
+  if (pkgSelect) {
+    const currentVal = pkgSelect.value;
+    if (lang === 'en') {
+      pkgSelect.options[0].text = "Hajj 2027 (Pre-registration at 328,500 FCFA)";
+      pkgSelect.options[1].text = "Standard Umrah (1,300,000 FCFA)";
+      pkgSelect.options[2].text = "Ramadan Umrah (1,800,000 FCFA)";
+      pkgSelect.options[3].text = "Visa Assistance";
+      pkgSelect.options[4].text = "Air Ticketing";
+      pkgSelect.options[5].text = "Money Transfer";
+    } else if (lang === 'ar') {
+      pkgSelect.options[0].text = "حج 2027 (تسجيل مسبق: 328,500 فرنك سيفا)";
+      pkgSelect.options[1].text = "العمرة الاعتيادية (1,300,000 فرنك سيفا)";
+      pkgSelect.options[2].text = "عمرة رمضان المبارك (1,800,000 فرنك سيفا)";
+      pkgSelect.options[3].text = "استخراج التأشيرات";
+      pkgSelect.options[4].text = "حجز تذاكر الطيران";
+      pkgSelect.options[5].text = "تحويل الأموال";
+    } else {
+      pkgSelect.options[0].text = "Hadj 2027 (Pré-inscription à 328 500 FCFA)";
+      pkgSelect.options[1].text = "Omra Standard (1 300 000 FCFA)";
+      pkgSelect.options[2].text = "Omra Ramadan (1 800 000 FCFA)";
+      pkgSelect.options[3].text = "Assistance Visa";
+      pkgSelect.options[4].text = "Billetterie Aérienne";
+      pkgSelect.options[5].text = "Transfert d'Argent";
+    }
+  }
 }
 
 function initLanguageSelector() {
@@ -143,24 +171,80 @@ export function renderOffers() {
     const waText = encodeURIComponent(`Salam Aleykoum AFRICA VOYAGES SARL, je souhaite des informations et m'inscrire pour : ${pkg.title}`);
     const priceFormatted = formatPrice(pkg.basePriceFCFA, currentCurrency);
 
-    // Titres localisés si besoin
     let displayTitle = pkg.title;
     let displayTag = pkg.tag;
+    let displayDuration = pkg.duration;
+    let displayDeparture = "Ouagadougou";
     let detailsLabel = dict.viewItinerary || "Voir Programme Complet";
     let bookLabel = dict.bookWhatsapp || "Réserver sur WhatsApp";
+    let inclusionsList = pkg.inclusions;
 
     if (currentLanguage === 'en') {
-      if (pkg.id === 'hadj-2027') displayTitle = "Hajj 2027 – Official Pre-Registration (4★ & 5★)";
-      if (pkg.id === 'omra-standard') displayTitle = "Standard Umrah – 2 Departures per Month";
-      if (pkg.id === 'omra-ramadan') displayTitle = "Premium Ramadan Umrah – Last 15 Days";
-      detailsLabel = "View Full Schedule";
-      bookLabel = "Book via WhatsApp";
+      if (pkg.id === 'hadj-2027') {
+        displayTitle = "Hajj 2027 – Official Pre-Registration (4★ & 5★)";
+        displayTag = "2027 Pre-Registration";
+        displayDuration = "30 Days";
+        inclusionsList = [
+          "Round-trip scheduled flight from Ouagadougou",
+          "4★ & 5★ luxury hotels near the Holy Mosques",
+          "Official Saudi Hajj visa included",
+          "Air-conditioned VIP tents at Mina & Arafat"
+        ];
+      } else if (pkg.id === 'omra-standard') {
+        displayTitle = "Standard Umrah – 2 Departures per Month";
+        displayTag = "2 Departures / Month";
+        displayDuration = "15 Days";
+        inclusionsList = [
+          "Direct or 1-stop scheduled flight",
+          "Close-proximity hotel near Haram",
+          "Saudi Umrah visa included",
+          "Ziyarat guided visits in Mecca and Medina"
+        ];
+      } else if (pkg.id === 'omra-ramadan') {
+        displayTitle = "Premium Ramadan Umrah – Last 15 Days";
+        displayTag = "Ramadan Special";
+        displayDuration = "15 Days";
+        inclusionsList = [
+          "Scheduled flight Ouagadougou ➔ Jeddah",
+          "5★ luxury hotel facing Masjid Al-Haram",
+          "Full Iftar & Suhoor catering",
+          "24/7 Spiritual guidance by Islamic scholars"
+        ];
+      }
+      displayDeparture = "Ouagadougou";
     } else if (currentLanguage === 'ar') {
-      if (pkg.id === 'hadj-2027') displayTitle = "حج 2027 – التسجيل المسبق الرسمي (فنادق 4 و 5 نجوم)";
-      if (pkg.id === 'omra-standard') displayTitle = "العمرة الاعتيادية – رحلتان شهرياً على مدار العام";
-      if (pkg.id === 'omra-ramadan') displayTitle = "عمرة رمضان المبارك – العشر الأواخر والختم";
-      detailsLabel = "تفاصيل البرنامج";
-      bookLabel = "حجز عبر واتساب";
+      if (pkg.id === 'hadj-2027') {
+        displayTitle = "حج 2027 – التسجيل المسبق الرسمي (فنادق 4 و 5 نجوم)";
+        displayTag = "تسجيل مسبق 2027";
+        displayDuration = "30 يوماً";
+        inclusionsList = [
+          "تذكرة طيران ذهاباً وإياباً من واغادوغو",
+          "إقامة في فنادق 4 و 5 نجوم قريبة من الحرمين",
+          "تأشيرة الحج الرسمية المعتمدة",
+          "مخيمات VIP مكيفة في مشعري منى وعرفات"
+        ];
+      } else if (pkg.id === 'omra-standard') {
+        displayTitle = "العمرة الاعتيادية – رحلتان شهرياً على مدار العام";
+        displayTag = "رحلتان كل شهر";
+        displayDuration = "15 يوماً";
+        inclusionsList = [
+          "رحلات طيران منتظمة ومريحة",
+          "فنادق راقية على مقربة من الحرمين الشريفين",
+          "تأشيرة العمرة والتأمين الصحي الشامل",
+          "برنامج المزارات والمعالم التاريخية بمكة والمدينة"
+        ];
+      } else if (pkg.id === 'omra-ramadan') {
+        displayTitle = "عمرة رمضان المبارك – العشر الأواخر والختم";
+        displayTag = "عمرة شهر رمضان";
+        displayDuration = "15 يوماً";
+        inclusionsList = [
+          "طيران مباشر / مريح واغادوغو ➔ جدة",
+          "فنادق 5 نجوم مطلة وقريبة من الحرم المكي",
+          "وجبات إفطار وسحور فاخرة يومياً",
+          "إرشاد ديني مستمر ومرافقة أطباء على مدار 24 ساعة"
+        ];
+      }
+      displayDeparture = "واغادوغو";
     }
 
     return `
@@ -177,13 +261,13 @@ export function renderOffers() {
           <h3 class="offer-title">${displayTitle}</h3>
           
           <div class="offer-meta">
-            <span><i class="fa-solid fa-clock"></i> ${pkg.duration}</span>
+            <span><i class="fa-solid fa-clock"></i> ${displayDuration}</span>
             <span>•</span>
-            <span><i class="fa-solid fa-plane-departure"></i> Ouagadougou</span>
+            <span><i class="fa-solid fa-plane-departure"></i> ${displayDeparture}</span>
           </div>
 
           <ul class="offer-features">
-            ${pkg.inclusions.slice(0, 4).map(inc => `
+            ${inclusionsList.slice(0, 4).map(inc => `
               <li class="offer-feature-item">
                 <i class="fa-solid fa-check"></i>
                 <span>${inc}</span>
@@ -199,7 +283,7 @@ export function renderOffers() {
 
           <div class="offer-footer">
             <div>
-              <div class="offer-price-label">${pkg.priceLabel}</div>
+              <div class="offer-price-label">${dict.priceOfficial || pkg.priceLabel}</div>
               <div class="offer-price-val">${priceFormatted}</div>
             </div>
             <a href="https://wa.me/22673187417?text=${waText}" target="_blank" rel="noopener" class="btn btn-whatsapp">
@@ -231,7 +315,23 @@ export function openItineraryModal(packageId) {
 
   if (!modal || !titleEl || !bodyEl) return;
 
-  titleEl.innerHTML = `<i class="fa-solid fa-kaaba"></i> ${pkg.title}`;
+  const dict = TRANSLATIONS[currentLanguage] || TRANSLATIONS.fr;
+
+  let modalTitle = pkg.title;
+  let inclusions = pkg.inclusions;
+  let itinerarySteps = pkg.itinerary;
+
+  if (currentLanguage === 'en') {
+    if (pkg.id === 'hadj-2027') modalTitle = "Hajj 2027 – Detailed Schedule & Rituals";
+    if (pkg.id === 'omra-standard') modalTitle = "Standard Umrah – Schedule & Visits";
+    if (pkg.id === 'omra-ramadan') modalTitle = "Ramadan Umrah – Program & Tahajjud";
+  } else if (currentLanguage === 'ar') {
+    if (pkg.id === 'hadj-2027') modalTitle = "حج 2027 – تفاصيل البرنامج ومراحل المناسك";
+    if (pkg.id === 'omra-standard') modalTitle = "العمرة الاعتيادية – جدول الزيارات والمناسك";
+    if (pkg.id === 'omra-ramadan') modalTitle = "عمرة رمضان – البرنامج والتهجد وختم القرآن";
+  }
+
+  titleEl.innerHTML = `<i class="fa-solid fa-kaaba"></i> ${modalTitle}`;
 
   const priceFormatted = formatPrice(pkg.basePriceFCFA, currentCurrency);
   const waText = encodeURIComponent(`Salam Aleykoum AFRICA VOYAGES SARL, je souhaite réserver le forfait : ${pkg.title}`);
@@ -239,11 +339,11 @@ export function openItineraryModal(packageId) {
   bodyEl.innerHTML = `
     <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface-alt); padding: 14px 18px; border-radius: 10px;">
       <div>
-        <span style="font-size: 0.85rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Tarif Officiel :</span>
+        <span style="font-size: 0.85rem; color: #64748b; font-weight: 700; text-transform: uppercase;">${dict.priceOfficial || "Tarif Officiel :"}</span>
         <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); font-family: 'Playfair Display', serif;">${priceFormatted}</div>
       </div>
       <a href="https://wa.me/22673187417?text=${waText}" target="_blank" class="btn btn-whatsapp">
-        <i class="fa-brands fa-whatsapp"></i> Réserver via WhatsApp
+        <i class="fa-brands fa-whatsapp"></i> ${dict.bookWhatsapp || "Réserver via WhatsApp"}
       </a>
     </div>
 
@@ -254,11 +354,11 @@ export function openItineraryModal(packageId) {
     ` : ''}
 
     <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 14px; font-weight: 700;">
-      <i class="fa-solid fa-route"></i> Programme & Étapes Rituelles
+      <i class="fa-solid fa-route"></i> ${dict.ritualSteps || "Programme & Étapes Rituelles"}
     </h4>
 
     <div class="itinerary-timeline">
-      ${pkg.itinerary.map((step, idx) => `
+      ${itinerarySteps.map((step, idx) => `
         <div class="timeline-step">
           <div class="timeline-dot">${idx + 1}</div>
           <div class="timeline-content">
@@ -271,11 +371,11 @@ export function openItineraryModal(packageId) {
     </div>
 
     <h4 style="font-size: 1.15rem; color: var(--primary); margin: 24px 0 12px 0; font-weight: 700;">
-      <i class="fa-solid fa-shield-halved"></i> Prestations Incluses
+      <i class="fa-solid fa-shield-halved"></i> ${dict.includedServices || "Prestations Incluses"}
     </h4>
 
     <ul class="inclusions-modal-list">
-      ${pkg.inclusions.map(inc => `
+      ${inclusions.map(inc => `
         <li><i class="fa-solid fa-check text-gold"></i> ${inc}</li>
       `).join('')}
     </ul>
@@ -292,16 +392,19 @@ window.closeModal = function(modalId) {
 // Témoignages
 function renderTestimonials() {
   const container = document.getElementById('testimonialsGrid');
-  if (!container || !APP_DATA.testimonials) return;
+  if (!container) return;
 
-  container.innerHTML = APP_DATA.testimonials.map(item => `
+  const dict = TRANSLATIONS[currentLanguage] || TRANSLATIONS.fr;
+  const list = dict.testimonials || APP_DATA.testimonials;
+
+  container.innerHTML = list.map(item => `
     <div class="testimonial-card">
       <div class="testimonial-stars">
         ${Array(item.rating).fill('<i class="fa-solid fa-star"></i>').join('')}
       </div>
       <p class="testimonial-quote">"${item.text}"</p>
       <div class="testimonial-author">
-        <img src="${item.avatar}" alt="${item.name}" class="testimonial-avatar" loading="lazy">
+        <img src="${item.avatar || '/images/testimonials/amadou-ouedraogo.jpg'}" alt="${item.name}" class="testimonial-avatar" loading="lazy">
         <div>
           <h4 class="testimonial-name">${item.name}</h4>
           <span class="testimonial-role">${item.role}</span>
@@ -314,9 +417,12 @@ function renderTestimonials() {
 // FAQ Accordion
 function renderFaq() {
   const container = document.getElementById('faqAccordion');
-  if (!container || !APP_DATA.faq) return;
+  if (!container) return;
 
-  container.innerHTML = APP_DATA.faq.map((item, idx) => `
+  const dict = TRANSLATIONS[currentLanguage] || TRANSLATIONS.fr;
+  const list = dict.faq || APP_DATA.faq;
+
+  container.innerHTML = list.map((item, idx) => `
     <div class="faq-item" id="faq-item-${idx}">
       <button class="faq-question-btn" type="button" aria-expanded="false" data-faq="${idx}">
         <span>${item.q}</span>
@@ -364,10 +470,11 @@ function initContactForm() {
 
     window.open(`https://wa.me/22673187417?text=${text}`, '_blank');
 
+    const dict = TRANSLATIONS[currentLanguage] || TRANSLATIONS.fr;
     const alertBox = document.getElementById('formSuccessAlert');
     if (alertBox) {
       alertBox.style.display = 'block';
-      alertBox.innerHTML = `<i class="fa-solid fa-check-circle"></i> Merci ${name}, votre message a été préparé pour WhatsApp ! Notre équipe vous répond immédiatement.`;
+      alertBox.innerHTML = `<i class="fa-solid fa-check-circle"></i> ${name}, ${dict.formSuccess || "votre message a été préparé pour WhatsApp ! Notre équipe vous répond immédiatement."}`;
       form.reset();
     }
   });

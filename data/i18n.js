@@ -1,12 +1,12 @@
 /**
- * AFRICA VOYAGES SARL - Système Internationalisé Multilingue (FR, EN, AR)
- * Traduction complète & gestion de la direction RTL pour l'Arabe
+ * AFRICA VOYAGES SARL - Système Internationalisé Multilingue Complet (FR, EN, AR)
+ * Traduction intégrale de tous les composants, forfaits, FAQ, témoignages et modales
  */
 
 export const TRANSLATIONS = {
   fr: {
     // Navigation & Marque
-    brandName: "AFRICA VOYAGES SARL",
+    brandName: "AFRICA <span>VOYAGES</span> SARL",
     brandSub: "La 1ère agence agréée par l'État burkinabè",
     menu: "MENU",
     currency: "Devise",
@@ -54,19 +54,18 @@ export const TRANSLATIONS = {
     tabAll: "Tous les Forfaits",
     tabHadj: "Hadj 2027",
     tabOmra: "Omra (Standard & Ramadan)",
-    badgePopular: "Pré-inscriptions 2027",
-    badgeBestSeller: "2 Départs / Mois",
-    badgeRamadan: "Spécial Ramadan",
-    viewItinerary: "Voir l'Itinéraire",
+    viewItinerary: "Voir Programme Complet",
     bookWhatsapp: "Réserver sur WhatsApp",
-    startingFrom: "Tarif",
+    priceOfficial: "Tarif Officiel :",
+    ritualSteps: "Programme & Étapes Rituelles",
+    includedServices: "Prestations Incluses",
     
     // Services
     servicesTag: "Services Complémentaires",
     servicesTitle: "Services de l'Agence",
     servicesSubtitle: "Au-delà du pèlerinage, AFRICA VOYAGES SARL vous accompagne au quotidien avec des prestations sur-mesure.",
     serviceVisaTitle: "Assistance Visa Express",
-    serviceVisaDesc: "Prise en charge intégrale de vos démarches de visa pour l'Arabie Saoudite (Omra, Tourisme, Affaires, Visite familiale), l'Europe (Schengen), l'Asie, les Émirats (Dubaï) et les pays africains.",
+    serviceVisaDesc: "Traitement rapide de vos visas pour l'Arabie Saoudite (Omra, Tourisme, Affaires), Schengen, Dubaï et toutes destinations.",
     serviceFlightTitle: "Billetterie Aérienne Toutes Destinations",
     serviceFlightBadge: "Agence Agréée IATA",
     serviceFlightDesc: "Agence officiellement agréée IATA : émission instantanée et réservation directe de billets d'avion sur l'ensemble des compagnies régulières aux meilleurs tarifs du marché, avec options de modification et franchise bagages avantageuse.",
@@ -74,19 +73,57 @@ export const TRANSLATIONS = {
     serviceMoneyDesc: "Point agréé de transfert d'argent national et international : Orange Money, Moov Money, Western Union, MoneyGram et virements pour vos proches et pèlerins aux Lieux Saints.",
 
     // Compagnies
-    airlinesTag: "Partenaires de Vol",
+    airlinesTag: "Liaisons Aériennes",
     airlinesTitle: "Compagnies Aériennes Partenaires",
     airlinesSubtitle: "Nous collaborons avec les compagnies aériennes internationales les plus réputées pour des vols sécurisés et confortables.",
 
     // Témoignages
     testiTag: "Retours d'Expérience",
-    testiTitle: "Ce Que Disent Nos Pèlerins",
-    testiSubtitle: "Découvrez les témoignages de ceux qui ont accompli leur pèlerinage avec AFRICA VOYAGES SARL.",
+    testiTitle: "Ce que disent nos Pèlerins",
+    testiSubtitle: "Découvrez les témoignages de croyants ayant accompli leur Hadj et Omra avec Africa Voyages SARL.",
+    testimonials: [
+      {
+        name: "El Hadj Amadou Ouédraogo",
+        role: "Pèlerin Hadj (Ouagadougou)",
+        rating: 5,
+        text: "J'ai effectué mon Hadj avec Africa Voyages SARL. La promesse a été tenue de A à Z : hôtel de grand confort, tentes de Mina climatisées et surtout les conseils de nos guides en Mooré qui nous ont évité tout égarement."
+      },
+      {
+        name: "Hadja Mariam Sawadogo",
+        role: "Pèlerine Omra Ramadan",
+        rating: 5,
+        text: "Pour la Omra de Ramadan, l'organisation était impeccable. Les navettes et la proximité des hôtels nous ont permis de vivre les prières au Haram en toute quiétude. Qu'Allah bénisse l'agence !"
+      },
+      {
+        name: "El Hadj Idrissa Kaboré",
+        role: "Pèlerin Hadj & Omra",
+        rating: 5,
+        text: "40 ans d'expérience, ça se ressent immédiatement. Aucun stress administratif, visa et billets délivrés rapidement, suivi médical rassurant. Je recommande vivement pour le Hadj 2027."
+      }
+    ],
 
     // FAQ
-    faqTag: "Besoin d'Aide ?",
-    faqTitle: "Questions Fréquentes",
+    faqTag: "Questions Fréquentes",
+    faqTitle: "Tout Savoir sur votre Voyage",
     faqSubtitle: "Toutes les réponses à vos questions pour bien préparer votre Hadj ou votre Omra.",
+    faq: [
+      {
+        q: "Quelles sont les conditions pour se pré-inscrire au Hadj 2027 ?",
+        a: "La pré-inscription pour le Hadj 2027 est fixée au tarif provisoire de 328 500 FCFA. Il vous suffit de fournir une copie de votre CNIB (Carte Nationale d'Identité Burkinabè) ou de votre Passeport en cours de validité (validité minimale de 6 mois)."
+      },
+      {
+        q: "Quelle est la fréquence des départs pour la Omra ?",
+        a: "AFRICA VOYAGES SARL organise 2 départs par mois tout au long de l'année au départ de Ouagadougou. Des formules spéciales sont également proposées pour le mois béni de Ramadan."
+      },
+      {
+        q: "Quels services sont inclus dans vos forfaits Hadj et Omra ?",
+        a: "Nos forfaits comprennent le billet d'avion aller-retour sur vols réguliers, l'obtention du visa officiel, l'hébergement en hôtels 4★ et 5★ proches des Lieux Saints, la pension complète ou demi-pension, les transferts en bus VIP climatisés, l'encadrement par des Oulémas éminents et l'assistance médicale 24h/24."
+      },
+      {
+        q: "Où se situe l'agence AFRICA VOYAGES SARL à Ouagadougou ?",
+        a: "Notre agence est située à Samandin secteur 05, exactement en face de la station Total du Mogho Naaba à Ouagadougou. Vous pouvez également nous joindre aux numéros +226 25 31 06 77 ou par WhatsApp au +226 73 18 74 17."
+      }
+    ],
 
     // Contact
     contactTag: "Siège & Informations Officielles",
@@ -108,6 +145,7 @@ export const TRANSLATIONS = {
     formPhonePlaceholder: "Téléphone / WhatsApp (+226...) *",
     formMsgPlaceholder: "Votre message ou question...",
     formSubmit: "Envoyer à l'Agence",
+    formSuccess: "votre message a été préparé pour WhatsApp ! Notre équipe vous répond immédiatement.",
 
     // Footer
     footerCopyright: "© 2026 <strong>AFRICA VOYAGES SARL</strong>. La 1ère agence agréée par l'État burkinabè pour le Hadj • Samandin secteur 05, Ouagadougou."
@@ -115,7 +153,7 @@ export const TRANSLATIONS = {
 
   en: {
     // Navigation & Brand
-    brandName: "AFRICA VOYAGES SARL",
+    brandName: "AFRICA <span>VOYAGES</span> SARL",
     brandSub: "The 1st accredited agency by the Burkinabe State",
     menu: "MENU",
     currency: "Currency",
@@ -163,19 +201,18 @@ export const TRANSLATIONS = {
     tabAll: "All Packages",
     tabHadj: "Hajj 2027",
     tabOmra: "Umrah (Monthly & Ramadan)",
-    badgePopular: "2027 Pre-Registration",
-    badgeBestSeller: "2 Flights / Month",
-    badgeRamadan: "Ramadan Special",
-    viewItinerary: "View Itinerary",
-    bookWhatsapp: "Book on WhatsApp",
-    startingFrom: "Rate",
+    viewItinerary: "View Full Schedule",
+    bookWhatsapp: "Book via WhatsApp",
+    priceOfficial: "Official Rate:",
+    ritualSteps: "Schedule & Ritual Steps",
+    includedServices: "Included Services",
     
     // Services
     servicesTag: "Additional Services",
     servicesTitle: "Agency Services",
     servicesSubtitle: "Beyond pilgrimage, AFRICA VOYAGES SARL supports your international travel and financial transactions.",
     serviceVisaTitle: "Express Visa Assistance",
-    serviceVisaDesc: "Comprehensive visa processing for Saudi Arabia (Umrah, Tourism, Business, Family Visit), Schengen Europe, Asia, Dubai (UAE), and African destinations.",
+    serviceVisaDesc: "Fast visa processing for Saudi Arabia (Umrah, Tourism, Business), Schengen Europe, Asia, Dubai (UAE), and African destinations.",
     serviceFlightTitle: "Global Air Ticketing",
     serviceFlightBadge: "IATA Accredited Agency",
     serviceFlightDesc: "Official IATA-accredited agency: instant booking and direct issuance of airline tickets on all major global carriers at competitive rates with flexible baggage policies.",
@@ -183,19 +220,57 @@ export const TRANSLATIONS = {
     serviceMoneyDesc: "Authorized money transfer point: Orange Money, Moov Money, Western Union, MoneyGram, and fast bank transfers for your family and pilgrims in the Holy Lands.",
 
     // Airlines
-    airlinesTag: "Flight Partners",
+    airlinesTag: "Flight Routes",
     airlinesTitle: "Partner Airlines",
     airlinesSubtitle: "We partner with world-renowned airlines to ensure safe, comfortable, and reliable pilgrim flights.",
 
     // Testimonials
-    testiTag: "Pilgrim Feedback",
+    testiTag: "Pilgrim Reviews",
     testiTitle: "What Our Pilgrims Say",
-    testiSubtitle: "Read authentic reviews from pilgrims who performed their sacred journey with AFRICA VOYAGES SARL.",
+    testiSubtitle: "Discover authentic feedback from believers who completed their pilgrimage with AFRICA VOYAGES SARL.",
+    testimonials: [
+      {
+        name: "El Hadj Amadou Ouédraogo",
+        role: "Hajj Pilgrim (Ouagadougou)",
+        rating: 5,
+        text: "I performed my Hajj with Africa Voyages SARL. Every promise was kept from A to Z: top-comfort hotels, air-conditioned Mina tents, and dedicated guides in Mooré who ensured a peaceful pilgrimage."
+      },
+      {
+        name: "Hadja Mariam Sawadogo",
+        role: "Ramadan Umrah Pilgrim",
+        rating: 5,
+        text: "For Ramadan Umrah, the organization was flawless. The proximity of the hotels allowed us to experience prayers at the Haram in total serenity. May Allah bless the agency!"
+      },
+      {
+        name: "El Hadj Idrissa Kaboré",
+        role: "Hajj & Umrah Pilgrim",
+        rating: 5,
+        text: "40 years of heritage makes an immediate difference. Zero administrative stress, visas and tickets delivered swiftly, and reassuring medical assistance. Highly recommended for Hajj 2027."
+      }
+    ],
 
     // FAQ
     faqTag: "Need Help?",
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "Clear answers to guide your preparation for Hajj and Umrah.",
+    faq: [
+      {
+        q: "What are the requirements for Hajj 2027 pre-registration?",
+        a: "Pre-registration for Hajj 2027 is set at the provisional rate of 328,500 FCFA. You simply need to provide a copy of your National ID (CNIB) or valid Passport (valid for at least 6 months)."
+      },
+      {
+        q: "How often are Umrah departures organized?",
+        a: "AFRICA VOYAGES SARL organizes 2 departures per month year-round from Ouagadougou, along with special packages for the blessed month of Ramadan."
+      },
+      {
+        q: "What services are included in your Hajj and Umrah packages?",
+        a: "Our packages include round-trip flights on scheduled airlines, official visa processing, 4★ and 5★ hotel accommodations near the Holy Mosques, full or half board meals, VIP air-conditioned bus transfers, scholar guidance, and 24/7 medical assistance."
+      },
+      {
+        q: "Where is AFRICA VOYAGES SARL located in Ouagadougou?",
+        a: "Our agency is located in Samandin sector 05, right opposite the Total Mogho Naaba station in Ouagadougou. You can reach us at +226 25 31 06 77 or on WhatsApp at +226 73 18 74 17."
+      }
+    ],
 
     // Contact
     contactTag: "Headquarters & Official Information",
@@ -217,6 +292,7 @@ export const TRANSLATIONS = {
     formPhonePlaceholder: "Phone / WhatsApp (+226...) *",
     formMsgPlaceholder: "Your message or question...",
     formSubmit: "Send to Agency",
+    formSuccess: "your message has been prepared for WhatsApp! Our team will reply immediately.",
 
     // Footer
     footerCopyright: "© 2026 <strong>AFRICA VOYAGES SARL</strong>. 1st accredited agency by the Burkinabe State for Hajj • Samandin sector 05, Ouagadougou."
@@ -224,7 +300,7 @@ export const TRANSLATIONS = {
 
   ar: {
     // Navigation & Brand
-    brandName: "أفريكا السفريات ش.ذ.م.م",
+    brandName: "أفريكا <span>السفريات</span> ش.ذ.م.م",
     brandSub: "الوكالة الأولى المعتمدة من الدولة البوركينابية",
     menu: "القائمة",
     currency: "العملة",
@@ -272,12 +348,11 @@ export const TRANSLATIONS = {
     tabAll: "جميع الباقات",
     tabHadj: "حج 2027",
     tabOmra: "العمرة (الاعتيادية ورمضان)",
-    badgePopular: "تسجيل مسبق 2027",
-    badgeBestSeller: "رحلتان كل شهر",
-    badgeRamadan: "عمرة شهر رمضان",
     viewItinerary: "تفاصيل البرنامج",
     bookWhatsapp: "حجز عبر واتساب",
-    startingFrom: "السعر",
+    priceOfficial: "السعر الرسمي :",
+    ritualSteps: "البرنامج والمراحل والمناسك",
+    includedServices: "الخدمات والمزايا المشمولة",
     
     // Services
     servicesTag: "خدماتنا المتميزة",
@@ -292,19 +367,57 @@ export const TRANSLATIONS = {
     serviceMoneyDesc: "مركز معتمد للتحويلات المالية المحلية والدولية: أورنج موني، موف موني، ويسترن يونيون، موني جرام، وتحويلات بنكية فورية لأهاليكم والحجاج بالمشاعر المقدسة.",
 
     // Airlines
-    airlinesTag: "شركاء الطيران",
-    airlinesTitle: "خطوط الطيران الشريكة",
+    airlinesTag: "خطوط الطيران",
+    airlinesTitle: "شركات الطيران الشريكة",
     airlinesSubtitle: "نتعاون مع كبرى شركات الطيران العالمية لضمان رحلات جوية مريحة وآمنة لضيوف الرحمن.",
 
     // Testimonials
-    testiTag: "تجارب الحجاج",
+    testiTag: "تجارب وشهادات",
     testiTitle: "ماذا يقول حجاجنا الكرام",
     testiSubtitle: "شهادات حية من حجاج ومعتمرين تشرفنا بخدمتهم مع وكالة أفريكا السفريات.",
+    testimonials: [
+      {
+        name: "الحاج أمادو ويدراوغو",
+        role: "حاج بموسم الحج (واغادوغو)",
+        rating: 5,
+        text: "أديت مناسك الحج مع وكالة أفريكا السفريات. تم الوفاء بجميع الوعود بدقة: فنادق راقية ومريحة، مخيمات مكيفة في منى، وإرشاد متميز من مرشدينا باللغة المورية مما يسر لنا أداء المناسك بكل طمأنينة."
+      },
+      {
+        name: "الحاجة مريم ساوادوغو",
+        role: "معتمرة بموسم رمضان المبارك",
+        rating: 5,
+        text: "في عمرة رمضان المبارك، كان التنظيم في غاية الإتقان. سهولة التنقل وقرب الفنادق من الحرم الشريف مكنتنا من صلاة التراويح والتهجد بكل خشوع وسكينة. بارك الله في جهود الوكالة!"
+      },
+      {
+        name: "الحاج إدريسا كابوري",
+        role: "حاج ومعتمر",
+        rating: 5,
+        text: "خبرة 40 عاماً تظهر بوضوح في كل التفاصيل. معاملات سريعة للتأشيرات والتذاكر، ومرافقة طبية مطمئنة. أنصح بشدة بالتسجيل معهم لحج 2027."
+      }
+    ],
 
     // FAQ
     faqTag: "هل لديك استفسار؟",
     faqTitle: "الأسئلة الشائعة",
     faqSubtitle: "إجابات شاملة ومفصلة للاستعداد الأمثل لرحلة الحج والعمرة.",
+    faq: [
+      {
+        q: "ما هي شروط وإجراءات التسجيل المسبق لحج 2027 ؟",
+        a: "تم تحديد رسوم التسجيل المسبق لحج 2027 بمبلغ تقديري 328,500 فرنك سيفا. يكفي إحضار نسخة من بطاقة الهوية الوطنية أو جواز سفر ساري المفعول (صلاحية 6 أشهر على الأقل)."
+      },
+      {
+        q: "ما هي وتيرة رحلات العمرة خلال العام ؟",
+        a: "تنظم وكالة أفريكا السفريات رحلتين عمرة شهرياً على مدار العام من واغادوغو، بالإضافة إلى برامج خاصة ومميزة لعمرة شهر رمضان المبارك."
+      },
+      {
+        q: "ما هي الخدمات المشمولة في باقات الحج والعمرة ؟",
+        a: "تشمل باقاتنا تذاكر الطيران ذهاباً وإياباً، التأشيرة الرسمية، الإقامة في فنادق 4 و 5 نجوم قريبة من الحرمين، الوجبات الغذائية، التنقلات في حافلات VIP مكيفة، الإرشاد الديني باللغات المحلية والرعاية الطبية 24/7."
+      },
+      {
+        q: "أين يقع مقر وكالة أفريكا السفريات في واغادوغو ؟",
+        a: "يقع مقرنا الرئيسي في ساماندين قطاع 05، تحديداً أمام محطة توتال موغو نابا في واغادوغو. يمكنكم التواصل معنا عبر الهاتف +226 25 31 06 77 أو واتساب +226 73 18 74 17."
+      }
+    ],
 
     // Contact
     contactTag: "المقر الرئيسي والمعلومات الرسمية",
@@ -326,6 +439,7 @@ export const TRANSLATIONS = {
     formPhonePlaceholder: "رقم الهاتف / واتساب (+226...) *",
     formMsgPlaceholder: "اكتب رسالتك أو استفسارك هنا...",
     formSubmit: "إرسال عبر واتساب",
+    formSuccess: "تم تجهيز رسالتك للإرسال عبر واتساب! فريقنا سيرد عليك فوراً.",
 
     // Footer
     footerCopyright: "© 2026 <strong>أفريكا السفريات ش.ذ.م.م</strong>. الوكالة الأولى المعتمدة من الدولة البوركينابية للحج والعمرة • ساماندين قطاع 05، واغادوغو."
