@@ -226,11 +226,26 @@ h1, h2, h3, h4, .font-serif {
 /* Hero Section */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, rgba(6, 78, 59, 0.94) 0%, rgba(2, 26, 20, 0.96) 100%),
-              url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  background: linear-gradient(135deg, #021a14 0%, #064e3b 100%);
   color: #ffffff;
-  padding: 75px 0 85px 0;
+  padding: 85px 0 95px 0;
   text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  opacity: 0.15; /* Photo de fond en transparence douce et subtile */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
