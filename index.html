@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -37,11 +37,12 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#apropos" class="nav-link">À Propos de Nous</a></li>
+        <li><a href="#apropos" class="nav-link">À Propos</a></li>
         <li><a href="#offres" class="nav-link">Forfaits Hadj & Omra</a></li>
-        <li><a href="#services" class="nav-link">Services Annexes</a></li>
-        <li><a href="#compagnies" class="nav-link">Compagnies Partenaires</a></li>
-        <li><a href="#contact" class="nav-link">Contact & Agence</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#temoignages" class="nav-link">Témoignages</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -65,11 +66,11 @@
   <section class="hero">
     <div class="container">
       <h1 class="hero-title">
-        Votre Pèlerinage <span class="highlight">Hadj & Omra</span>
+        Votre Pèlerinage <span class="highlight">Hadj & Omra</span> en Toute Sérénité
       </h1>
 
       <p class="hero-desc">
-        Pré-inscriptions ouvertes pour le <strong>Hadj 2027</strong> (328 500 FCFA avec CNIB ou Passeport) et <strong>2 départs Omra par mois</strong> au départ de Ouagadougou.
+        Pré-inscriptions ouvertes pour le <strong>Hadj 2027</strong> (328 500 FCFA avec CNIB ou Passeport) et <strong>2 départs Omra par mois</strong> toute l'année au départ de Ouagadougou.
       </p>
 
       <div class="hero-cta">
@@ -87,7 +88,7 @@
   </section>
 
   <!-- ========================================================================
-       Section : À Propos de Nous (Présentation Détaillée & Rassurante)
+       Section : À Propos de Nous
        ======================================================================== -->
   <section class="section" id="apropos">
     <div class="container">
@@ -143,7 +144,7 @@
   </section>
 
   <!-- ========================================================================
-       Section : Les 3 Offres Claires
+       Section : Les 3 Offres Claires avec Filtres Interactifs
        ======================================================================== -->
   <section class="section" id="offres" style="background: var(--surface-alt); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
     <div class="container">
@@ -151,8 +152,15 @@
         <span class="section-tag">Tarifs & Modalités</span>
         <h2 class="section-title">Nos Forfaits Hadj & Omra</h2>
         <p class="section-subtitle">
-          Sélectionnez l'offre de votre choix pour vous inscrire ou obtenir les détails.
+          Sélectionnez un forfait pour consulter le programme complet ou réserver directement via WhatsApp.
         </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-tab-btn active" data-filter="all">Tous les Forfaits</button>
+        <button class="filter-tab-btn" data-filter="hadj">Hadj 2027</button>
+        <button class="filter-tab-btn" data-filter="omra">Omra (Standard & Ramadan)</button>
       </div>
 
       <div class="offers-grid" id="packagesGrid">
@@ -177,9 +185,9 @@
           <div class="service-icon">
             <i class="fa-solid fa-passport"></i>
           </div>
-          <h3 class="service-title">Assistance Visa</h3>
+          <h3 class="service-title">Assistance Visa Express</h3>
           <p class="service-desc">
-            Traitement de visas pour l'Arabie Saoudite, Schengen, Dubaï et toutes destinations.
+            Traitement rapide de vos visas pour l'Arabie Saoudite (Omra, Tourisme, Affaires), Schengen, Dubaï et toutes destinations.
           </p>
         </div>
 
@@ -190,7 +198,7 @@
           </div>
           <h3 class="service-title">Billetterie Aérienne</h3>
           <p class="service-desc">
-            Vente et réservation de billets d'avion sur toutes les compagnies régulières au départ de Ouagadougou.
+            Vente et réservation instantanée de billets d'avion sur toutes les compagnies régulières au départ de Ouagadougou.
           </p>
         </div>
 
@@ -199,9 +207,9 @@
           <div class="service-icon">
             <i class="fa-solid fa-money-bill-transfer"></i>
           </div>
-          <h3 class="service-title">Transfert d'Argent</h3>
+          <h3 class="service-title">Transfert d'Argent Sécurisé</h3>
           <p class="service-desc">
-            Opérations rapides via Orange Money, Moov Money, Western Union et MoneyGram.
+            Point agréé : Orange Money, Moov Money, Western Union et MoneyGram pour vos proches et pèlerins aux Lieux Saints.
           </p>
         </div>
       </div>
@@ -226,6 +234,41 @@
         <div class="airline-pill"><i class="fa-solid fa-plane"></i> ASKY Airlines</div>
         <div class="airline-pill"><i class="fa-solid fa-plane"></i> Air Côte d'Ivoire</div>
         <div class="airline-pill"><i class="fa-solid fa-plane"></i> Air Sénégal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Section : Avis de nos Pèlerins (Testimonials)
+       ======================================================================== -->
+  <section class="section" id="temoignages">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Retours d'Expérience</span>
+        <h2 class="section-title">Ce que disent nos Pèlerins</h2>
+        <p class="section-subtitle">
+          Découvrez les témoignages de croyants ayant accompli leur Hadj et Omra avec Africa Voyages SARL.
+        </p>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Rendu dynamique par app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Section : FAQ Accordéon Interactif
+       ======================================================================== -->
+  <section class="section" id="faq" style="background: var(--surface-alt); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Questions Fréquentes</span>
+        <h2 class="section-title">Tout Savoir sur votre Voyage</h2>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <!-- Rendu dynamique par app.js -->
       </div>
     </div>
   </section>
@@ -305,16 +348,16 @@
             </div>
             <div>
               <select id="contactPackage" class="form-input">
-                <option value="hadj-2027">Hadj 2027 (Pré-inscription à 328 500 FCFA)</option>
-                <option value="omra-standard">Omra Standard (1 300 000 FCFA)</option>
-                <option value="omra-ramadan">Omra Ramadan (1 800 000 FCFA)</option>
-                <option value="visa">Assistance Visa</option>
-                <option value="billetterie">Billetterie Aérienne</option>
-                <option value="transfert">Transfert d'Argent</option>
+                <option value="Hadj 2027 (Pré-inscription à 328 500 FCFA)">Hadj 2027 (Pré-inscription à 328 500 FCFA)</option>
+                <option value="Omra Standard (1 300 000 FCFA)">Omra Standard (1 300 000 FCFA)</option>
+                <option value="Omra Ramadan (1 800 000 FCFA)">Omra Ramadan (1 800 000 FCFA)</option>
+                <option value="Assistance Visa">Assistance Visa</option>
+                <option value="Billetterie Aérienne">Billetterie Aérienne</option>
+                <option value="Transfert d'Argent">Transfert d'Argent</option>
               </select>
             </div>
             <div>
-              <textarea id="contactMsg" class="form-textarea" rows="3" placeholder="Votre message..."></textarea>
+              <textarea id="contactMsg" class="form-textarea" rows="3" placeholder="Votre message ou question..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%;">
               <i class="fa-solid fa-paper-plane"></i> Envoyer à l'Agence
