@@ -234,11 +234,11 @@ h1, h2, h3, h4, .font-serif {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-.currency-select {
-  background: rgba(6, 78, 59, 0.08);
+.lang-select, .currency-select {
+  background: #ffffff;
   color: var(--primary);
   border: 1.5px solid var(--border-gold);
   border-radius: var(--radius-full);
@@ -247,6 +247,62 @@ h1, h2, h3, h4, .font-serif {
   font-weight: 700;
   cursor: pointer;
   outline: none;
+  transition: var(--transition);
+}
+
+.lang-select:hover, .currency-select:hover {
+  background: rgba(6, 78, 59, 0.06);
+  border-color: var(--gold);
+}
+
+/* Arabic Typography & RTL Support */
+html[lang="ar"] {
+  font-family: 'Cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html[lang="ar"] .brand-title,
+html[lang="ar"] .brand-name,
+html[lang="ar"] .hero-title,
+html[lang="ar"] .section-title,
+html[lang="ar"] .offer-title,
+html[lang="ar"] .about-pillar-title {
+  font-family: 'Amiri', 'Cairo', serif;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .hero,
+[dir="rtl"] .section-head,
+[dir="rtl"] .hero-content-card,
+[dir="rtl"] .footer {
+  text-align: center;
+}
+
+[dir="rtl"] .menu-drawer,
+[dir="rtl"] .hamburger-drawer {
+  transform: translateX(-100%);
+  border-left: none;
+  border-right: 2px solid var(--gold);
+}
+
+[dir="rtl"] .menu-drawer-overlay,
+[dir="rtl"] .hamburger-drawer-overlay {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .menu-drawer-overlay.active .menu-drawer,
+[dir="rtl"] .hamburger-drawer-overlay.active .hamburger-drawer {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .drawer-menu-item a {
+  flex-direction: row;
+}
+
+[dir="rtl"] .drawer-menu-item a:hover {
+  transform: translateX(-4px);
 }
 
 /* Menu Button (Hamburger) */

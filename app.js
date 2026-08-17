@@ -7,6 +7,7 @@
  */
 
 import contentData from './data/content.json';
+import { TRANSLATIONS } from './data/i18n.js';
 
 export const APP_DATA = contentData;
 export const PACKAGES = APP_DATA.offers;
@@ -19,17 +20,69 @@ const EXCHANGE_RATES = {
 };
 
 let currentCurrency = 'FCFA';
+let currentLanguage = localStorage.getItem('africa_voyages_lang') || 'fr';
 let activeFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLanguageSelector();
   initCurrencySelector();
   initFilterTabs();
   initDrawerMenu();
+  applyLanguage(currentLanguage);
   renderOffers();
   renderTestimonials();
   renderFaq();
   initContactForm();
 });
+
+// Système de Traduction Dynamique
+export function setLanguage(lang) {
+  if (!TRANSLATIONS[lang]) lang = 'fr';
+  currentLanguage = lang;
+  localStorage.setItem('africa_voyages_lang', lang);
+  applyLanguage(lang);
+  renderOffers();
+  renderTestimonials();
+  renderFaq();
+}
+
+function applyLanguage(lang) {
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS.fr;
+  
+  // Mettre à jour l'attribut lang et dir (RTL pour l'arabe)
+  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+  // Traduire les sélecteurs de langue
+  document.querySelectorAll('.lang-select').forEach(sel => {
+    sel.value = lang;
+  });
+
+  // Traduire les éléments avec data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  // Traduire les placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key]) {
+      el.setAttribute('placeholder', dict[key]);
+    }
+  });
+}
+
+function initLanguageSelector() {
+  document.querySelectorAll('.lang-select').forEach(selector => {
+    selector.value = currentLanguage;
+    selector.addEventListener('change', (e) => {
+      setLanguage(e.target.value);
+    });
+  });
+}
 
 // Formatage des prix
 export function formatPrice(amountFCFA, currency = currentCurrency) {
@@ -83,23 +136,45 @@ export function renderOffers() {
     return true;
   });
 
+  const dict = TRANSLATIONS[currentLanguage] || TRANSLATIONS.fr;
+
   container.innerHTML = filteredOffers.map(pkg => {
     const isHadj = pkg.id === 'hadj-2027';
     const waText = encodeURIComponent(`Salam Aleykoum AFRICA VOYAGES SARL, je souhaite des informations et m'inscrire pour : ${pkg.title}`);
     const priceFormatted = formatPrice(pkg.basePriceFCFA, currentCurrency);
 
+    // Titres localisés si besoin
+    let displayTitle = pkg.title;
+    let displayTag = pkg.tag;
+    let detailsLabel = dict.viewItinerary || "Voir Programme Complet";
+    let bookLabel = dict.bookWhatsapp || "Réserver sur WhatsApp";
+
+    if (currentLanguage === 'en') {
+      if (pkg.id === 'hadj-2027') displayTitle = "Hajj 2027 – Official Pre-Registration (4★ & 5★)";
+      if (pkg.id === 'omra-standard') displayTitle = "Standard Umrah – 2 Departures per Month";
+      if (pkg.id === 'omra-ramadan') displayTitle = "Premium Ramadan Umrah – Last 15 Days";
+      detailsLabel = "View Full Schedule";
+      bookLabel = "Book via WhatsApp";
+    } else if (currentLanguage === 'ar') {
+      if (pkg.id === 'hadj-2027') displayTitle = "حج 2027 – التسجيل المسبق الرسمي (فنادق 4 و 5 نجوم)";
+      if (pkg.id === 'omra-standard') displayTitle = "العمرة الاعتيادية – رحلتان شهرياً على مدار العام";
+      if (pkg.id === 'omra-ramadan') displayTitle = "عمرة رمضان المبارك – العشر الأواخر والختم";
+      detailsLabel = "تفاصيل البرنامج";
+      bookLabel = "حجز عبر واتساب";
+    }
+
     return `
       <article class="offer-card ${isHadj ? 'featured' : ''}" id="card-${pkg.id}">
         <div class="offer-badge">
-          <i class="fa-solid fa-star"></i> ${pkg.tag}
+          <i class="fa-solid fa-star"></i> ${displayTag}
         </div>
         
         <div class="offer-img-box">
-          <img src="${pkg.image}" alt="${pkg.title}" class="offer-img" loading="lazy">
+          <img src="${pkg.image}" alt="${displayTitle}" class="offer-img" loading="lazy">
         </div>
 
         <div class="offer-body">
-          <h3 class="offer-title">${pkg.title}</h3>
+          <h3 class="offer-title">${displayTitle}</h3>
           
           <div class="offer-meta">
             <span><i class="fa-solid fa-clock"></i> ${pkg.duration}</span>
@@ -118,7 +193,7 @@ export function renderOffers() {
 
           <div class="offer-actions-row">
             <button type="button" class="btn btn-outline btn-details" data-pkg-id="${pkg.id}" style="width: 100%; margin-bottom: 10px;">
-              <i class="fa-solid fa-list-check"></i> Voir Programme Complet
+              <i class="fa-solid fa-list-check"></i> ${detailsLabel}
             </button>
           </div>
 
@@ -128,7 +203,7 @@ export function renderOffers() {
               <div class="offer-price-val">${priceFormatted}</div>
             </div>
             <a href="https://wa.me/22673187417?text=${waText}" target="_blank" rel="noopener" class="btn btn-whatsapp">
-              <i class="fa-brands fa-whatsapp"></i> Réserver
+              <i class="fa-brands fa-whatsapp"></i> ${bookLabel}
             </a>
           </div>
         </div>

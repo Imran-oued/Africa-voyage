@@ -9,10 +9,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/logo.png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (Latin & Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -36,6 +36,16 @@
       </a>
 
       <div class="nav-actions">
+        <!-- Sélecteur de Langue -->
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <select class="lang-select" aria-label="Langue">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="ar">🇸🇦 العربية</option>
+          </select>
+        </div>
+
+        <!-- Sélecteur de Devise -->
         <div style="display: flex; align-items: center; gap: 6px;">
           <select id="currencySelector" class="currency-select" aria-label="Devise">
             <option value="FCFA" selected>FCFA</option>
@@ -43,13 +53,15 @@
             <option value="USD">USD ($)</option>
           </select>
         </div>
+
+        <!-- Bouton Menu -->
         <button class="menu-btn" id="menuToggleBtn" aria-label="Ouvrir le menu">
           <div class="menu-icon-lines">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <span>MENU</span>
+          <span data-i18n="menu">MENU</span>
         </button>
       </div>
     </div>
@@ -81,52 +93,63 @@
         <li class="drawer-menu-item">
           <a href="#offres">
             <i class="fa-solid fa-kaaba"></i>
-            <span>Forfaits Hadj 2027 & Omra</span>
+            <span data-i18n="navOffers">Forfaits Hadj 2027 & Omra</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="guide.html">
             <i class="fa-solid fa-book-quran"></i>
-            <span>Guide Pas à Pas du Pèlerin</span>
+            <span data-i18n="navGuide">Guide Pas à Pas du Pèlerin</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="#apropos">
             <i class="fa-solid fa-award"></i>
-            <span>À Propos & 40+ Ans d'Expérience</span>
+            <span data-i18n="navAbout">À Propos & 40+ Ans d'Expérience</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="#services">
             <i class="fa-solid fa-passport"></i>
-            <span>Services (Visa, Billetterie IATA, Transferts)</span>
+            <span data-i18n="navServices">Services (Visa, Billetterie IATA, Transferts)</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="#compagnies">
             <i class="fa-solid fa-plane-departure"></i>
-            <span>Compagnies Partenaires IATA</span>
+            <span data-i18n="navAirlines">Compagnies Partenaires IATA</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="#temoignages">
             <i class="fa-solid fa-comments"></i>
-            <span>Témoignages des Pèlerins</span>
+            <span data-i18n="navTestimonials">Témoignages des Pèlerins</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="#faq">
             <i class="fa-solid fa-circle-question"></i>
-            <span>Questions Fréquentes (FAQ)</span>
+            <span data-i18n="navFaq">Questions Fréquentes (FAQ)</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="#contact">
             <i class="fa-solid fa-location-dot"></i>
-            <span>Siège & Coordonnées à Ouagadougou</span>
+            <span data-i18n="navContact">Siège & Coordonnées à Ouagadougou</span>
           </a>
         </li>
       </ul>
+
+      <div style="margin-bottom: 18px;">
+        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase;">
+          Langue / Language / اللغة :
+        </label>
+        <select class="lang-select" style="width: 100%;" aria-label="Langue Mobile">
+          <option value="fr" selected>🇫🇷 Français</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="ar">🇸🇦 العربية</option>
+        </select>
+      </div>
 
       <div class="drawer-footer-card">
         <div style="color: var(--gold); font-size: 0.95rem; font-weight: 800; margin-bottom: 4px;">
@@ -154,26 +177,26 @@
       <div class="hero-content-card">
         <div class="hero-badge">
           <i class="fa-solid fa-kaaba"></i>
-          <span>La 1ère Agence Agréée par l'État burkinabè • Agréée IATA</span>
+          <span data-i18n="heroBadge">La 1ère Agence Agréée par l'État burkinabè • Agréée IATA</span>
         </div>
 
-        <h1 class="hero-title">
+        <h1 class="hero-title" data-i18n="heroTitle">
           Votre Pèlerinage <span class="highlight">Hadj & Omra</span> en Toute Sérénité
         </h1>
 
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n="heroDesc">
           Pré-inscriptions ouvertes pour le <strong>Hadj 2027</strong> (328 500 FCFA avec CNIB ou Passeport) et <strong>2 départs Omra par mois</strong> toute l'année au départ de Ouagadougou.
         </p>
 
         <div class="hero-cta">
           <a href="#offres" class="btn btn-gold">
-            <i class="fa-solid fa-kaaba"></i> Voir les Forfaits
+            <i class="fa-solid fa-kaaba"></i> <span data-i18n="heroCtaOffers">Voir les Forfaits</span>
           </a>
           <a href="#apropos" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1);">
-            <i class="fa-solid fa-circle-info"></i> En Savoir Plus
+            <i class="fa-solid fa-circle-info"></i> <span data-i18n="heroCtaAbout">En Savoir Plus</span>
           </a>
           <a href="#contact" class="btn btn-primary">
-            <i class="fa-solid fa-location-dot"></i> Nous Contacter
+            <i class="fa-solid fa-location-dot"></i> <span data-i18n="heroCtaContact">Nous Contacter</span>
           </a>
         </div>
       </div>
@@ -186,18 +209,18 @@
   <section class="section" id="apropos">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Qui Sommes-Nous ?</span>
-        <h2 class="section-title">À Propos de AFRICA VOYAGES SARL</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="aboutTag">Qui Sommes-Nous ?</span>
+        <h2 class="section-title" data-i18n="aboutTitle">À Propos de AFRICA VOYAGES SARL</h2>
+        <p class="section-subtitle" data-i18n="aboutSubtitle">
           La 1ère agence agréée par l'État burkinabè • Plus de 40 ans d'expérience
         </p>
       </div>
 
       <div class="about-box">
-        <p class="about-intro-text">
+        <p class="about-intro-text" data-i18n="aboutP1">
           Fondée avec la noble mission d'accompagner les fidèles croyants dans l'accomplissement des rites sacrés de l'Islam, <strong>AFRICA VOYAGES SARL</strong> est le pionnier historique et la référence incontournable de l'organisation du Hadj et de la Omra au Burkina Faso.
         </p>
-        <p class="about-intro-text" style="margin-bottom: 0;">
+        <p class="about-intro-text" style="margin-bottom: 0;" data-i18n="aboutP2">
           Depuis plus de quatre décennies, notre équipe œuvre avec dévouement pour garantir à chaque pèlerin un voyage spirituel serein, fluide et parfaitement conforme à la Sunnah du Prophète (PSL). De la préparation pratique à notre siège de Samandin jusqu'au retour à Ouagadougou, nous assurons un encadrement religieux bienveillant par des Oulémas éminents, ainsi qu'une prise en charge logistique et médicale continue 24h/24.
         </p>
 
@@ -206,8 +229,8 @@
             <div class="about-pillar-icon">
               <i class="fa-solid fa-award"></i>
             </div>
-            <h3 class="about-pillar-title">1ère Agence Agréée, Licence A & IATA</h3>
-            <p class="about-pillar-desc">
+            <h3 class="about-pillar-title" data-i18n="pillar1Title">1ère Agence Agréée, Licence A & IATA</h3>
+            <p class="about-pillar-desc" data-i18n="pillar1Desc">
               Pionnier agréé par l'État burkinabè et accrédité IATA pour une sécurité juridique, logistique et billetterie totale.
             </p>
           </div>
@@ -216,8 +239,8 @@
             <div class="about-pillar-icon">
               <i class="fa-solid fa-book-quran"></i>
             </div>
-            <h3 class="about-pillar-title">Encadrement Religieux Polyglotte</h3>
-            <p class="about-pillar-desc">
+            <h3 class="about-pillar-title" data-i18n="pillar2Title">Encadrement Religieux Polyglotte</h3>
+            <p class="about-pillar-desc" data-i18n="pillar2Desc">
               Séminaires préparatoires réguliers et accompagnement personnalisé aux Lieux Saints en Mooré, Dioula, Français et Arabe.
             </p>
           </div>
@@ -226,8 +249,8 @@
             <div class="about-pillar-icon">
               <i class="fa-solid fa-hand-holding-medical"></i>
             </div>
-            <h3 class="about-pillar-title">Assistance Médicale 24/7</h3>
-            <p class="about-pillar-desc">
+            <h3 class="about-pillar-title" data-i18n="pillar3Title">Assistance Médicale 24/7</h3>
+            <p class="about-pillar-desc" data-i18n="pillar3Desc">
               Présence constante d'un corps médical dédié pour veiller sur la santé et le bien-être de nos pèlerins à La Mecque, Médine, Mina et Arafat.
             </p>
           </div>
@@ -242,18 +265,18 @@
   <section class="section" id="offres" style="background: var(--surface-alt); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Tarifs & Modalités</span>
-        <h2 class="section-title">Nos Forfaits Hadj & Omra</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="offersTag">Tarifs & Modalités</span>
+        <h2 class="section-title" data-i18n="offersTitle">Nos Forfaits Hadj & Omra</h2>
+        <p class="section-subtitle" data-i18n="offersSubtitle">
           Sélectionnez un forfait pour consulter le programme complet ou réserver directement via WhatsApp.
         </p>
       </div>
 
       <!-- Filter Tabs -->
       <div class="filter-tabs-wrapper">
-        <button class="filter-tab-btn active" data-filter="all">Tous les Forfaits</button>
-        <button class="filter-tab-btn" data-filter="hadj">Hadj 2027</button>
-        <button class="filter-tab-btn" data-filter="omra">Omra (Standard & Ramadan)</button>
+        <button class="filter-tab-btn active" data-filter="all" data-i18n="tabAll">Tous les Forfaits</button>
+        <button class="filter-tab-btn" data-filter="hadj" data-i18n="tabHadj">Hadj 2027</button>
+        <button class="filter-tab-btn" data-filter="omra" data-i18n="tabOmra">Omra (Standard & Ramadan)</button>
       </div>
 
       <div class="offers-grid" id="packagesGrid">
@@ -268,8 +291,11 @@
   <section class="section" id="services">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Services Complémentaires</span>
-        <h2 class="section-title">Services de l'Agence</h2>
+        <span class="section-tag" data-i18n="servicesTag">Services Complémentaires</span>
+        <h2 class="section-title" data-i18n="servicesTitle">Services de l'Agence</h2>
+        <p class="section-subtitle" data-i18n="servicesSubtitle">
+          Au-delà du pèlerinage, AFRICA VOYAGES SARL vous accompagne au quotidien avec des prestations sur-mesure.
+        </p>
       </div>
 
       <div class="services-grid">
@@ -278,8 +304,8 @@
           <div class="service-icon">
             <i class="fa-solid fa-passport"></i>
           </div>
-          <h3 class="service-title">Assistance Visa Express</h3>
-          <p class="service-desc">
+          <h3 class="service-title" data-i18n="serviceVisaTitle">Assistance Visa Express</h3>
+          <p class="service-desc" data-i18n="serviceVisaDesc">
             Traitement rapide de vos visas pour l'Arabie Saoudite (Omra, Tourisme, Affaires), Schengen, Dubaï et toutes destinations.
           </p>
         </div>
@@ -289,9 +315,9 @@
           <div class="service-icon">
             <i class="fa-solid fa-plane-departure"></i>
           </div>
-          <h3 class="service-title">Billetterie Aérienne</h3>
-          <p class="service-desc">
-            Vente et réservation instantanée de billets d'avion sur toutes les compagnies régulières au départ de Ouagadougou.
+          <h3 class="service-title" data-i18n="serviceFlightTitle">Billetterie Aérienne Toutes Destinations</h3>
+          <p class="service-desc" data-i18n="serviceFlightDesc">
+            Agence officiellement agréée IATA : émission instantanée et réservation directe de billets d'avion sur l'ensemble des compagnies régulières aux meilleurs tarifs du marché, avec options de modification et franchise bagages avantageuse.
           </p>
         </div>
 
@@ -300,9 +326,9 @@
           <div class="service-icon">
             <i class="fa-solid fa-money-bill-transfer"></i>
           </div>
-          <h3 class="service-title">Transfert d'Argent Sécurisé</h3>
-          <p class="service-desc">
-            Point agréé : Orange Money, Moov Money, Western Union et MoneyGram pour vos proches et pèlerins aux Lieux Saints.
+          <h3 class="service-title" data-i18n="serviceMoneyTitle">Transfert d'Argent Rapide & Sécurisé</h3>
+          <p class="service-desc" data-i18n="serviceMoneyDesc">
+            Point agréé de transfert d'argent national et international : Orange Money, Moov Money, Western Union, MoneyGram et virements pour vos proches et pèlerins aux Lieux Saints.
           </p>
         </div>
       </div>
@@ -315,8 +341,11 @@
   <section class="section" id="compagnies" style="background: var(--surface-alt); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Liaisons Aériennes</span>
-        <h2 class="section-title">Compagnies Aériennes Partenaires</h2>
+        <span class="section-tag" data-i18n="airlinesTag">Liaisons Aériennes</span>
+        <h2 class="section-title" data-i18n="airlinesTitle">Compagnies Aériennes Partenaires</h2>
+        <p class="section-subtitle" data-i18n="airlinesSubtitle">
+          Nous collaborons avec les compagnies aériennes internationales les plus réputées pour des vols sécurisés et confortables.
+        </p>
       </div>
 
       <div class="airlines-list">
@@ -337,9 +366,9 @@
   <section class="section" id="temoignages">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Retours d'Expérience</span>
-        <h2 class="section-title">Ce que disent nos Pèlerins</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="testiTag">Retours d'Expérience</span>
+        <h2 class="section-title" data-i18n="testiTitle">Ce que disent nos Pèlerins</h2>
+        <p class="section-subtitle" data-i18n="testiSubtitle">
           Découvrez les témoignages de croyants ayant accompli leur Hadj et Omra avec Africa Voyages SARL.
         </p>
       </div>
@@ -356,8 +385,11 @@
   <section class="section" id="faq" style="background: var(--surface-alt); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Questions Fréquentes</span>
-        <h2 class="section-title">Tout Savoir sur votre Voyage</h2>
+        <span class="section-tag" data-i18n="faqTag">Questions Fréquentes</span>
+        <h2 class="section-title" data-i18n="faqTitle">Tout Savoir sur votre Voyage</h2>
+        <p class="section-subtitle" data-i18n="faqSubtitle">
+          Toutes les réponses à vos questions pour bien préparer votre Hadj ou votre Omra.
+        </p>
       </div>
 
       <div class="faq-accordion" id="faqAccordion">
@@ -372,9 +404,9 @@
   <section class="contact-section" id="contact">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">Siège & Informations Officielles</span>
-        <h2 class="section-title">AFRICA VOYAGES SARL</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="contactTag">Siège & Informations Officielles</span>
+        <h2 class="section-title" data-i18n="contactTitle">AFRICA VOYAGES SARL</h2>
+        <p class="section-subtitle" data-i18n="contactSubtitle">
           La 1ère agence agréée par l'État burkinabè • Plus de 40 ans d'expérience
         </p>
       </div>
@@ -383,29 +415,29 @@
         
         <!-- Coordonnées & Mentions Légales Sans Capital -->
         <div class="contact-card">
-          <h3>Nos Coordonnées</h3>
+          <h3 data-i18n="contactDetailsTitle">Nos Coordonnées</h3>
 
           <div class="contact-row">
             <i class="fa-solid fa-location-dot"></i>
             <div>
-              <strong>Siège & Adresse Physique :</strong><br>
-              Samandin secteur 05, en face de la station Total du Mogho Naaba à Ouagadougou, Burkina Faso.
+              <strong data-i18n="contactAddressLabel">Siège & Adresse Physique :</strong><br>
+              <span data-i18n="contactAddressValue">Samandin secteur 05, en face de la station Total du Mogho Naaba à Ouagadougou, Burkina Faso.</span>
             </div>
           </div>
 
           <div class="contact-row">
             <i class="fa-solid fa-phone"></i>
             <div>
-              <strong>Contacts Téléphoniques :</strong><br>
-              Principal : <a href="tel:+22625310677" style="color: var(--primary); font-weight: 700; text-decoration: none;">+226 25 31 06 77</a><br>
-              Second numéro : <a href="tel:+22670245574" style="color: var(--primary); font-weight: 700; text-decoration: none;">+226 70 24 55 74</a>
+              <strong data-i18n="contactPhonesLabel">Contacts Téléphoniques :</strong><br>
+              <span data-i18n="contactMainPhone">Principal :</span> <a href="tel:+22625310677" style="color: var(--primary); font-weight: 700; text-decoration: none;">+226 25 31 06 77</a><br>
+              <span data-i18n="contactSecondPhone">Second numéro :</span> <a href="tel:+22670245574" style="color: var(--primary); font-weight: 700; text-decoration: none;">+226 70 24 55 74</a>
             </div>
           </div>
 
           <div class="contact-row">
             <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
             <div>
-              <strong>WhatsApp :</strong><br>
+              <strong data-i18n="contactWhatsAppLabel">WhatsApp :</strong><br>
               <a href="https://wa.me/22673187417" target="_blank" style="color: #25d366; font-weight: 700; text-decoration: none;">+226 73 18 74 17</a>
             </div>
           </div>
@@ -413,13 +445,13 @@
           <div class="contact-row">
             <i class="fa-solid fa-envelope"></i>
             <div>
-              <strong>Email :</strong><br>
+              <strong data-i18n="contactEmailLabel">Email :</strong><br>
               <a href="mailto:africavoyagebf74@gmail.com" style="color: var(--primary); text-decoration: none;">africavoyagebf74@gmail.com</a>
             </div>
           </div>
 
           <div class="legal-box">
-            <strong>Agréments & Mentions Légales :</strong><br>
+            <strong data-i18n="contactLegalTitle">Agréments & Mentions Légales :</strong><br>
             • RCCM : <code>BF OUA 2018 B 9910</code><br>
             • IFU : <code>00114097X</code><br>
             • Licence : Catégorie A<br>
@@ -429,16 +461,16 @@
 
         <!-- Formulaire de Demande Rapide -->
         <div class="contact-card">
-          <h3>Envoyer un Message</h3>
+          <h3 data-i18n="formTitle">Envoyer un Message</h3>
           
           <div id="formSuccessAlert" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 12px 16px; border-radius: 8px; margin-bottom: 14px; font-size: 0.9rem;"></div>
 
           <form id="contactForm" class="quick-form">
             <div>
-              <input type="text" id="contactName" class="form-input" placeholder="Votre Nom et Prénom *" required>
+              <input type="text" id="contactName" class="form-input" placeholder="Votre Nom et Prénom *" data-i18n-placeholder="formNamePlaceholder" required>
             </div>
             <div>
-              <input type="tel" id="contactPhone" class="form-input" placeholder="Téléphone / WhatsApp (+226...) *" required>
+              <input type="tel" id="contactPhone" class="form-input" placeholder="Téléphone / WhatsApp (+226...) *" data-i18n-placeholder="formPhonePlaceholder" required>
             </div>
             <div>
               <select id="contactPackage" class="form-input">
@@ -451,10 +483,10 @@
               </select>
             </div>
             <div>
-              <textarea id="contactMsg" class="form-textarea" rows="3" placeholder="Votre message ou question..."></textarea>
+              <textarea id="contactMsg" class="form-textarea" rows="3" placeholder="Votre message ou question..." data-i18n-placeholder="formMsgPlaceholder"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%;">
-              <i class="fa-solid fa-paper-plane"></i> Envoyer à l'Agence
+              <i class="fa-solid fa-paper-plane"></i> <span data-i18n="formSubmit">Envoyer à l'Agence</span>
             </button>
           </form>
         </div>
@@ -468,7 +500,7 @@
        ======================================================================== -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 <strong>AFRICA VOYAGES SARL</strong>. La 1ère agence agréée par l'État burkinabè pour le Hadj • Samandin secteur 05, Ouagadougou.</p>
+      <p data-i18n="footerCopyright">© 2026 <strong>AFRICA VOYAGES SARL</strong>. La 1ère agence agréée par l'État burkinabè pour le Hadj • Samandin secteur 05, Ouagadougou.</p>
     </div>
   </footer>
 
