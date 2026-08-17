@@ -226,9 +226,9 @@ h1, h2, h3, h4, .font-serif {
 /* Hero Section */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #021a14 0%, #064e3b 100%);
+  background: #021a14;
   color: #ffffff;
-  padding: 85px 0 95px 0;
+  padding: 95px 0 105px 0;
   text-align: center;
   overflow: hidden;
 }
@@ -237,8 +237,13 @@ h1, h2, h3, h4, .font-serif {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-  opacity: 0.15; /* Photo de fond en transparence douce et subtile */
+  background-image: 
+    linear-gradient(to bottom, rgba(2, 26, 20, 0.60) 0%, rgba(6, 78, 59, 0.40) 50%, rgba(2, 26, 20, 0.82) 100%),
+    url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=2000&q=85');
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.45; /* La mosquée entière est bien visible en transparence */
   z-index: 1;
   pointer-events: none;
 }
@@ -256,6 +261,7 @@ h1, h2, h3, h4, .font-serif {
   max-width: 920px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.75);
 }
 
 .hero-title .highlight {
@@ -263,14 +269,16 @@ h1, h2, h3, h4, .font-serif {
   background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 .hero-desc {
-  font-size: 1.15rem;
-  color: #e2e8f0;
+  font-size: 1.18rem;
+  color: #f8fafc;
   max-width: 780px;
   margin: 0 auto 32px auto;
   line-height: 1.65;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
 .hero-cta {
