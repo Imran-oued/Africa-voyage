@@ -238,12 +238,12 @@ h1, h2, h3, h4, .font-serif {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to bottom, rgba(2, 26, 20, 0.60) 0%, rgba(6, 78, 59, 0.40) 50%, rgba(2, 26, 20, 0.82) 100%),
-    url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=2000&q=85');
-  background-position: center 30%;
+    linear-gradient(to bottom, rgba(2, 26, 20, 0.58) 0%, rgba(6, 78, 59, 0.35) 50%, rgba(2, 26, 20, 0.85) 100%),
+    url('/images/kaaba-tawaf-hero.jpg');
+  background-position: center 40%;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.45; /* La mosquée entière est bien visible en transparence */
+  opacity: 0.48; /* La Kaaba et les fidèles en Tawaf clairement visibles en transparence */
   z-index: 1;
   pointer-events: none;
 }
