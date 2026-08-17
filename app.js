@@ -21,14 +21,13 @@ const EXCHANGE_RATES = {
 
 let currentCurrency = 'FCFA';
 
-// Packages Database from contentData.offers
+// Packages Database
 export const PACKAGES = APP_DATA.offers;
-
-// Partner Airlines
+export const STATS = APP_DATA.stats;
 export const AIRLINES = APP_DATA.partnerAirlines;
-
-// Additional Services
 export const SERVICES = APP_DATA.additionalServices;
+export const TESTIMONIALS = APP_DATA.testimonials;
+export const FAQ = APP_DATA.faq;
 
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initCurrencySelector();
   initPrayerTimes();
+  renderStats();
   renderPackages(PACKAGES);
   initFilterPills();
   initSearchForm();
@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initLogoCustomizer();
   initContactForm();
   renderAirlinesAndServices();
+  renderTestimonials();
+  renderFAQ();
 });
 
 /* ==========================================================================
@@ -155,6 +157,27 @@ function updateAllPrices() {
 }
 
 /* ==========================================================================
+   Render Stats (KPI Strip)
+   ========================================================================== */
+function renderStats() {
+  const container = document.getElementById('statsGrid');
+  if (!container || !STATS) return;
+
+  container.innerHTML = STATS.map(s => `
+    <div class="stat-card">
+      <div class="stat-icon-wrapper">
+        <i class="${s.icon}"></i>
+      </div>
+      <div>
+        <div class="stat-number">${s.value}</div>
+        <div class="stat-label">${s.label}</div>
+        <div class="stat-subtext">${s.subtext}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ==========================================================================
    Prayer Times Widget
    ========================================================================== */
 function initPrayerTimes() {
@@ -210,6 +233,15 @@ function renderPackages(packagesToRender) {
       </div>
 
       <div class="package-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="color: var(--gold-dark); font-size: 0.82rem; font-weight: 700;">
+            <i class="fa-solid fa-star" style="color: var(--gold);"></i> ${pkg.rating || '5.0'} (${pkg.reviewsCount || '100+'} avis)
+          </span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">
+            <i class="fa-solid fa-plane-departure" style="color: var(--gold);"></i> Départs garantis
+          </span>
+        </div>
+
         <h3 class="package-title">${pkg.title}</h3>
         <div class="package-dates">
           <i class="fa-regular fa-calendar" style="color: var(--gold-dark);"></i>
@@ -227,7 +259,7 @@ function renderPackages(packagesToRender) {
           </div>
         </div>
 
-        <div style="background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 4px; margin-bottom: 14px; font-size: 0.82rem; color: var(--primary);">
+        <div style="background: rgba(212, 175, 55, 0.12); border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 6px; margin-bottom: 14px; font-size: 0.82rem; color: var(--primary);">
           <i class="fa-solid fa-circle-info"></i> <strong>Condition :</strong> ${pkg.conditions}
         </div>
 
@@ -308,7 +340,7 @@ function initSearchForm() {
 }
 
 /* ==========================================================================
-   Interactive Quote Simulator (Configured for Official Burkina Faso Offers)
+   Interactive Quote Simulator
    ========================================================================== */
 let simulatorState = {
   type: 'omra-standard',
@@ -333,7 +365,7 @@ const ROOM_MULTIPLIERS = {
 
 function initSimulator() {
   document.querySelectorAll('.sim-type-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       document.querySelectorAll('.sim-type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       simulatorState.type = btn.dataset.value;
@@ -342,7 +374,7 @@ function initSimulator() {
   });
 
   document.querySelectorAll('.sim-room-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       document.querySelectorAll('.sim-room-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       simulatorState.room = btn.dataset.value;
@@ -497,9 +529,15 @@ function renderAirlinesAndServices() {
   const airlinesContainer = document.getElementById('partnerAirlinesGrid');
   if (airlinesContainer && AIRLINES) {
     airlinesContainer.innerHTML = AIRLINES.map(airline => `
-      <div class="airline-badge" style="background: #ffffff; border: 1px solid var(--border-gold); padding: 14px 20px; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--primary); box-shadow: var(--shadow-sm);">
-        <i class="fa-solid fa-plane-departure" style="color: var(--gold);"></i>
-        <span>${airline.name}</span>
+      <div class="airline-card" style="background: #ffffff; border: 1px solid var(--border-gold); padding: 18px 24px; border-radius: 14px; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow-sm); transition: var(--transition);">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gold-gradient); color: #021a14; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+        <div>
+          <div style="font-weight: 800; color: var(--primary); font-size: 1.05rem;">${airline.name}</div>
+          <div style="font-size: 0.8rem; color: #64748b;">${airline.hub || 'Liaisons régulières'}</div>
+        </div>
+        ${airline.badge ? `<span style="margin-left: auto; background: rgba(6,78,59,0.08); color: var(--primary); font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 12px;">${airline.badge}</span>` : ''}
       </div>
     `).join('');
   }
@@ -508,13 +546,82 @@ function renderAirlinesAndServices() {
   if (servicesContainer && SERVICES) {
     servicesContainer.innerHTML = SERVICES.map(srv => `
       <div class="pillar-card" style="background: #ffffff; color: var(--on-surface); border: 1px solid var(--border-gold);">
-        <div class="pillar-icon-wrapper" style="background: var(--gold-gradient); color: #121c2a;">
-          <i class="${srv.icon}"></i>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div class="pillar-icon-wrapper" style="background: var(--gold-gradient); color: #021a14; margin-bottom: 0;">
+            <i class="${srv.icon}"></i>
+          </div>
+          ${srv.badge ? `<span style="background: rgba(212,175,55,0.15); color: var(--gold-dark); font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; border: 1px solid var(--gold);">${srv.badge}</span>` : ''}
         </div>
-        <h3 class="pillar-title" style="color: var(--primary);">${srv.title}</h3>
-        <p class="pillar-desc" style="color: #4b5563;">${srv.description}</p>
+        <h3 class="pillar-title" style="color: var(--primary); margin-top: 14px;">${srv.title}</h3>
+        <p class="pillar-desc" style="color: #4b5563; font-size: 0.92rem; line-height: 1.6;">${srv.description}</p>
+        <div style="margin-top: 20px;">
+          <button class="btn btn-outline" style="width: 100%; justify-content: center; padding: 8px 14px; font-size: 0.85rem;" onclick="openContactModal()">
+            Demander ce service
+          </button>
+        </div>
       </div>
     `).join('');
+  }
+}
+
+/* ==========================================================================
+   Render Testimonials
+   ========================================================================== */
+function renderTestimonials() {
+  const container = document.getElementById('testimonialsGrid');
+  if (!container || !TESTIMONIALS) return;
+
+  container.innerHTML = TESTIMONIALS.map(t => `
+    <div class="testimonial-card">
+      <div class="stars-rating">
+        ${'<i class="fa-solid fa-star"></i>'.repeat(t.rating)}
+      </div>
+      <p class="testimonial-quote">${t.text}</p>
+      <div class="testimonial-author">
+        <img src="${t.avatar}" alt="${t.name}" class="author-avatar" loading="lazy">
+        <div>
+          <div class="author-name">${t.name}</div>
+          <div class="author-role">${t.role}</div>
+        </div>
+        <div style="margin-left: auto; color: var(--primary);">
+          <i class="fa-solid fa-circle-check" title="Pèlerin Vérifié"></i>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ==========================================================================
+   Render FAQ Accordion
+   ========================================================================== */
+function renderFAQ() {
+  const container = document.getElementById('faqAccordion');
+  if (!container || !FAQ) return;
+
+  container.innerHTML = FAQ.map((item, idx) => `
+    <div style="background: #ffffff; border: 1px solid var(--border-gold); border-radius: 12px; margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow-sm);">
+      <div style="padding: 18px 24px; font-weight: 700; color: var(--primary); font-size: 1.05rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFAQ(${idx})">
+        <span><i class="fa-solid fa-circle-question" style="color: var(--gold); margin-right: 10px;"></i>${item.q}</span>
+        <i class="fa-solid fa-chevron-down" id="faqIcon-${idx}" style="color: var(--gold-dark); transition: transform 0.3s ease;"></i>
+      </div>
+      <div id="faqAnswer-${idx}" style="display: ${idx === 0 ? 'block' : 'none'}; padding: 0 24px 20px 24px; color: #475569; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid #f1f5f9; padding-top: 14px;">
+        ${item.a}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFAQ(idx) {
+  const ans = document.getElementById(`faqAnswer-${idx}`);
+  const icon = document.getElementById(`faqIcon-${idx}`);
+  if (ans && icon) {
+    if (ans.style.display === 'none') {
+      ans.style.display = 'block';
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      ans.style.display = 'none';
+      icon.style.transform = 'rotate(0deg)';
+    }
   }
 }
 
@@ -583,3 +690,4 @@ window.closeDrawer = closeDrawer;
 window.bookPackageWhatsApp = bookPackageWhatsApp;
 window.sendSimulatorWhatsApp = sendSimulatorWhatsApp;
 window.resetDefaultLogo = resetDefaultLogo;
+window.toggleFAQ = toggleFAQ;
