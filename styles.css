@@ -142,17 +142,24 @@ h1, h2, h3, h4, .font-serif {
   background: rgba(253, 251, 247, 0.98);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-gold);
-  padding: 12px 0;
+  padding: 10px 0;
   box-shadow: var(--shadow-sm);
 }
 
-.nav-inner {
+.navbar .container, .nav-container {
+  max-width: 100%;
+  padding: 0 40px;
+  margin: 0;
+}
+
+.nav-inner, .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
-.brand {
+.brand, .brand-logo {
   display: flex;
   align-items: center;
   gap: 14px;
