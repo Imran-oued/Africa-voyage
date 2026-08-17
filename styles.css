@@ -155,27 +155,35 @@ h1, h2, h3, h4, .font-serif {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
 }
 
-.brand-icon {
-  width: 52px;
-  height: 52px;
+.brand-logo-img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
   border-radius: 50%;
-  background: var(--gold-gradient);
-  color: #021a14;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.18);
+  background: #ffffff;
+  padding: 2px;
+  border: 1.5px solid var(--gold);
+  transition: var(--transition);
   flex-shrink: 0;
+}
+
+.brand:hover .brand-logo-img {
+  transform: scale(1.06) rotate(2deg);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.65rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: var(--primary);
   line-height: 1.1;
@@ -184,6 +192,14 @@ h1, h2, h3, h4, .font-serif {
 
 .brand-title span {
   color: var(--gold-dark);
+}
+
+.brand-sub {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .nav-links {
