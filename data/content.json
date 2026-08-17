@@ -9,6 +9,7 @@
       "rccm": "BF OUA 2018 B 9910",
       "ifu": "00114097X",
       "licence": "Catégorie A",
+      "iata": "Agréée IATA (International Air Transport Association)",
       "agreation": "La 1ère agence agréée par l'État burkinabè pour le Hadj"
     },
     "location": {
@@ -195,9 +196,9 @@
     {
       "id": "billetterie",
       "title": "Billetterie Aérienne Toutes Destinations",
-      "badge": "Tarifs Négociés",
+      "badge": "Agence Agréée IATA",
       "icon": "fa-solid fa-plane-departure",
-      "description": "Émission instantanée et réservation de billets d'avion sur l'ensemble des compagnies régulières aux meilleurs tarifs du marché, avec options de modification et franchise bagages avantageuse."
+      "description": "Agence officiellement agréée IATA : émission instantanée et réservation directe de billets d'avion sur l'ensemble des compagnies régulières aux meilleurs tarifs du marché, avec options de modification et franchise bagages avantageuse."
     },
     {
       "id": "transfert-argent",

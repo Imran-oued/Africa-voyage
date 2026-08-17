@@ -24,6 +24,7 @@ let activeFilter = 'all';
 document.addEventListener('DOMContentLoaded', () => {
   initCurrencySelector();
   initFilterTabs();
+  initDrawerMenu();
   renderOffers();
   renderTestimonials();
   renderFaq();
@@ -294,5 +295,44 @@ function initContactForm() {
       alertBox.innerHTML = `<i class="fa-solid fa-check-circle"></i> Merci ${name}, votre message a été préparé pour WhatsApp ! Notre équipe vous répond immédiatement.`;
       form.reset();
     }
+  });
+}
+
+// Menu Tiroir / Drawer Navigation
+function initDrawerMenu() {
+  const openBtns = document.querySelectorAll('.menu-btn, .hamburger-btn');
+  const closeBtns = document.querySelectorAll('.drawer-close-btn');
+  const overlay = document.getElementById('menuDrawerOverlay') || document.getElementById('hamburgerDrawerOverlay');
+
+  if (!overlay) return;
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Fermer le menu lors du clic sur un lien interne
+  overlay.querySelectorAll('.drawer-menu-item a').forEach(link => {
+    link.addEventListener('click', () => {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
   });
 }

@@ -35,15 +35,6 @@
         </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#apropos" class="nav-link">À Propos</a></li>
-        <li><a href="#offres" class="nav-link">Forfaits Hadj & Omra</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#temoignages" class="nav-link">Témoignages</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
       <div class="nav-actions">
         <div style="display: flex; align-items: center; gap: 6px;">
           <select id="currencySelector" class="currency-select" aria-label="Devise">
@@ -52,9 +43,108 @@
             <option value="USD">USD ($)</option>
           </select>
         </div>
+        <button class="menu-btn" id="menuToggleBtn" aria-label="Ouvrir le menu">
+          <div class="menu-icon-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span>MENU</span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- ========================================================================
+       Slide-Out Drawer Menu (Navigation Complète)
+       ======================================================================== -->
+  <div class="menu-drawer-overlay" id="menuDrawerOverlay">
+    <aside class="menu-drawer">
+      <div class="drawer-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="/images/logo.png" alt="AFRICA VOYAGES SARL" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--gold); object-fit: contain;">
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 800; color: var(--primary); line-height: 1.1;">
+              AFRICA <span style="color: var(--gold-dark);">VOYAGES</span> SARL
+            </div>
+            <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">
+              Agréée par l'État & IATA
+            </div>
+          </div>
+        </div>
+        <button class="drawer-close-btn" aria-label="Fermer le menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <ul class="drawer-menu-list">
+        <li class="drawer-menu-item">
+          <a href="#offres">
+            <i class="fa-solid fa-kaaba"></i>
+            <span>Forfaits Hadj 2027 & Omra</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="guide.html">
+            <i class="fa-solid fa-book-quran"></i>
+            <span>Guide Pas à Pas du Pèlerin</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="#apropos">
+            <i class="fa-solid fa-award"></i>
+            <span>À Propos & 40+ Ans d'Expérience</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="#services">
+            <i class="fa-solid fa-passport"></i>
+            <span>Services (Visa, Billetterie IATA, Transferts)</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="#compagnies">
+            <i class="fa-solid fa-plane-departure"></i>
+            <span>Compagnies Partenaires IATA</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="#temoignages">
+            <i class="fa-solid fa-comments"></i>
+            <span>Témoignages des Pèlerins</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="#faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Questions Fréquentes (FAQ)</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="#contact">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Siège & Coordonnées à Ouagadougou</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-footer-card">
+        <div style="color: var(--gold); font-size: 0.95rem; font-weight: 800; margin-bottom: 4px;">
+          AFRICA VOYAGES SARL
+        </div>
+        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 8px; line-height: 1.4;">
+          Samandin secteur 05, en face station Total du Mogho Naaba, Ouagadougou.
+        </p>
+        <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 12px; line-height: 1.4;">
+          RCCM : BF OUA 2018 B 9910 • IFU : 00114097X<br>
+          Licence Catégorie A • <strong>Agréée IATA</strong>
+        </p>
+        <a href="https://wa.me/22673187417" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.85rem;">
+          <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
 
   <!-- ========================================================================
        Hero Section
@@ -109,9 +199,9 @@
             <div class="about-pillar-icon">
               <i class="fa-solid fa-award"></i>
             </div>
-            <h3 class="about-pillar-title">1ère Agence Agréée & Licence A</h3>
+            <h3 class="about-pillar-title">1ère Agence Agréée, Licence A & IATA</h3>
             <p class="about-pillar-desc">
-              Pionnier officiel reconnu par le Ministère du Hadj et les autorités d'Arabie Saoudite pour une sécurité juridique et logistique totale.
+              Pionnier agréé par l'État burkinabè et accrédité IATA pour une sécurité juridique, logistique et billetterie totale.
             </p>
           </div>
 
@@ -325,7 +415,8 @@
             <strong>Agréments & Mentions Légales :</strong><br>
             • RCCM : <code>BF OUA 2018 B 9910</code><br>
             • IFU : <code>00114097X</code><br>
-            • Licence : Catégorie A
+            • Licence : Catégorie A<br>
+            • Agrément IATA : <strong>Agence Agréée IATA</strong>
           </div>
         </div>
 
