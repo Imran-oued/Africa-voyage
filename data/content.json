@@ -48,7 +48,7 @@
       },
       {
         "title": "Prise en Charge Médicale & Logistique",
-        "desc": "Médecins dédiés, tentes climatisées à Mina/Arafat, hébergements de confort proches du Haram.",
+        "desc": "Médecins dédiés, tentes climatisées à Mina/Arafat, hébergements de confort de qualité.",
         "icon": "fa-solid fa-hand-holding-heart"
       }
     ]
@@ -94,9 +94,7 @@
       "rating": 5.0,
       "reviewsCount": 348,
       "makkahHotel": "Hôtels 4★ & 5★ de référence",
-      "makkahDistance": "Proximité immédiate du parvis du Haram",
-      "madinahHotel": "Hôtels de prestige proches Rawdah",
-      "madinahDistance": "150m de la Mosquée du Prophète",
+      "madinahHotel": "Hôtels de prestige",
       "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
       "conditions": "La pièce d'identité (CNIB) ou le passeport en cours de validité suffit pour la pré-inscription.",
       "inclusions": [
@@ -129,10 +127,8 @@
       "basePriceFCFA": 1300000,
       "rating": 4.9,
       "reviewsCount": 215,
-      "makkahHotel": "Hôtels de grand confort face au Haram",
-      "makkahDistance": "100m à 250m de la Kaaba",
-      "madinahHotel": "Hôtels de qualité face à l'Esplanade",
-      "madinahDistance": "150m de la Porte des Femmes et des Hommes",
+      "makkahHotel": "Hôtels de grand confort",
+      "madinahHotel": "Hôtels de qualité",
       "image": "https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=1200&q=80",
       "conditions": "Passeport en cours de validité (> 6 mois) et photos d'identité.",
       "inclusions": [
@@ -162,10 +158,8 @@
       "basePriceFCFA": 1800000,
       "rating": 5.0,
       "reviewsCount": 180,
-      "makkahHotel": "Hôtels de prestige avec vue directe Haram",
-      "makkahDistance": "Accès direct au parvis de la Kaaba",
-      "madinahHotel": "Hôtels 5★ proches Rawdah",
-      "madinahDistance": "Face à la Sainte Mosquée",
+      "makkahHotel": "Hôtels de prestige",
+      "madinahHotel": "Hôtels 5★",
       "image": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=80",
       "conditions": "Places très convoitées. Inscription anticipée vivement recommandée.",
       "inclusions": [
@@ -218,7 +212,7 @@
       "name": "El Hadj Amadou Ouédraogo",
       "role": "Pèlerin Hadj (Ouagadougou)",
       "rating": 5,
-      "text": "J'ai effectué mon Hadj avec Africa Voyages SARL. La promesse a été tenue de A à Z : hôtel juste en face du Haram, tentes de Mina climatisées et surtout les conseils de nos guides en Mooré qui nous ont évité tout égarement.",
+      "text": "J'ai effectué mon Hadj avec Africa Voyages SARL. La promesse a été tenue de A à Z : hôtel de grand confort, tentes de Mina climatisées et surtout les conseils de nos guides en Mooré qui nous ont évité tout égarement.",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
     },
     {

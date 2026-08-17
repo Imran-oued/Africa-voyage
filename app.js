@@ -106,17 +106,6 @@ export function renderOffers() {
             <span><i class="fa-solid fa-plane-departure"></i> Ouagadougou</span>
           </div>
 
-          ${pkg.conditions ? `
-            <div class="offer-notice">
-              <i class="fa-solid fa-circle-check"></i> ${pkg.conditions}
-            </div>
-          ` : ''}
-
-          <div class="offer-hotels">
-            <div class="hotel-line"><i class="fa-solid fa-hotel text-gold"></i> <strong>Makkah :</strong> ${pkg.makkahDistance}</div>
-            <div class="hotel-line"><i class="fa-solid fa-mosque text-gold"></i> <strong>Médine :</strong> ${pkg.madinahDistance}</div>
-          </div>
-
           <ul class="offer-features">
             ${pkg.inclusions.slice(0, 4).map(inc => `
               <li class="offer-feature-item">
