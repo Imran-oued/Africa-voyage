@@ -134,21 +134,26 @@ h1, h2, h3, h4, .font-serif {
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
 }
 
-/* Navbar */
+/* Navbar - Always Sticky & Fixed at Top */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(253, 251, 247, 0.98);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-gold);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(253, 251, 247, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid var(--border-gold);
   padding: 10px 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 20px rgba(6, 78, 59, 0.08);
+  transition: var(--transition);
 }
 
 .navbar .container, .nav-container {
   max-width: 100%;
-  padding: 0 40px;
+  padding: 0 32px;
   margin: 0;
 }
 
@@ -1561,16 +1566,69 @@ html[lang="ar"] .about-pillar-title {
   left: 18px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* Responsive Optimization */
+@media (max-width: 992px) {
+  .navbar .container, .nav-container {
+    padding: 0 20px;
+  }
+  .brand-title, .brand-name {
+    font-size: 1.5rem;
+  }
+  .brand-logo-img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 0;
+  }
+  .navbar .container, .nav-container {
+    padding: 0 16px;
+  }
+  .brand-logo-img {
+    width: 48px;
+    height: 48px;
+  }
+  .brand-title, .brand-name {
+    font-size: 1.22rem;
+  }
+  .brand-sub {
+    font-size: 0.65rem;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  .lang-select, .currency-select {
+    padding: 5px 8px;
+    font-size: 0.78rem;
+  }
+  .menu-btn, .hamburger-btn {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .nav-links {
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .currency-select {
+    display: none; /* Keep navbar clean & prioritize Menu Button on very small screens */
+  }
+  .brand-sub {
+    display: none;
+  }
+  .brand-title, .brand-name {
+    font-size: 1.1rem;
+  }
+}
+
 
