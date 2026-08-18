@@ -181,12 +181,12 @@ export function renderOffers() {
 
     if (currentLanguage === 'en') {
       if (pkg.id === 'hadj-2027') {
-        displayTitle = "Hajj 2027 – Official Pre-Registration (4★ & 5★)";
+        displayTitle = "Hajj 2027 – Official Pre-Registration (3★ & 4★)";
         displayTag = "2027 Pre-Registration";
         displayDuration = "30 Days";
         inclusionsList = [
           "Round-trip scheduled flight from Ouagadougou",
-          "4★ & 5★ luxury hotels near the Holy Mosques",
+          "3★ & 4★ comfortable hotels near the Holy Mosques",
           "Official Saudi Hajj visa included",
           "Air-conditioned VIP tents at Mina & Arafat"
         ];
@@ -196,7 +196,7 @@ export function renderOffers() {
         displayDuration = "15 Days";
         inclusionsList = [
           "Direct or 1-stop scheduled flight",
-          "Close-proximity hotel near Haram",
+          "3★ & 4★ close-proximity hotel near Haram",
           "Saudi Umrah visa included",
           "Ziyarat guided visits in Mecca and Medina"
         ];
@@ -206,7 +206,7 @@ export function renderOffers() {
         displayDuration = "15 Days";
         inclusionsList = [
           "Scheduled flight Ouagadougou ➔ Jeddah",
-          "5★ luxury hotel facing Masjid Al-Haram",
+          "3★ & 4★ quality hotel close to Masjid Al-Haram",
           "Full Iftar & Suhoor catering",
           "24/7 Spiritual guidance by Islamic scholars"
         ];
@@ -214,12 +214,12 @@ export function renderOffers() {
       displayDeparture = "Ouagadougou";
     } else if (currentLanguage === 'ar') {
       if (pkg.id === 'hadj-2027') {
-        displayTitle = "حج 2027 – التسجيل المسبق الرسمي (فنادق 4 و 5 نجوم)";
+        displayTitle = "حج 2027 – التسجيل المسبق الرسمي (فنادق 3 و 4 نجوم)";
         displayTag = "تسجيل مسبق 2027";
         displayDuration = "30 يوماً";
         inclusionsList = [
           "تذكرة طيران ذهاباً وإياباً من واغادوغو",
-          "إقامة في فنادق 4 و 5 نجوم قريبة من الحرمين",
+          "إقامة في فنادق 3 و 4 نجوم مريحة وقريبة من الحرمين",
           "تأشيرة الحج الرسمية المعتمدة",
           "مخيمات VIP مكيفة في مشعري منى وعرفات"
         ];
@@ -229,7 +229,7 @@ export function renderOffers() {
         displayDuration = "15 يوماً";
         inclusionsList = [
           "رحلات طيران منتظمة ومريحة",
-          "فنادق راقية على مقربة من الحرمين الشريفين",
+          "فنادق 3 و 4 نجوم راقية على مقربة من الحرمين الشريفين",
           "تأشيرة العمرة والتأمين الصحي الشامل",
           "برنامج المزارات والمعالم التاريخية بمكة والمدينة"
         ];
@@ -239,7 +239,7 @@ export function renderOffers() {
         displayDuration = "15 يوماً";
         inclusionsList = [
           "طيران مباشر / مريح واغادوغو ➔ جدة",
-          "فنادق 5 نجوم مطلة وقريبة من الحرم المكي",
+          "فنادق 3 و 4 نجوم مريحة وقريبة من الحرم المكي",
           "وجبات إفطار وسحور فاخرة يومياً",
           "إرشاد ديني مستمر ومرافقة أطباء على مدار 24 ساعة"
         ];

@@ -44,8 +44,8 @@ export const TRANSLATIONS = {
     pillar2Desc: "Séminaires préparatoires réguliers et accompagnement personnalisé aux Lieux Saints en Mooré, Dioula, Français et Arabe.",
     pillar3Title: "Assistance Médicale 24/7",
     pillar3Desc: "Présence constante d'un corps médical dédié pour veiller sur la santé et le bien-être de nos pèlerins à La Mecque, Médine, Mina et Arafat.",
-    pillar4Title: "Hébergements 4★ & 5★ Proches",
-    pillar4Desc: "Sélection rigoureuse des hôtels les plus confortables à proximité immédiate du Masjid Al-Haram et du Masjid An-Nabawi.",
+    pillar4Title: "Hébergements 3★ & 4★ Proches",
+    pillar4Desc: "Sélection rigoureuse des hôtels les plus confortables (3 et 4 étoiles) à proximité immédiate du Masjid Al-Haram et du Masjid An-Nabawi.",
 
     // Offres
     offersTag: "Tarifs & Modalités",
@@ -118,7 +118,7 @@ export const TRANSLATIONS = {
       },
       {
         q: "Quels services sont inclus dans vos forfaits Hadj et Omra ?",
-        a: "Nos forfaits comprennent le billet d'avion aller-retour sur vols réguliers, l'obtention du visa officiel, l'hébergement en hôtels 4★ et 5★ proches des Lieux Saints, la pension complète ou demi-pension, les transferts en bus VIP climatisés, l'encadrement par des Oulémas éminents et l'assistance médicale 24h/24."
+        a: "Nos forfaits comprennent le billet d'avion aller-retour sur vols réguliers, l'obtention du visa officiel, l'hébergement en hôtels 3★ et 4★ proches des Lieux Saints, la pension complète ou demi-pension, les transferts en bus VIP climatisés, l'encadrement par des Oulémas éminents et l'assistance médicale 24h/24."
       },
       {
         q: "Où se situe l'agence AFRICA VOYAGES SARL à Ouagadougou ?",
@@ -206,8 +206,8 @@ export const TRANSLATIONS = {
     pillar2Desc: "Regular preparatory workshops and personalized support in the Holy Sites in Mooré, Dioula, French, and Arabic.",
     pillar3Title: "24/7 Dedicated Medical Support",
     pillar3Desc: "Continuous presence of qualified medical personnel to safeguard our pilgrims' health across Mecca, Medina, Mina, and Arafat.",
-    pillar4Title: "4★ & 5★ Close-Proximity Hotels",
-    pillar4Desc: "Carefully selected premium accommodations within walking distance of Masjid Al-Haram and Masjid An-Nabawi.",
+    pillar4Title: "3★ & 4★ Close-Proximity Hotels",
+    pillar4Desc: "Carefully selected quality 3-star and 4-star accommodations within walking distance of Masjid Al-Haram and Masjid An-Nabawi.",
 
     // Offers
     offersTag: "Rates & Details",
@@ -280,7 +280,7 @@ export const TRANSLATIONS = {
       },
       {
         q: "What services are included in your Hajj and Umrah packages?",
-        a: "Our packages include round-trip flights on scheduled airlines, official visa processing, 4★ and 5★ hotel accommodations near the Holy Mosques, full or half board meals, VIP air-conditioned bus transfers, scholar guidance, and 24/7 medical assistance."
+        a: "Our packages include round-trip flights on scheduled airlines, official visa processing, 3★ and 4★ hotel accommodations near the Holy Mosques, full or half board meals, VIP air-conditioned bus transfers, scholar guidance, and 24/7 medical assistance."
       },
       {
         q: "Where is AFRICA VOYAGES SARL located in Ouagadougou?",
@@ -368,8 +368,8 @@ export const TRANSLATIONS = {
     pillar2Desc: "ندوات تأهيلية ومرافقة مستمرة في المشاعر المقدسة باللغات: المورية، الديولا، الفرنسية والعربية.",
     pillar3Title: "رعاية طبية متكاملة 24/7",
     pillar3Desc: "طاقم طبي متخصص يرافق الحجاج لسلامتهم وصحتهم في مكة المكرمة، المدينة المنورة، منى وعرفات.",
-    pillar4Title: "فنادق 4 و 5 نجوم قريبة من الحرمين",
-    pillar4Desc: "اختيار دقيق لأرقى الفنادق القريبة جداً من المسجد الحرام والمسجد النبوي الشريف لتسهيل أداء الصلوات.",
+    pillar4Title: "فنادق 3 و 4 نجوم قريبة من الحرمين",
+    pillar4Desc: "اختيار دقيق لفنادق 3 و 4 نجوم مريحة وقريبة جداً من المسجد الحرام والمسجد النبوي الشريف لتسهيل أداء الصلوات.",
 
     // Offers
     offersTag: "الأسعار والتفاصيل",
@@ -442,7 +442,7 @@ export const TRANSLATIONS = {
       },
       {
         q: "ما هي الخدمات المشمولة في باقات الحج والعمرة ؟",
-        a: "تشمل باقاتنا تذاكر الطيران ذهاباً وإياباً، التأشيرة الرسمية، الإقامة في فنادق 4 و 5 نجوم قريبة من الحرمين، الوجبات الغذائية، التنقلات في حافلات VIP مكيفة، الإرشاد الديني باللغات المحلية والرعاية الطبية 24/7."
+        a: "تشمل باقاتنا تذاكر الطيران ذهاباً وإياباً، التأشيرة الرسمية، الإقامة في فنادق 3 و 4 نجوم قريبة من الحرمين، الوجبات الغذائية، التنقلات في حافلات VIP مكيفة، الإرشاد الديني باللغات المحلية والرعاية الطبية 24/7."
       },
       {
         q: "أين يقع مقر وكالة أفريكا السفريات في واغادوغو ؟",
