@@ -3,38 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forfaits Hadj 2027 & Omra (2 départs/mois) | AFRICA VOYAGES SARL Ouagadougou</title>
-  <meta name="description" content="Découvrez les offres et tarifs officiels pour le Hadj 2027 (328 500 FCFA pré-inscription) et la Omra (2 départs par mois à 1 300 000 FCFA et Ramadan à 1 800 000 FCFA) avec AFRICA VOYAGES SARL, 1ère agence agréée au Burkina Faso.">
+  <title>Portail des Forfaits Hadj 2027 & Omra | AFRICA VOYAGES SARL Ouagadougou</title>
+  <meta name="description" content="Portail officiel des offres et tarifs pour le Hadj 2027 (328 500 FCFA pré-inscription) et la Omra (2 départs par mois et Ramadan) avec AFRICA VOYAGES SARL, 1ère agence agréée au Burkina Faso et agréée IATA.">
   
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/logo.png">
 
+  <!-- Google Fonts (Latin & Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="pattern-bg">
+<body>
 
-  <!-- Top Bar -->
-  <aside class="top-bar">
-    <div class="container top-bar-content">
-      <div class="top-info-group">
-        <div class="top-info-item">
-          <i class="fa-solid fa-certificate"></i>
-          <span><strong>AFRICA VOYAGES SARL :</strong> La 1ère agence agréée par l'État burkinabè • +40 ans d'expérience</span>
+  <!-- ========================================================================
+       Header / Navbar avec Logo Officiel AFRICA VOYAGES SARL
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img src="/images/logo.png" alt="Logo AFRICA VOYAGES SARL" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brandName">AFRICA <span>VOYAGES</span> SARL</span>
+          <span class="brand-sub" data-i18n="brandSub">La 1ère agence agréée par l'État burkinabè</span>
         </div>
-        <div class="top-info-item">
-          <i class="fa-solid fa-phone"></i>
-          <span>Ouagadougou : +226 25 31 06 77 | +226 70 24 55 74</span>
-        </div>
-      </div>
-      <div class="top-actions">
-        <div class="prayer-pill" id="prayerTimeIndicator">
-          <i class="fa-solid fa-mosque"></i>
-          <span>Makkah: Prochaine prière Dhuhr</span>
-        </div>
+      </a>
+
+      <div class="nav-actions">
+        <!-- Sélecteur de Langue -->
         <div style="display: flex; align-items: center; gap: 6px;">
           <select class="lang-select" aria-label="Langue">
             <option value="fr" selected>🇫🇷 Français</option>
@@ -42,61 +44,47 @@
             <option value="ar">🇸🇦 العربية</option>
           </select>
         </div>
+
+        <!-- Sélecteur de Devise -->
         <div style="display: flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-coins" style="color: var(--gold); font-size: 13px;"></i>
-          <select class="currency-selector" aria-label="Sélection de devise">
-            <option value="FCFA" selected>Devise : FCFA (XOF)</option>
-            <option value="EUR">Devise : EUR (€)</option>
-            <option value="USD">Devise : USD ($)</option>
+          <select id="currencySelector" class="currency-select" aria-label="Devise">
+            <option value="FCFA" selected>FCFA</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="USD">USD ($)</option>
           </select>
         </div>
-      </div>
-    </div>
-  </aside>
 
-  <!-- Navbar with Hamburger -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-logo-img-wrapper">
-          <img src="/images/logo.png" alt="AFRICA VOYAGES SARL" class="brand-logo-img">
-        </div>
-        <div class="brand-text-block">
-          <span class="brand-name" data-i18n="brandName">AFRICA <span>VOYAGES</span> SARL</span>
-          <span class="brand-sub" data-i18n="brandSub">La 1ère agence agréée par l'État burkinabè</span>
-        </div>
-      </a>
-
-      <div class="nav-actions-group">
-        <button class="btn btn-primary" onclick="openContactModal()">
-          <i class="fa-solid fa-file-invoice-dollar"></i> Devis Gratuit
-        </button>
-        <!-- Hamburger Menu Button -->
-        <button class="hamburger-btn" aria-label="Ouvrir le menu">
-          <div class="hamburger-icon-lines">
+        <!-- Bouton Menu -->
+        <button class="menu-btn" id="menuToggleBtn" aria-label="Ouvrir le menu">
+          <div class="menu-icon-lines">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <span>MENU</span>
+          <span data-i18n="menu">MENU</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hamburger Drawer -->
-  <div class="hamburger-drawer-overlay" id="hamburgerDrawerOverlay">
-    <aside class="hamburger-drawer">
+  <!-- ========================================================================
+       Slide-Out Drawer Menu (Navigation Complète)
+       ======================================================================== -->
+  <div class="menu-drawer-overlay" id="menuDrawerOverlay">
+    <aside class="menu-drawer">
       <div class="drawer-header">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div class="brand-logo-img-wrapper" style="width: 40px; height: 40px;">
-            <img src="/images/logo.png" alt="Logo" class="brand-logo-img">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="/images/logo.png" alt="AFRICA VOYAGES SARL" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--gold); object-fit: contain;">
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 800; color: var(--primary); line-height: 1.1;">
+              AFRICA <span style="color: var(--gold-dark);">VOYAGES</span> SARL
+            </div>
+            <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">
+              Agréée par l'État & IATA
+            </div>
           </div>
-          <span style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff;">
-            AFRICA <span style="color: var(--gold);">VOYAGES</span>
-          </span>
         </div>
-        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fermer le menu">
+        <button class="drawer-close-btn" aria-label="Fermer le menu">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -105,98 +93,153 @@
         <li class="drawer-menu-item">
           <a href="index.html">
             <i class="fa-solid fa-house"></i>
-            <span>Accueil</span>
+            <span data-i18n="navHome">Accueil & Présentation</span>
           </a>
         </li>
         <li class="drawer-menu-item">
-          <a href="offres.html" class="active">
+          <a href="offres.html" style="color: var(--gold); font-weight: 800;">
             <i class="fa-solid fa-kaaba"></i>
-            <span>Forfaits Hadj 2027 & Omra</span>
+            <span data-i18n="navOffers">Portail des Forfaits Hadj 2027 & Omra</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="guide.html">
             <i class="fa-solid fa-book-quran"></i>
-            <span>Guide Pratique du Pèlerin</span>
+            <span data-i18n="navGuide">Guide Pas à Pas du Pèlerin</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#apropos">
+            <i class="fa-solid fa-award"></i>
+            <span data-i18n="navAbout">À Propos & 40+ Ans d'Expérience</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="index.html#services">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Services (Visa, Billetterie, Transfert)</span>
+            <i class="fa-solid fa-passport"></i>
+            <span data-i18n="navServices">Services (Visa, Billetterie IATA, Transferts)</span>
           </a>
         </li>
         <li class="drawer-menu-item">
           <a href="index.html#compagnies">
             <i class="fa-solid fa-plane-departure"></i>
-            <span>Compagnies Partenaires</span>
+            <span data-i18n="navAirlines">Compagnies Partenaires IATA</span>
           </a>
         </li>
         <li class="drawer-menu-item">
-          <a href="index.html#agence">
+          <a href="index.html#temoignages">
+            <i class="fa-solid fa-comments"></i>
+            <span data-i18n="navTestimonials">Témoignages des Pèlerins</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span data-i18n="navFaq">Questions Fréquentes (FAQ)</span>
+          </a>
+        </li>
+        <li class="drawer-menu-item">
+          <a href="index.html#contact">
             <i class="fa-solid fa-location-dot"></i>
-            <span>Siège à Ouagadougou (Samandin)</span>
+            <span data-i18n="navContact">Siège & Coordonnées à Ouagadougou</span>
           </a>
         </li>
       </ul>
 
+      <div style="margin-bottom: 18px;">
+        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase;">
+          Langue / Language / اللغة :
+        </label>
+        <select class="lang-select" style="width: 100%;" aria-label="Langue Mobile">
+          <option value="fr" selected>🇫🇷 Français</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="ar">🇸🇦 العربية</option>
+        </select>
+      </div>
+
       <div class="drawer-footer-card">
-        <strong style="color: var(--gold); display: block; font-size: 0.95rem; margin-bottom: 4px;">
+        <div style="color: var(--gold); font-size: 0.95rem; font-weight: 800; margin-bottom: 4px;">
           AFRICA VOYAGES SARL
-        </strong>
-        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 8px;">
+        </div>
+        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 8px; line-height: 1.4;">
           Samandin secteur 05, en face station Total du Mogho Naaba, Ouagadougou.
         </p>
-        <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px;">
-          Tél : +226 25 31 06 77 | WhatsApp : +226 73 18 74 17
+        <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 12px; line-height: 1.4;">
+          RCCM : BF OUA 2018 B 9910 • IFU : 00114097X<br>
+          Licence Catégorie A • <strong>Agréée IATA</strong>
         </p>
-        <a href="https://wa.me/22673187417" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-          <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
-        </a>
+        <button type="button" onclick="document.getElementById('menuDrawerOverlay').classList.remove('active'); document.body.style.overflow=''; openWhatsAppModal();" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.85rem; border: none; cursor: pointer;">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappActionBtn">Échanger sur WhatsApp</span>
+        </button>
       </div>
     </aside>
   </div>
 
-  <!-- Page Header -->
-  <section class="section" style="padding-top: 130px; background: linear-gradient(135deg, rgba(6,78,59,0.95), rgba(4,47,36,0.98)); color: #fff; text-align: center;">
+  <!-- ========================================================================
+       Portal Header Banner
+       ======================================================================== -->
+  <section class="section" style="padding-top: 130px; padding-bottom: 50px; background: linear-gradient(135deg, rgba(6,78,59,0.95), rgba(4,47,36,0.98)); color: #fff; text-align: center;">
     <div class="container">
-      <div class="hero-badge-container" style="margin: 0 auto 16px auto;">
-        <i class="fa-solid fa-kaaba"></i>
-        <span>Catalogue Officiel AFRICA VOYAGES SARL</span>
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212,175,55,0.2); border: 1px solid var(--border-gold); color: #fff; padding: 6px 18px; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;">
+        <i class="fa-solid fa-kaaba text-gold"></i>
+        <span>Portail Officiel • AFRICA VOYAGES SARL</span>
       </div>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: 2.6rem; color: #fff; margin-bottom: 14px;">
-        Forfaits Hadj 2027 & Omra <span style="color: var(--gold);">(2 départs / mois)</span>
+
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 2.7rem; color: #fff; margin-bottom: 14px; line-height: 1.2;">
+        Portail des Forfaits <span style="color: var(--gold);">Hadj 2027 & Omra</span>
       </h1>
-      <p style="max-width: 780px; margin: 0 auto 24px auto; color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;">
-        Consultez l'ensemble des formules proposées par la 1ère agence agréée au Burkina Faso. Pré-inscriptions simplifiées avec CNIB ou Passeport, hébergements de qualité et accompagnement religieux dévoué.
+
+      <p style="max-width: 800px; margin: 0 auto 24px auto; color: #cbd5e1; font-size: 1.12rem; line-height: 1.6;">
+        Consultez l'ensemble des formules officielles proposées par la 1ère agence agréée au Burkina Faso. Pré-inscriptions simplifiées avec CNIB ou Passeport, hébergements de prestige 4★ & 5★ et accompagnement religieux par nos Oulémas.
       </p>
-    </div>
-  </section>
 
-  <!-- Filter Pills & Packages Grid -->
-  <section class="section" style="padding-top: 40px;">
-    <div class="container">
-      <div class="filter-pills-container">
-        <button class="filter-pill active" data-filter="all">Tous les forfaits</button>
-        <button class="filter-pill" data-filter="hadj">Hadj 2027 (Pré-inscription)</button>
-        <button class="filter-pill" data-filter="omra">Omra (2 départs / mois)</button>
-        <button class="filter-pill" data-filter="ramadan">Omra Ramadan</button>
-      </div>
-
-      <div class="packages-grid" id="packagesGrid">
-        <!-- Rendered dynamically by app.js from data/content.json -->
+      <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1);">
+          <i class="fa-solid fa-house"></i> <span>Retour à l'Accueil</span>
+        </a>
+        <button type="button" class="btn btn-whatsapp" onclick="openWhatsAppModal()">
+          <i class="fa-brands fa-whatsapp"></i> <span>Assistance Inscription</span>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Detailed Comparison Table -->
-  <section class="section" style="background: var(--surface); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
+  <!-- ========================================================================
+       Section : Les Forfaits avec Filtres Dynamiques
+       ======================================================================== -->
+  <section class="section" style="background: var(--surface-alt); padding-top: 50px;">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle">Transparence Totale</div>
+      <div class="section-head">
+        <span class="section-tag" data-i18n="offersTag">Tarifs & Modalités</span>
+        <h2 class="section-title" data-i18n="offersTitle">Nos Forfaits Hadj & Omra</h2>
+        <p class="section-subtitle" data-i18n="offersSubtitle">
+          Sélectionnez un forfait pour consulter le programme complet ou réserver directement via WhatsApp.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-tab-btn active" data-filter="all" data-i18n="tabAll">Tous les Forfaits</button>
+        <button class="filter-tab-btn" data-filter="hadj" data-i18n="tabHadj">Hadj 2027</button>
+        <button class="filter-tab-btn" data-filter="omra" data-i18n="tabOmra">Omra (Standard & Ramadan)</button>
+      </div>
+
+      <div class="offers-grid" id="packagesGrid">
+        <!-- Rendu dynamique par app.js à partir de data/content.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Detailed Comparison Table
+       ======================================================================== -->
+  <section class="section" style="background: #ffffff; border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Transparence & Qualité</span>
         <h2 class="section-title">Tableau Comparatif des Prestations</h2>
-        <p class="section-desc">
-          Comparez les détails de nos offres officielles pour choisir la formule la plus adaptée à vos attentes.
+        <p class="section-subtitle">
+          Comparez les détails de nos offres officielles pour choisir la formule la plus adaptée à votre voyage spirituel.
         </p>
       </div>
 
@@ -213,9 +256,9 @@
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 14px 16px; font-weight: 600; color: var(--primary);">Tarif de Référence</td>
-              <td style="padding: 14px 16px; font-weight: 700; color: var(--gold-dark);" class="table-price-cell" data-amount="328500">328 500 FCFA (Avance)</td>
-              <td style="padding: 14px 16px; font-weight: 700; color: var(--primary);" class="table-price-cell" data-amount="1300000">1 300 000 FCFA</td>
-              <td style="padding: 14px 16px; font-weight: 700; color: var(--primary);" class="table-price-cell" data-amount="1800000">1 800 000 FCFA</td>
+              <td style="padding: 14px 16px; font-weight: 700; color: var(--gold-dark);">328 500 FCFA (Avance)</td>
+              <td style="padding: 14px 16px; font-weight: 700; color: var(--primary);">1 300 000 FCFA</td>
+              <td style="padding: 14px 16px; font-weight: 700; color: var(--primary);">1 800 000 FCFA</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
               <td style="padding: 14px 16px; font-weight: 600;">Pièce Requise</td>
@@ -231,15 +274,15 @@
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
               <td style="padding: 14px 16px; font-weight: 600;">Vols & Compagnies</td>
-              <td style="padding: 14px 16px;">Vols officiels charters & réguliers</td>
-              <td style="padding: 14px 16px;">Vols réguliers (Ethiopian, Turkish, RAM...)</td>
+              <td style="padding: 14px 16px;">Vols charters & réguliers IATA</td>
+              <td style="padding: 14px 16px;">Vols réguliers sélectionnés</td>
               <td style="padding: 14px 16px;">Vols réguliers sélectionnés</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 14px 16px; font-weight: 600;">Hôtels Makkah</td>
+              <td style="padding: 14px 16px; font-weight: 600;">Hôtels Makkah & Madinah</td>
               <td style="padding: 14px 16px;">Hôtels 4★ / 5★ proches Haram</td>
-              <td style="padding: 14px 16px;">Hôtels de standing face au Haram</td>
-              <td style="padding: 14px 16px;">Hôtels de prestige proches Haram</td>
+              <td style="padding: 14px 16px;">Hôtels de standing proches Haram</td>
+              <td style="padding: 14px 16px;">Hôtels 5★ de prestige proches Haram</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
               <td style="padding: 14px 16px; font-weight: 600;">Encadrement Religieux</td>
@@ -248,20 +291,20 @@
               <td style="padding: 14px 16px;">Guides spirituels & Veillées</td>
             </tr>
             <tr>
-              <td style="padding: 14px 16px; font-weight: 600;">Action Immédiate</td>
+              <td style="padding: 14px 16px; font-weight: 600;">Réservation Directe</td>
               <td style="padding: 14px 16px;">
-                <button class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('hadj-2027')">
-                  Pré-inscription
+                <button type="button" class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="openWhatsAppModal('je souhaite me pré-inscrire pour le Hadj 2027 (328 500 FCFA)')">
+                  <i class="fa-brands fa-whatsapp"></i> Pré-inscription
                 </button>
               </td>
               <td style="padding: 14px 16px;">
-                <button class="btn btn-outline" style="padding: 8px 14px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('omra-standard')">
-                  Réserver Omra
+                <button type="button" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.8rem;" onclick="openWhatsAppModal('je souhaite réserver pour la Omra Standard (1 300 000 FCFA)')">
+                  <i class="fa-brands fa-whatsapp"></i> Réserver Omra
                 </button>
               </td>
               <td style="padding: 14px 16px;">
-                <button class="btn btn-outline" style="padding: 8px 14px; font-size: 0.8rem;" onclick="bookPackageWhatsApp('omra-ramadan')">
-                  Réserver Ramadan
+                <button type="button" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.8rem;" onclick="openWhatsAppModal('je souhaite réserver pour la Omra Ramadan (1 800 000 FCFA)')">
+                  <i class="fa-brands fa-whatsapp"></i> Réserver Ramadan
                 </button>
               </td>
             </tr>
@@ -271,13 +314,15 @@
     </div>
   </section>
 
-  <!-- Photo Gallery Section -->
-  <section class="section">
+  <!-- ========================================================================
+       Photo Gallery Section
+       ======================================================================== -->
+  <section class="section" style="background: var(--surface-alt);">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle">Immersion Spirituelle</div>
+      <div class="section-head">
+        <span class="section-tag">Immersion Spirituelle</span>
         <h2 class="section-title">Les Lieux Saints en Images</h2>
-        <p class="section-desc">
+        <p class="section-subtitle">
           Admirez la majesté de la Sainte Kaaba, de la Mosquée Al-Haram et du Masjid Nabawi à Médine.
         </p>
       </div>
@@ -298,86 +343,32 @@
         <div style="border-radius: 14px; overflow: hidden; position: relative; height: 260px; box-shadow: var(--shadow-sm);">
           <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80" alt="Tawaf autour de la Kaaba" style="width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; font-size: 0.9rem; font-weight: 600;">
-            Ferveur spirituelle et Tawaf nocturne
+            Tawaf & Prières aux Lieux Saints
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo-block">
-            <span class="brand-name" style="color: #fff; font-size: 1.4rem;">AFRICA <span style="color: var(--gold);">VOYAGES</span></span>
-            <span class="brand-sub" style="color: #cbd5e1; display: block; font-size: 0.8rem;">SARL • La 1ère agence agréée par l'État burkinabè</span>
-          </div>
-          <p style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-bottom: 16px;">
-            Plus de 40 ans d'expertise dans l'organisation du Hadj et de la Omra. Assistance visa, billetterie internationale et transferts d'argent.
-          </p>
-          <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5;">
-            RCCM: BF OUA 2018 B 9910 • IFU: 00114097X<br>
-            Licence Catégorie A • <strong>Agréée IATA</strong>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Programmes</h4>
-          <ul class="footer-links">
-            <li><a href="offres.html">Hadj 2027 (Pré-inscriptions)</a></li>
-            <li><a href="offres.html">Omra (2 départs / mois)</a></li>
-            <li><a href="offres.html">Omra Ramadan</a></li>
-            <li><a href="guide.html">Guide Pas à Pas</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Services & Compagnies</h4>
-          <ul class="footer-links">
-            <li><a href="index.html#services">Assistance Visa</a></li>
-            <li><a href="index.html#services">Billetterie Toutes Destinations</a></li>
-            <li><a href="index.html#services">Transfert d'Argent</a></li>
-            <li><a href="index.html#compagnies">Ethiopian • Turkish • RAM • Air Burkina</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Siège à Ouagadougou</h4>
-          <p style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.5; margin-bottom: 10px;">
-            <i class="fa-solid fa-location-dot" style="color: var(--gold);"></i> Samandin secteur 05, en face station Total du Mogho Naaba.
-          </p>
-          <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 6px;">
-            <i class="fa-solid fa-phone" style="color: var(--gold);"></i> +226 25 31 06 77 / +226 70 24 55 74
-          </p>
-          <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 12px;">
-            <i class="fa-solid fa-envelope" style="color: var(--gold);"></i> africavoyagebf74@gmail.com
-          </p>
-          <a href="https://wa.me/22673187417" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp : +226 73 18 74 17
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          © 2026 <strong>AFRICA VOYAGES SARL</strong>. Tous droits réservés.
-        </div>
-        <div style="display: flex; gap: 16px;">
-          <a href="index.html" style="color: #94a3b8; text-decoration: none;">Accueil</a>
-          <a href="offres.html" style="color: #94a3b8; text-decoration: none;">Offres</a>
-          <a href="guide.html" style="color: #94a3b8; text-decoration: none;">Guide</a>
-        </div>
-      </div>
+      <p data-i18n="footerCopyright">© 2026 <strong>AFRICA VOYAGES SARL</strong>. La 1ère agence agréée par l'État burkinabè pour le Hadj • Samandin secteur 05, Ouagadougou.</p>
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Trigger -->
+  <button type="button" class="floating-whatsapp" id="floatingWhatsAppBtn" onclick="openWhatsAppModal()" aria-label="WhatsApp Villes">
+    <i class="fa-brands fa-whatsapp"></i>
+  </button>
+
   <!-- Itinerary Modal -->
-  <div class="modal-overlay" id="itineraryModal">
+  <div class="modal-overlay" id="itineraryModal" style="display: none;">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 id="itineraryModalTitle" style="font-size: 1.3rem; color: var(--primary);">Détails du Programme</h3>
+        <h3 id="itineraryModalTitle" style="font-size: 1.25rem; color: var(--primary);">Détails du Forfait</h3>
         <button class="modal-close-btn" onclick="closeModal('itineraryModal')" aria-label="Fermer">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -385,43 +376,6 @@
       <div class="modal-body" id="itineraryModalBody"></div>
     </div>
   </div>
-
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="quoteModal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 style="font-size: 1.3rem; color: var(--primary);">Inscription & Renseignements</h3>
-        <button class="modal-close-btn" onclick="closeModal('quoteModal')" aria-label="Fermer">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="formSuccessAlert" style="display: none;"></div>
-        <form id="contactForm">
-          <div class="form-group" style="margin-bottom: 14px;">
-            <label class="form-label" for="contactName">Nom et Prénom *</label>
-            <input type="text" id="contactName" class="form-control" placeholder="Ex: Hadja Sawadogo" required>
-          </div>
-          <div class="form-group" style="margin-bottom: 14px;">
-            <label class="form-label" for="contactPhone">Téléphone / WhatsApp *</label>
-            <input type="tel" id="contactPhone" class="form-control" placeholder="+226 XX XX XX XX" required>
-          </div>
-          <div class="form-group" style="margin-bottom: 20px;">
-            <label class="form-label" for="contactMsg">Votre demande</label>
-            <textarea id="contactMsg" class="form-control" rows="3" placeholder="Indiquez le programme souhaité..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
-            <i class="fa-solid fa-paper-plane"></i> Envoyer à l'Agence de Ouagadougou
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating WhatsApp Trigger -->
-  <button type="button" class="floating-whatsapp" id="floatingWhatsAppBtn" onclick="openWhatsAppModal()" aria-label="WhatsApp Villes">
-    <i class="fa-brands fa-whatsapp"></i>
-  </button>
 
   <!-- WhatsApp Multi-City Modal -->
   <div class="modal-overlay" id="whatsappModal" style="display: none;">

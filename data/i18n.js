@@ -59,6 +59,7 @@ export const TRANSLATIONS = {
     priceOfficial: "Tarif Officiel :",
     ritualSteps: "Programme & Étapes Rituelles",
     includedServices: "Prestations Incluses",
+    openOffersPortal: "Ouvrir le Portail Dédié des Forfaits (Comparatifs & Programmes)",
     
     // Services
     servicesTag: "Services Complémentaires",
@@ -220,6 +221,7 @@ export const TRANSLATIONS = {
     priceOfficial: "Official Rate:",
     ritualSteps: "Schedule & Ritual Steps",
     includedServices: "Included Services",
+    openOffersPortal: "Open the Dedicated Packages Portal (Full Schedules & Rates)",
     
     // Services
     servicesTag: "Additional Services",
@@ -381,6 +383,7 @@ export const TRANSLATIONS = {
     priceOfficial: "السعر الرسمي :",
     ritualSteps: "البرنامج والمراحل والمناسك",
     includedServices: "الخدمات والمزايا المشمولة",
+    openOffersPortal: "فتح بوابة الباقات المخصصة (البرامج والأسعار بالتفصيل)",
     
     // Services
     servicesTag: "خدماتنا المتميزة",
