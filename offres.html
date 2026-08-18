@@ -418,10 +418,34 @@
     </div>
   </div>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/22673187417?text=Salam%20Aleykoum%20AFRICA%20VOYAGES%20SARL" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Contact WhatsApp">
+  <!-- Floating WhatsApp Trigger -->
+  <button type="button" class="floating-whatsapp" id="floatingWhatsAppBtn" onclick="openWhatsAppModal()" aria-label="WhatsApp Villes">
     <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  </button>
+
+  <!-- WhatsApp Multi-City Modal -->
+  <div class="modal-overlay" id="whatsappModal" style="display: none;">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="whatsapp-modal-head-banner">
+        <button class="modal-close-btn" onclick="closeModal('whatsappModal')" aria-label="Fermer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3>
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem; color: #25d366;"></i>
+          <span data-i18n="whatsappModalTitle">Contactez l'Agence sur WhatsApp</span>
+        </h3>
+        <p data-i18n="whatsappModalSubtitle">
+          Sélectionnez votre ville ou région pour échanger directement avec nos conseillers AFRICA VOYAGES SARL :
+        </p>
+      </div>
+
+      <div class="modal-body">
+        <div class="whatsapp-cities-list" id="whatsappCitiesList">
+          <!-- Rendu dynamique par app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="app.js"></script>
 </body>

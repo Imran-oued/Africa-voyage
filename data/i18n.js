@@ -147,6 +147,20 @@ export const TRANSLATIONS = {
     formSubmit: "Envoyer à l'Agence",
     formSuccess: "votre message a été préparé pour WhatsApp ! Notre équipe vous répond immédiatement.",
 
+    // WhatsApp Multi-Villes
+    whatsappModalTitle: "Contactez l'Agence sur WhatsApp",
+    whatsappModalSubtitle: "Sélectionnez votre ville ou région pour échanger directement avec nos conseillers AFRICA VOYAGES SARL :",
+    whatsappOuagaTitle: "Ouagadougou (Siège Principal)",
+    whatsappOuagaDesc: "Samandin secteur 05, en face station Total Mogho Naaba",
+    whatsappOuagaNumber: "+226 73 18 74 17",
+    whatsappBoboTitle: "Bobo-Dioulasso (Agence Bobo)",
+    whatsappBoboDesc: "Région des Hauts-Bassins & Grand Ouest",
+    whatsappBoboNumber: "+226 74 64 29 80",
+    whatsappYakoTitle: "Yako - Gourcy (Agence Nord)",
+    whatsappYakoDesc: "Provinces du Passoré, Zondoma & Région du Nord",
+    whatsappYakoNumber: "+226 76 52 81 31",
+    whatsappActionBtn: "Échanger sur WhatsApp",
+
     // Footer
     footerCopyright: "© 2026 <strong>AFRICA VOYAGES SARL</strong>. La 1ère agence agréée par l'État burkinabè pour le Hadj • Samandin secteur 05, Ouagadougou."
   },
@@ -294,6 +308,20 @@ export const TRANSLATIONS = {
     formSubmit: "Send to Agency",
     formSuccess: "your message has been prepared for WhatsApp! Our team will reply immediately.",
 
+    // WhatsApp Multi-City
+    whatsappModalTitle: "Contact Agency on WhatsApp",
+    whatsappModalSubtitle: "Select your city or region to chat directly with our AFRICA VOYAGES SARL advisors:",
+    whatsappOuagaTitle: "Ouagadougou (Headquarters)",
+    whatsappOuagaDesc: "Samandin sector 05, opposite Total Mogho Naaba station",
+    whatsappOuagaNumber: "+226 73 18 74 17",
+    whatsappBoboTitle: "Bobo-Dioulasso (Bobo Branch)",
+    whatsappBoboDesc: "Hauts-Bassins & Western Region",
+    whatsappBoboNumber: "+226 74 64 29 80",
+    whatsappYakoTitle: "Yako - Gourcy (Northern Branch)",
+    whatsappYakoDesc: "Passoré, Zondoma & Northern Region",
+    whatsappYakoNumber: "+226 76 52 81 31",
+    whatsappActionBtn: "Chat on WhatsApp",
+
     // Footer
     footerCopyright: "© 2026 <strong>AFRICA VOYAGES SARL</strong>. 1st accredited agency by the Burkinabe State for Hajj • Samandin sector 05, Ouagadougou."
   },
@@ -440,6 +468,20 @@ export const TRANSLATIONS = {
     formMsgPlaceholder: "اكتب رسالتك أو استفسارك هنا...",
     formSubmit: "إرسال عبر واتساب",
     formSuccess: "تم تجهيز رسالتك للإرسال عبر واتساب! فريقنا سيرد عليك فوراً.",
+
+    // WhatsApp Multi-City
+    whatsappModalTitle: "تواصل مع الوكالة عبر واتساب",
+    whatsappModalSubtitle: "اختر مدينتك أو منطقتك للتواصل المباشر مع مستشاري وكالة أفريكا السفريات:",
+    whatsappOuagaTitle: "واغادوغو (المقر الرئيسي)",
+    whatsappOuagaDesc: "ساماندين قطاع 05، مقابل محطة توتال موغو نابا",
+    whatsappOuagaNumber: "+226 73 18 74 17",
+    whatsappBoboTitle: "بوبوديولاسو (فرع بوبو)",
+    whatsappBoboDesc: "منطقة الهوت باسان والغرب البوركينابي",
+    whatsappBoboNumber: "+226 74 64 29 80",
+    whatsappYakoTitle: "ياكو - غورسيه (فرع الشمال)",
+    whatsappYakoDesc: "إقليم باسوريه وزوندوما والشمال البوركينابي",
+    whatsappYakoNumber: "+226 76 52 81 31",
+    whatsappActionBtn: "محادثة عبر واتساب",
 
     // Footer
     footerCopyright: "© 2026 <strong>أفريكا السفريات ش.ذ.م.م</strong>. الوكالة الأولى المعتمدة من الدولة البوركينابية للحج والعمرة • ساماندين قطاع 05، واغادوغو."

@@ -286,9 +286,9 @@ export function renderOffers() {
               <div class="offer-price-label">${dict.priceOfficial || pkg.priceLabel}</div>
               <div class="offer-price-val">${priceFormatted}</div>
             </div>
-            <a href="https://wa.me/22673187417?text=${waText}" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <button type="button" class="btn btn-whatsapp btn-pkg-wa" data-pkg-title="${displayTitle}">
               <i class="fa-brands fa-whatsapp"></i> ${bookLabel}
-            </a>
+            </button>
           </div>
         </div>
       </article>
@@ -302,7 +302,89 @@ export function renderOffers() {
       openItineraryModal(pkgId);
     });
   });
+
+  // Event listeners sur les boutons WhatsApp des offres
+  container.querySelectorAll('.btn-pkg-wa').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const pkgTitle = e.currentTarget.getAttribute('data-pkg-title') || '';
+      openWhatsAppModal(`je souhaite des informations et m'inscrire pour : ${pkgTitle}`);
+    });
+  });
 }
+
+// Modal WhatsApp Multi-Villes (Ouagadougou, Bobo-Dioulasso, Yako-Gourcy)
+export function openWhatsAppModal(customMessage = null) {
+  const modal = document.getElementById('whatsappModal');
+  if (!modal) return;
+
+  const dict = TRANSLATIONS[currentLanguage] || TRANSLATIONS.fr;
+
+  const branches = [
+    {
+      id: 'ouaga',
+      city: dict.whatsappOuagaTitle || "Ouagadougou (Siège Principal)",
+      desc: dict.whatsappOuagaDesc || "Samandin secteur 05, en face station Total Mogho Naaba",
+      number: "22673187417",
+      displayNumber: "+226 73 18 74 17",
+      badge: "Siège Ouaga"
+    },
+    {
+      id: 'bobo',
+      city: dict.whatsappBoboTitle || "Bobo-Dioulasso (Agence Bobo)",
+      desc: dict.whatsappBoboDesc || "Région des Hauts-Bassins & Grand Ouest",
+      number: "22674642980",
+      displayNumber: "+226 74 64 29 80",
+      badge: "Agence Bobo"
+    },
+    {
+      id: 'yako-gourcy',
+      city: dict.whatsappYakoTitle || "Yako - Gourcy (Agence Nord)",
+      desc: dict.whatsappYakoDesc || "Provinces du Passoré, Zondoma & Région du Nord",
+      number: "22676528131",
+      displayNumber: "+226 76 52 81 31",
+      badge: "Passoré / Zondoma"
+    }
+  ];
+
+  const listContainer = document.getElementById('whatsappCitiesList');
+  if (listContainer) {
+    listContainer.innerHTML = branches.map(b => {
+      let defaultMsg = `Salam Aleykoum AFRICA VOYAGES SARL (${b.city}), je souhaite avoir des informations sur vos forfaits Hadj & Omra et vos services.`;
+      if (customMessage) {
+        defaultMsg = `Salam Aleykoum AFRICA VOYAGES SARL (${b.city}), ${customMessage}`;
+      }
+      const waUrl = `https://wa.me/${b.number}?text=${encodeURIComponent(defaultMsg)}`;
+
+      return `
+        <a href="${waUrl}" target="_blank" rel="noopener" class="whatsapp-city-card" onclick="closeModal('whatsappModal')">
+          <div class="whatsapp-city-info">
+            <div class="whatsapp-city-badge">
+              <span class="pulse-online"></span>
+              <span>${b.badge}</span>
+            </div>
+            <div class="whatsapp-city-name">
+              <i class="fa-solid fa-location-dot" style="color: var(--gold-dark); font-size: 0.95rem;"></i>
+              <span>${b.city}</span>
+            </div>
+            <div class="whatsapp-city-address">${b.desc}</div>
+            <div class="whatsapp-city-phone">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+              <span>${b.displayNumber}</span>
+            </div>
+          </div>
+          <div class="whatsapp-city-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>${dict.whatsappActionBtn || "Échanger"}</span>
+          </div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  modal.style.display = 'flex';
+}
+
+window.openWhatsAppModal = openWhatsAppModal;
 
 // Modal d'Itinéraire Complet
 export function openItineraryModal(packageId) {
@@ -334,7 +416,6 @@ export function openItineraryModal(packageId) {
   titleEl.innerHTML = `<i class="fa-solid fa-kaaba"></i> ${modalTitle}`;
 
   const priceFormatted = formatPrice(pkg.basePriceFCFA, currentCurrency);
-  const waText = encodeURIComponent(`Salam Aleykoum AFRICA VOYAGES SARL, je souhaite réserver le forfait : ${pkg.title}`);
 
   bodyEl.innerHTML = `
     <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface-alt); padding: 14px 18px; border-radius: 10px;">
@@ -342,9 +423,9 @@ export function openItineraryModal(packageId) {
         <span style="font-size: 0.85rem; color: #64748b; font-weight: 700; text-transform: uppercase;">${dict.priceOfficial || "Tarif Officiel :"}</span>
         <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); font-family: 'Playfair Display', serif;">${priceFormatted}</div>
       </div>
-      <a href="https://wa.me/22673187417?text=${waText}" target="_blank" class="btn btn-whatsapp">
+      <button type="button" class="btn btn-whatsapp" onclick="closeModal('itineraryModal'); openWhatsAppModal('je souhaite réserver le forfait : ${encodeURIComponent(pkg.title)}');">
         <i class="fa-brands fa-whatsapp"></i> ${dict.bookWhatsapp || "Réserver via WhatsApp"}
-      </a>
+      </button>
     </div>
 
     ${pkg.conditions ? `
@@ -388,6 +469,13 @@ window.closeModal = function(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) modal.style.display = 'none';
 };
+
+// Global click-outside to close modals
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal-overlay')) {
+    e.target.style.display = 'none';
+  }
+});
 
 // Témoignages
 function renderTestimonials() {

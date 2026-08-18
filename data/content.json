@@ -29,7 +29,36 @@
       "whatsappRaw": "22673187417",
       "whatsappLink": "https://wa.me/22673187417",
       "email": "africavoyagebf74@gmail.com"
-    }
+    },
+    "branches": [
+      {
+        "id": "ouaga",
+        "city": "Ouagadougou",
+        "name": "Siège Principal (Samandin)",
+        "address": "Samandin secteur 05, en face station Total Mogho Naaba",
+        "whatsapp": "+226 73 18 74 17",
+        "whatsappRaw": "22673187417",
+        "phone": "+226 25 31 06 77"
+      },
+      {
+        "id": "bobo",
+        "city": "Bobo-Dioulasso",
+        "name": "Agence Bobo-Dioulasso",
+        "address": "Région des Hauts-Bassins, Bobo-Dioulasso",
+        "whatsapp": "+226 74 64 29 80",
+        "whatsappRaw": "22674642980",
+        "phone": "+226 74 64 29 80"
+      },
+      {
+        "id": "yako-gourcy",
+        "city": "Yako - Gourcy",
+        "name": "Agence Région du Nord",
+        "address": "Provinces du Passoré & Zondoma (Yako - Gourcy)",
+        "whatsapp": "+226 76 52 81 31",
+        "whatsappRaw": "22676528131",
+        "phone": "+226 76 52 81 31"
+      }
+    ]
   },
   "about": {
     "title": "À Propos de AFRICA VOYAGES SARL",

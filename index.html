@@ -162,9 +162,9 @@
           RCCM : BF OUA 2018 B 9910 • IFU : 00114097X<br>
           Licence Catégorie A • <strong>Agréée IATA</strong>
         </p>
-        <a href="https://wa.me/22673187417" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-          <i class="fa-brands fa-whatsapp"></i> Échanger sur WhatsApp
-        </a>
+        <button type="button" onclick="document.getElementById('menuDrawerOverlay').classList.remove('active'); document.body.style.overflow=''; openWhatsAppModal();" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.85rem; border: none; cursor: pointer;">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="whatsappActionBtn">Échanger sur WhatsApp</span>
+        </button>
       </div>
     </aside>
   </div>
@@ -436,9 +436,13 @@
 
           <div class="contact-row">
             <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-            <div>
-              <strong data-i18n="contactWhatsAppLabel">WhatsApp :</strong><br>
-              <a href="https://wa.me/22673187417" target="_blank" style="color: #25d366; font-weight: 700; text-decoration: none;">+226 73 18 74 17</a>
+            <div style="width: 100%;">
+              <strong data-i18n="contactWhatsAppLabel">WhatsApp par Ville :</strong><br>
+              <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px; font-size: 0.88rem;">
+                <div>📍 <strong>Ouaga :</strong> <a href="javascript:void(0)" onclick="openWhatsAppModal()" style="color: #25d366; font-weight: 700; text-decoration: none;">+226 73 18 74 17</a></div>
+                <div>📍 <strong>Bobo :</strong> <a href="javascript:void(0)" onclick="openWhatsAppModal()" style="color: #25d366; font-weight: 700; text-decoration: none;">+226 74 64 29 80</a></div>
+                <div>📍 <strong>Yako - Gourcy :</strong> <a href="javascript:void(0)" onclick="openWhatsAppModal()" style="color: #25d366; font-weight: 700; text-decoration: none;">+226 76 52 81 31</a></div>
+              </div>
             </div>
           </div>
 
@@ -504,10 +508,10 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/22673187417?text=Salam%20Aleykoum%20AFRICA%20VOYAGES%20SARL" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <!-- Floating WhatsApp Trigger -->
+  <button type="button" class="floating-whatsapp" id="floatingWhatsAppBtn" onclick="openWhatsAppModal()" aria-label="WhatsApp Villes">
     <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  </button>
 
   <!-- Itinerary Modal -->
   <div class="modal-overlay" id="itineraryModal" style="display: none;">
@@ -519,6 +523,30 @@
         </button>
       </div>
       <div class="modal-body" id="itineraryModalBody"></div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Multi-City Modal -->
+  <div class="modal-overlay" id="whatsappModal" style="display: none;">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="whatsapp-modal-head-banner">
+        <button class="modal-close-btn" onclick="closeModal('whatsappModal')" aria-label="Fermer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3>
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem; color: #25d366;"></i>
+          <span data-i18n="whatsappModalTitle">Contactez l'Agence sur WhatsApp</span>
+        </h3>
+        <p data-i18n="whatsappModalSubtitle">
+          Sélectionnez votre ville ou région pour échanger directement avec nos conseillers AFRICA VOYAGES SARL :
+        </p>
+      </div>
+
+      <div class="modal-body">
+        <div class="whatsapp-cities-list" id="whatsappCitiesList">
+          <!-- Rendu dynamique par app.js -->
+        </div>
+      </div>
     </div>
   </div>
 
