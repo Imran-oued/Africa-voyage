@@ -26,7 +26,7 @@ export const TRANSLATIONS = {
     // Hero Section
     heroBadge: "La 1ère Agence Agréée par l'État burkinabè • Agréée IATA",
     heroTitle: "Votre Pèlerinage <span class=\"highlight\">Hadj & Omra</span> en Toute Sérénité",
-    heroDesc: "Pré-inscriptions ouvertes pour le <strong>Hadj 2027</strong> (328 500 FCFA avec CNIB ou Passeport) et <strong>2 départs Omra par mois</strong> toute l'année au départ de Ouagadougou.",
+    heroDesc: "Pré-inscriptions ouvertes pour le <strong>Hadj 2027</strong> (tarif provisoire de 3 285 000 FCFA avec CNIB ou Passeport) et <strong>2 départs Omra par mois</strong> toute l'année au départ de Ouagadougou.",
     heroCtaOffers: "Voir les Forfaits",
     heroCtaAbout: "En Savoir Plus",
     heroCtaContact: "Nous Contacter",
@@ -57,6 +57,7 @@ export const TRANSLATIONS = {
     viewItinerary: "Voir Programme Complet",
     bookWhatsapp: "Réserver sur WhatsApp",
     priceOfficial: "Tarif Officiel :",
+    priceProvisional: "Tarif Provisoire :",
     ritualSteps: "Programme & Étapes Rituelles",
     includedServices: "Prestations Incluses",
     openOffersPortal: "Ouvrir le Portail Dédié des Forfaits (Comparatifs & Programmes)",
@@ -110,7 +111,7 @@ export const TRANSLATIONS = {
     faq: [
       {
         q: "Quelles sont les conditions pour se pré-inscrire au Hadj 2027 ?",
-        a: "La pré-inscription pour le Hadj 2027 est fixée au tarif provisoire de 328 500 FCFA. Il vous suffit de fournir une copie de votre CNIB (Carte Nationale d'Identité Burkinabè) ou de votre Passeport en cours de validité (validité minimale de 6 mois)."
+        a: "La pré-inscription pour le Hadj 2027 est fixée au tarif provisoire de 3 285 000 FCFA. Il vous suffit de fournir une copie de votre CNIB (Carte Nationale d'Identité Burkinabè) ou de votre Passeport en cours de validité (validité minimale de 6 mois)."
       },
       {
         q: "Quelle est la fréquence des départs pour la Omra ?",
@@ -188,7 +189,7 @@ export const TRANSLATIONS = {
     // Hero Section
     heroBadge: "1st Accredited Agency by the Burkinabe State • IATA Certified",
     heroTitle: "Your <span class=\"highlight\">Hajj & Umrah</span> Pilgrimage in Total Peace of Mind",
-    heroDesc: "Pre-registrations now open for <strong>Hajj 2027</strong> (328,500 FCFA with National ID or Passport) and <strong>2 Umrah departures per month</strong> year-round from Ouagadougou.",
+    heroDesc: "Pre-registrations now open for <strong>Hajj 2027</strong> (provisional rate of 3,285,000 FCFA with National ID or Passport) and <strong>2 Umrah departures per month</strong> year-round from Ouagadougou.",
     heroCtaOffers: "View Packages",
     heroCtaAbout: "Learn More",
     heroCtaContact: "Contact Us",
@@ -219,6 +220,7 @@ export const TRANSLATIONS = {
     viewItinerary: "View Full Schedule",
     bookWhatsapp: "Book via WhatsApp",
     priceOfficial: "Official Rate:",
+    priceProvisional: "Provisional Rate:",
     ritualSteps: "Schedule & Ritual Steps",
     includedServices: "Included Services",
     openOffersPortal: "Open the Dedicated Packages Portal (Full Schedules & Rates)",
@@ -272,7 +274,7 @@ export const TRANSLATIONS = {
     faq: [
       {
         q: "What are the requirements for Hajj 2027 pre-registration?",
-        a: "Pre-registration for Hajj 2027 is set at the provisional rate of 328,500 FCFA. You simply need to provide a copy of your National ID (CNIB) or valid Passport (valid for at least 6 months)."
+        a: "Pre-registration for Hajj 2027 is set at the provisional rate of 3,285,000 FCFA. You simply need to provide a copy of your National ID (CNIB) or valid Passport (valid for at least 6 months)."
       },
       {
         q: "How often are Umrah departures organized?",
@@ -350,7 +352,7 @@ export const TRANSLATIONS = {
     // Hero Section
     heroBadge: "الوكالة الأولى المعتمدة من الدولة البوركينابية • معتمدة من إياتا (IATA)",
     heroTitle: "رحلتكم إلى <span class=\"highlight\">الحج والعمرة</span> بكل طمأنينة وخشوع",
-    heroDesc: "التسجيل المسبق مفتوح الآن لـ <strong>حج 2027</strong> (328,500 فرنك سيفا ببطاقة الهوية أو جواز السفر) مع <strong>رحلتين عمرة شهرياً</strong> على مدار العام انطلاقاً من واغادوغو.",
+    heroDesc: "التسجيل المسبق مفتوح الآن لـ <strong>حج 2027</strong> (سعر تقديري 3,285,000 فرنك سيفا ببطاقة الهوية أو جواز السفر) مع <strong>رحلتين عمرة شهرياً</strong> على مدار العام انطلاقاً من واغادوغو.",
     heroCtaOffers: "استعراض الباقات",
     heroCtaAbout: "تعرف علينا",
     heroCtaContact: "تواصل معنا",
@@ -381,6 +383,7 @@ export const TRANSLATIONS = {
     viewItinerary: "تفاصيل البرنامج",
     bookWhatsapp: "حجز عبر واتساب",
     priceOfficial: "السعر الرسمي :",
+    priceProvisional: "السعر التقديري :",
     ritualSteps: "البرنامج والمراحل والمناسك",
     includedServices: "الخدمات والمزايا المشمولة",
     openOffersPortal: "فتح بوابة الباقات المخصصة (البرامج والأسعار بالتفصيل)",
@@ -434,7 +437,7 @@ export const TRANSLATIONS = {
     faq: [
       {
         q: "ما هي شروط وإجراءات التسجيل المسبق لحج 2027 ؟",
-        a: "تم تحديد رسوم التسجيل المسبق لحج 2027 بمبلغ تقديري 328,500 فرنك سيفا. يكفي إحضار نسخة من بطاقة الهوية الوطنية أو جواز سفر ساري المفعول (صلاحية 6 أشهر على الأقل)."
+        a: "تم تحديد رسوم التسجيل المسبق لحج 2027 بمبلغ تقديري 3,285,000 فرنك سيفا. يكفي إحضار نسخة من بطاقة الهوية الوطنية أو جواز سفر ساري المفعول (صلاحية 6 أشهر على الأقل)."
       },
       {
         q: "ما هي وتيرة رحلات العمرة خلال العام ؟",

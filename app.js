@@ -79,21 +79,21 @@ function applyLanguage(lang) {
   if (pkgSelect) {
     const currentVal = pkgSelect.value;
     if (lang === 'en') {
-      pkgSelect.options[0].text = "Hajj 2027 (Pre-registration at 328,500 FCFA)";
+      pkgSelect.options[0].text = "Hajj 2027 (Provisional: 3,285,000 FCFA)";
       pkgSelect.options[1].text = "Standard Umrah (1,300,000 FCFA)";
       pkgSelect.options[2].text = "Ramadan Umrah (1,800,000 FCFA)";
       pkgSelect.options[3].text = "Visa Assistance";
       pkgSelect.options[4].text = "Air Ticketing";
       pkgSelect.options[5].text = "Money Transfer";
     } else if (lang === 'ar') {
-      pkgSelect.options[0].text = "حج 2027 (تسجيل مسبق: 328,500 فرنك سيفا)";
+      pkgSelect.options[0].text = "حج 2027 (سعر تقديري: 3,285,000 فرنك سيفا)";
       pkgSelect.options[1].text = "العمرة الاعتيادية (1,300,000 فرنك سيفا)";
       pkgSelect.options[2].text = "عمرة رمضان المبارك (1,800,000 فرنك سيفا)";
       pkgSelect.options[3].text = "استخراج التأشيرات";
       pkgSelect.options[4].text = "حجز تذاكر الطيران";
       pkgSelect.options[5].text = "تحويل الأموال";
     } else {
-      pkgSelect.options[0].text = "Hadj 2027 (Pré-inscription à 328 500 FCFA)";
+      pkgSelect.options[0].text = "Hadj 2027 (Tarif provisoire : 3 285 000 FCFA)";
       pkgSelect.options[1].text = "Omra Standard (1 300 000 FCFA)";
       pkgSelect.options[2].text = "Omra Ramadan (1 800 000 FCFA)";
       pkgSelect.options[3].text = "Assistance Visa";
@@ -283,7 +283,7 @@ export function renderOffers() {
 
           <div class="offer-footer">
             <div>
-              <div class="offer-price-label">${dict.priceOfficial || pkg.priceLabel}</div>
+              <div class="offer-price-label">${isHadj ? (dict.priceProvisional || "Tarif Provisoire :") : (dict.priceOfficial || "Tarif Officiel :")}</div>
               <div class="offer-price-val">${priceFormatted}</div>
             </div>
             <button type="button" class="btn btn-whatsapp btn-pkg-wa" data-pkg-title="${displayTitle}">
@@ -416,11 +416,12 @@ export function openItineraryModal(packageId) {
   titleEl.innerHTML = `<i class="fa-solid fa-kaaba"></i> ${modalTitle}`;
 
   const priceFormatted = formatPrice(pkg.basePriceFCFA, currentCurrency);
+  const modalPriceLabel = pkg.id === 'hadj-2027' ? (dict.priceProvisional || "Tarif Provisoire :") : (dict.priceOfficial || "Tarif Officiel :");
 
   bodyEl.innerHTML = `
     <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface-alt); padding: 14px 18px; border-radius: 10px;">
       <div>
-        <span style="font-size: 0.85rem; color: #64748b; font-weight: 700; text-transform: uppercase;">${dict.priceOfficial || "Tarif Officiel :"}</span>
+        <span style="font-size: 0.85rem; color: #64748b; font-weight: 700; text-transform: uppercase;">${modalPriceLabel}</span>
         <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); font-family: 'Playfair Display', serif;">${priceFormatted}</div>
       </div>
       <button type="button" class="btn btn-whatsapp" onclick="closeModal('itineraryModal'); openWhatsAppModal('je souhaite réserver le forfait : ${encodeURIComponent(pkg.title)}');">

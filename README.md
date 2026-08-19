@@ -26,7 +26,7 @@ Bienvenue sur le dépôt de l'application web officielle de l'agence **AFRICA VO
 
 ### 🕋 1. Hadj 2027 & Omra ([`offres.html`](offres.html))
 * **Hadj 2027 (Campagne Officielle)** :
-  * **Tarif provisoire / Pré-inscription** : **328 500 FCFA**
+  * **Tarif provisoire / Pré-inscription** : **3 285 000 FCFA**
   * **Condition simplifiée** : La pièce d'identité (CNIB) ou le passeport en cours de validité suffit pour la pré-inscription.
 * **Omra (2 Départs par mois)** :
   * **Omra Standard** : **1 300 000 FCFA** (2 départs chaque mois, vols, visas, hôtels proches du Haram).
